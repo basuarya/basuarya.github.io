@@ -2,7 +2,7 @@
 <html lang="en">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
-		<title>Bootstrap Level</title>
+		<title>Alternate Bootstrap Level</title>
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
@@ -22,7 +22,6 @@
 		<header>
       		<nav class="website-nav">
 		        <ul>
-		          <li><a href="about.html" style="font-size:2vw;">About</a></li>
 		          <li><a href="links.html" style="font-size:2vw;">Links</a></li>
 		        </ul>
       		</nav>
@@ -68,8 +67,8 @@
 				camera.position.z = 1000;
 
 				
-				textureCube = THREE.ImageUtils.loadTexture( 'https://spatiotemporalbasu.com/extras/AdobeStock_69069070.png');
-				textureEmissive = THREE.ImageUtils.loadTexture( 'https://spatiotemporalbasu.com/extras/white_emission.jpg');
+				textureCube = THREE.ImageUtils.loadTexture( 'https://basuarya.github.io/resources/AdobeStock_69069070.png');
+				textureEmissive = THREE.ImageUtils.loadTexture( 'https://basuarya.github.io/resources/white_emission.jpg');
 
 				// LIGHT
 				var light = new THREE.PointLight(0xffffff);
@@ -99,7 +98,7 @@
 
 				// Load the background texture
 		        // do not load the heavy texture
-		        texture = THREE.ImageUtils.loadTexture( 'https://spatiotemporalbasu.com/extras/wireframe.png' );
+		        texture = THREE.ImageUtils.loadTexture( 'https://basuarya.github.io/resources/wireframe.png' );
 		        backgroundMesh = new THREE.Mesh(
 		            new THREE.PlaneGeometry(2, 2, 0),
 		            new THREE.MeshBasicMaterial({
@@ -167,7 +166,7 @@
 
 			       //console.log(firstIntersectedObject);
 			       if(firstIntersectedObject.distance <= 7) {
-			       	window.open('https://spatiotemporalbasu.com/deck.html', '_self');	
+			       	window.open('https://basuarya.github.io', '_self');	
 			       }
 			       
 
