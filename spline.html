@@ -132,30 +132,36 @@
 				controls.damping = 0.2;
 				
 				//custom zoom 
-				controls.noZoom = true;
+				container.on('mousewheel', function ( ev ){
 
-				$('body').on('mousewheel', function (e){
+		        var factor = 10;
 
-				        var mouseX = (e.clientX - (WIDTH/2)) * 10;
-				        var mouseY = (e.clientY - (HEIGHT/2)) * 10;
+		        var WIDTH = window.innerWidth;
+		        var HEIGHT = window.innerHeight;
 
-				        if(e.originalEvent.deltaY < 0){ // zoom to the front
-				            camera.position.x -= mouseX * .00125;
-				            camera.position.y += mouseY * .00125;
-				            camera.position.z += 1.1 * 10;
-				            controls.target.x -= mouseX * .00125;
-				            controls.target.y += mouseY * .00125;
-				            controls.target.z += 1.1 * 10;
-				        }else{                          // zoom to the back
-				            camera.position.x += mouseX * .00125;
-				            camera.position.y -= mouseY * .00125;
-				            camera.position.z -= 1.1 * 10;
-				            controls.target.x += mouseX * .00125;
-				            controls.target.y -= mouseY * .00125;
-				            controls.target.z -= 1.1 * 10;
-				        }
+		        var mX = ( ev.clientX / WIDTH ) * 2 - 1;
+		        var mY = - ( ev.clientY / HEIGHT ) * 2 + 1;
+
+		        var vector = new THREE.Vector3(mX, mY, 1 );
+		        projector.unprojectVector( vector, camera );
+		        vector.sub( camera.position ).normalize();
+
+			        if( ev.originalEvent.deltaY < 0 ){
+			            camera.position.x += vector.x * factor;
+			            camera.position.y += vector.y * factor;
+			            camera.position.z += vector.z * factor;
+			            controls.target.x += vector.x * factor;
+			            controls.target.y += vector.y * factor;
+			            controls.target.z += vector.z * factor;
+			        } else{
+			            camera.position.x -= vector.x * factor;
+			            camera.position.y -= vector.y * factor;
+			            camera.position.z -= vector.z * factor;
+			            controls.target.x -= vector.x * factor;
+			            controls.target.y -= vector.y * factor;
+			            controls.target.z -= vector.z * factor;
+			        }
 				});
-
 
 				controls.addEventListener( 'change', render );
 
