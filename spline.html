@@ -337,6 +337,27 @@
 				render();
 				stats.update();
 
+				// update the picking ray with the camera and mouse position
+				raycaster.setFromCamera( mouse, camera );
+
+				// calculate objects intersecting the picking ray
+				var intersects = raycaster.intersectObjects( scene.children );
+
+
+				var firstIntersectedObject;
+
+				if (intersects.length > 0) {
+			       var firstIntersectedObject  = intersects[0];
+			       // this will give you the first intersected Object if there are multiple.
+
+			       //console.log(firstIntersectedObject);
+			       if(firstIntersectedObject.distance >= 7) {
+			       	window.open('https://basuarya.github.io', '_self');	
+			       }
+			       
+
+			    }
+
 			}
 
 			function render() {
