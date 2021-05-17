@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - geometry - catmull spline editor</title>
+		<title>geometry - catmull spline editor</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
@@ -130,6 +130,33 @@
 				// Controls
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.damping = 0.2;
+				
+				//custom zoom 
+				controls.noZoom = true;
+
+				$('body').on('mousewheel', function (e){
+
+				        var mouseX = (e.clientX - (WIDTH/2)) * 10;
+				        var mouseY = (e.clientY - (HEIGHT/2)) * 10;
+
+				        if(e.originalEvent.deltaY < 0){ // zoom to the front
+				            camera.position.x -= mouseX * .00125;
+				            camera.position.y += mouseY * .00125;
+				            camera.position.z += 1.1 * 10;
+				            controls.target.x -= mouseX * .00125;
+				            controls.target.y += mouseY * .00125;
+				            controls.target.z += 1.1 * 10;
+				        }else{                          // zoom to the back
+				            camera.position.x += mouseX * .00125;
+				            camera.position.y -= mouseY * .00125;
+				            camera.position.z -= 1.1 * 10;
+				            controls.target.x += mouseX * .00125;
+				            controls.target.y -= mouseY * .00125;
+				            controls.target.z -= 1.1 * 10;
+				        }
+				});
+
+
 				controls.addEventListener( 'change', render );
 
 				transformControl = new TransformControls( camera, renderer.domElement );
