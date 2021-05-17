@@ -131,37 +131,7 @@
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.damping = 0.2;
 				
-				//custom zoom 
-				container.on('mousewheel', function ( ev ){
-
-		        var factor = 10;
-
-		        var WIDTH = window.innerWidth;
-		        var HEIGHT = window.innerHeight;
-
-		        var mX = ( ev.clientX / WIDTH ) * 2 - 1;
-		        var mY = - ( ev.clientY / HEIGHT ) * 2 + 1;
-
-		        var vector = new THREE.Vector3(mX, mY, 1 );
-		        projector.unprojectVector( vector, camera );
-		        vector.sub( camera.position ).normalize();
-
-			        if( ev.originalEvent.deltaY < 0 ){
-			            camera.position.x += vector.x * factor;
-			            camera.position.y += vector.y * factor;
-			            camera.position.z += vector.z * factor;
-			            controls.target.x += vector.x * factor;
-			            controls.target.y += vector.y * factor;
-			            controls.target.z += vector.z * factor;
-			        } else{
-			            camera.position.x -= vector.x * factor;
-			            camera.position.y -= vector.y * factor;
-			            camera.position.z -= vector.z * factor;
-			            controls.target.x -= vector.x * factor;
-			            controls.target.y -= vector.y * factor;
-			            controls.target.z -= vector.z * factor;
-			        }
-				});
+				
 
 				controls.addEventListener( 'change', render );
 
