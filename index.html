@@ -72,20 +72,19 @@
 
 				// LIGHT
 				scene.add( new THREE.AmbientLight( 0xf0f0f0 ) );
-				const light = new THREE.SpotLight( 0xffffff, 1.5 );
-				light.position.set( 0, 1500, 200 );
-				light.angle = Math.PI * 0.2;
-				light.castShadow = true;
-				light.shadow.camera.near = 200;
-				light.shadow.camera.far = 2000;
-				light.shadow.bias = - 0.000222;
-				light.shadow.mapSize.width = 1024;
-				light.shadow.mapSize.height = 1024;
-				scene.add( light );
-				
+				//const light = new THREE.SpotLight( 0xffffff, 1.5 );
+				//light.position.set( 0, 1500, 200 );
+				//light.angle = Math.PI * 0.2;
+				//light.castShadow = true;
+				//light.shadow.camera.near = 200;
+				//light.shadow.camera.far = 2000;
+				//light.shadow.bias = - 0.000222;
+				//light.shadow.mapSize.width = 1024;
+				//light.shadow.mapSize.height = 1024;
+				//scene.add( light );
 
 				geometry = new THREE.BoxGeometry( 200, 200, 200 );
-				material = new THREE.MeshStandardMaterial( { color: 0xffffff , alphaMap: textureCube, wireframe: false, emissiveMap: textureEmissive, emissiveIntensity: 0.5  } );
+				material = new THREE.MeshStandardMaterial( { color: 0xffffff , alphaMap: textureCube, wireframe: true, emissiveMap: textureEmissive, emissiveIntensity: 0.1  } );
 
 				mesh = new THREE.Mesh( geometry, material );
 				scene.add( mesh );
