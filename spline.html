@@ -131,7 +131,24 @@
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.damping = 0.2;
 				
-				
+				var vector = new THREE.Vector3();
+				var dir = new THREE.Vector3();
+				var position = camera.position;
+
+				var rect = canvas.getBoundingClientRect();
+				var left = event.clientX - rect.left;
+				var top = event.clientY - rect.top;
+
+				camera.updateMatrixWorld( true );
+				vector.set((left/rect.width)*2 - 1, -(top/rect.height)*2 + 1, 0.5);
+				vector.unproject(camera);
+
+				var dir = vector.sub(position).normalize();
+
+				// * x being the amount you want to move
+				camera.position.x += dir.x * 2;
+				camera.position.y += dir.y * 2;
+				camera.position.z += dir.z * 2;
 
 				controls.addEventListener( 'change', render );
 
