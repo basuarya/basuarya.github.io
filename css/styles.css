@@ -10,8 +10,9 @@
     padding: 0;
     font-family: Georgia, serif;
     font-size: 70%;
-    color: white;
+    /*color: white;
     background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%);
+    */
   }
   body {
     font-size: 1.8rem;
