@@ -110,7 +110,7 @@
 		        let fov_y = camera.position.z * camera.getFilmHeight() / camera.getFocalLength();
 
 		        backgroundMesh = new THREE.Mesh(
-		            new THREE.PlaneGeometry(fov_y * camera.aspect, fov_y, 0),
+		            new THREE.PlaneGeometry(fov_y * camera.aspect, fov_y),
 		            new THREE.MeshBasicMaterial({
 		                map: texture
 		            }));
