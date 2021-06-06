@@ -106,8 +106,11 @@
 				// Load the background texture
 		        // trying another way out
 		        texture = THREE.ImageUtils.loadTexture( 'https://spatiotemporalbasu.com/resources/wireframe.png' );
+		        
+		        let fov_y = camera.position.z * camera.getFilmHeight() / camera.getFocalLength();
+
 		        backgroundMesh = new THREE.Mesh(
-		            new THREE.PlaneGeometry(2, 2, 0),
+		            new THREE.PlaneGeometry(fov_y * camera.aspect, fov_y, 0),
 		            new THREE.MeshBasicMaterial({
 		                map: texture
 		            }));
@@ -193,7 +196,7 @@
 				controls.update();
 
 
-			
+
 
 
 			}
