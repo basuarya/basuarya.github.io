@@ -129,11 +129,9 @@
       			
 			
 
-				//document.body.appendChild( renderer.domElement );
+				document.body.appendChild( renderer.domElement );
 
-				container = document.getElementById('container');
-				renderer.setSize($(container).width(), $(container).height());
-				container.appendChild(renderer.domElement);
+			
 
 
 
@@ -193,6 +191,9 @@
 
 				renderer.render( scene, camera );
 				controls.update();
+
+
+			
 
 
 			}
