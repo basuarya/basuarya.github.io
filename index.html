@@ -104,24 +104,24 @@
 				renderer.setSize( window.innerWidth, window.innerHeight );
 
 				// Load the background texture
-		        // do not load the heavy texture
+		        // trying another way out
 		        /*texture = THREE.ImageUtils.loadTexture( 'https://spatiotemporalbasu.com/resources/wireframe.png' );
 		        backgroundMesh = new THREE.Mesh(
 		            new THREE.PlaneGeometry(2, 2, 0),
 		            new THREE.MeshBasicMaterial({
 		                map: texture
 		            }));
-		            */
+		            
 
 		        backgroundMesh .material.depthTest = false;
 		        backgroundMesh .material.depthWrite = false;
-		        
+		        */
 
 		        // Create your background scene
 		        backgroundScene = new THREE.Scene();
 		        backgroundCamera = new THREE.Camera();
 		        backgroundScene .add(backgroundCamera );
-		        backgroundScene .add(backgroundMesh );
+		       //backgroundScene .add(backgroundMesh );
 
 
 				// Add OrbitControls so that we can pan around with the mouse.
