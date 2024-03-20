@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Links</title>
+  <meta name="links" content=""/>
+  
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav class="website-nav">
+        <ul>
+          <li><a class="home-link" href="index.html"style="font-size:3vw;"><u>Home^3</u></a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <section class="page-content">
+      <article>
+        <p>
+          <a href="https://basuarya.github.io/documents/CV_Aryabrata_Basu_UALR.pdf" target="_blank">
+            <i> >> Curriculum Vitae</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://basuarya.github.io/documents/research_statement_basu.pdf" target="_blank">
+            <i> >> Research Statement</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://basuarya.github.io/documents/teaching_statement_basu.pdf" target="_blank">
+            <i> >> Teaching Statement</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://basuarya.github.io/documents/diversity_statement_basu.pdf" target="_blank">
+            <i> >> Diversity Statement</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://basuarya.github.io/documents/service_statement_basu.pdf" target="_blank">
+            <i> >> Service Statement</i>
+          </a>
+        </p>
+
+         <p>
+          <a href="https://getd.libs.uga.edu/pdfs/basu_aryabrata_201812_phd.pdf" target="_blank">
+            <i> >> Doctoral Dissertation</i>
+          </a>
+        </p>
+
+
+        <p>
+          <a href="https://www.linkedin.com/in/arya-basu-ph-d-11796b36/" target="_blank">
+            <i> >> LinkedIn Profile</i>
+          </a>
+        </p>
+
+        
+        <p>
+          <a href="https://www.researchgate.net/profile/Aryabrata_Basu" target="_blank">
+            <i> >> Research Gate Profile</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en" target="_blank">
+            <i> >> Google Scholar Profile</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://vel.engr.uga.edu/about/" target="_blank">
+            <i> >> Virtual Experiences Laboratory, University of Georgia (VEL)</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="http://digitalscholarship.emory.edu/" target="_blank">
+            <i> >> Emory's Center for Digital Scholarship, Emory University (ECDS)</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://ualr.edu/computerscience" target="_blank">
+            <i> >> Department of Computer Science, University of Arkansas, Little Rock (CS at UALR) </i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://www.eac-ualr.org/" target="_blank">
+            <i> >> The Donaghey Emerging Analytics Center, University of Arkansas, Little Rock (EAC) </i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://abasu5.myportfolio.com/home" target="_blank">
+            <i> >> Personal Inscriptions</i>
+          </a>
+        </p>
+
+        <p>
+          <a href="https://sites.pitt.edu/~jdnorton/lectures/Rotman_Summer_School_2013/Einstein_1905_docs/Einstein_Dissertation_English.pdf" target="_blank">
+            <i> >> Albert Einstein's 1905 Dissertation (English)</i>
+          </a>
+        </p>
+
+       </article>
+      </section>
+     
+    <div class="push"></div>
+
+  </div>
+  
+  <footer>
+    <p class="footer-contents">Twitter handle:
+      <!-- tweet handle -->
+      <a href="https://twitter.com/profaryabasu" target="_blank">
+        @profaryabasu
+      </a>
+    </p>
+
+    <p class="footer-contents">Mastodon handle:
+      <!-- mastodon handle -->
+      <a rel="me" href="https://discuss.systems/@aryabasu">profaryabasu</a>
+    </p>
+
+    <p class="footer-contents">Contact via email:
+    <!-- email handle -->
+      <a href = "mailto: basuone@spatiotemporalbasu.com">Personal Email</a>
+
+      <!-- email handle -->
+      <a href = "mailto: abasu@ualr.edu">| Work Email</a>
+    
+    </p>
+
+
+  </footer>
+
+  
+</body>
+</html>

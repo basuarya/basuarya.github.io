@@ -1,0 +1,47 @@
+---
+title: "About"
+format:
+  html:
+    theme: vapor
+    code-fold: true
+    toc: false
+    lightbox: auto
+    number-sections: false
+    header-includes: |
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
+link-citations: true
+mainfont: NowRegular
+---
+
+![](images/AryaBasu_UALR_croppped.jpg){width="211"}
+
+## **Bio:**
+
+Dr. Aryabrata Basu is a Virtual Reality/Human-Computer Interaction researcher investigating human spatial decision-making in virtual environments and its impact on translational training and skill-building. Dr. Basu completed his Ph.D. in computer sciences from the University of Georgia (UGA) in Athens, GA focusing on designing and evaluating ubiquitous wearable Virtual Reality experiences. As part of his graduate school curriculum, Dr. Basu has designed and deployed extensive user studies in the field involving 100 plus subjects at a time.
+
+From 2016 to 2022, Dr. Basu has spearheaded the public scholarship mission through meaningful 3D visualization and effective human-computer interaction at Emory University’s Center for Digital Scholarship. As a staff research scientist, he has created and configured real-time simulations (of places/spaces of historical importance) using a variety of 3D computer modeling, simulation software, and geospatial data. He has been engaged in the active development of Virtual Reality, Augmented Reality, and Mixed Reality-based visualization projects in an academic setting by serving various departments ranging from Art History to the School of Medicine.
+
+Dr. Basu is an assistant professor in the Department of Computer Science at UA Little Rock and a research fellow in the [Emerging Analytics Center](https://www.eac-ualr.org/) in the EIT building. Dr. Basu is passionate about creating experiential simulations of places that do not exist or hyper-realistic spaces to understand human behavior in simulated space-time.
+
+## **Areas of Expertise:**
+
+-   Human-Computer Interaction
+
+-   Design and evaluation of (Virtual Reality + Augmented Reality = Extended Reality) experiences
+
+-   Natural User Interfaces (2D/3D)
+
+-   Usability Analytics
+
+-   Assistive Artificial Intelligence
+
+## Contact information:
+
+Email: abasu\[at\]ualr\[dot\]edu\
+Office:
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.2014832084446!2d-92.34326692548025!3d34.72531538189373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d2a4f62c0aca29%3A0x429b3d27ebe977b1!2sEmerging%20Analytics%20Center%20-%20University%20of%20Arkansas%20at%20Little%20Rock!5e0!3m2!1sen!2sus!4v1710969122541!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+::: footer
+Copyright © Aryabrata Basu 2024
+:::
