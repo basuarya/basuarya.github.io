@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "basuarya.github.io"
+  title: "Spatio-temporal Basu"
   navbar:
     left:
       - href: index.qmd
