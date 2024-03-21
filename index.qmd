@@ -6,6 +6,7 @@ format:
     code-fold: false
     toc: false
     number-sections: false
+    lightbox: auto
     header-includes: |
       <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
 link-citations: true

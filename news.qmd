@@ -1,0 +1,36 @@
+---
+title: "News"
+format:
+  html:
+    theme: vapor
+    code-fold: true
+    toc: false
+    lightbox: auto
+    number-sections: false
+    header-includes: |
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
+link-citations: true
+mainfont: NowRegular
+---
+
+::: {#news0}
+\>\> I am thrilled to share the remarkable achievements of our students, ["Jayasri" Sai Nikitha Guthula](https://www.linkedin.com/in/ACoAACe8gl4B4UEQd5VKFiHMlqP6V9clU8PTF_g) and [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/ACoAAB2UKjgB8f9FPaUiNA1STJtBV5DF4cnvjO8), who presented their critical research at the [IEEE](https://www.linkedin.com/company/ieee/) VR 2024 conference.\
+\
+Their work, exploring gender biases in XR technologies and spatial decision-making in immersive virtual environments, showcases our commitment to inclusive and innovative technology development. Their contributions underscore the importance of diversity in tech and the intricacies of navigation in virtual spaces. I am proud of their contributions and looking forward to further advancements they will bring to the field!\
+\
+Special thanks to the [Emerging Analytics Center at UA Little Rock](https://www.linkedin.com/company/eac-ua-little-rock/) for providing our students with the perfect tinkering space as budding engineers.\
+\
+[University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/)\
+[#IEEEVR2024](https://www.linkedin.com/feed/hashtag/?keywords=ieeevr2024&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457) [#InclusiveTech](https://www.linkedin.com/feed/hashtag/?keywords=inclusivetech&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457) [#VirtualReality](https://www.linkedin.com/feed/hashtag/?keywords=virtualreality&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457)
+:::
+
+::: {#news1}
+\>\> Integrating the [Unity](https://www.linkedin.com/company/unity/) game engine into our Computer Networks curriculum represents a groundbreaking shift towards a more interactive and applied learning experience. This innovative approach allows students to practically apply and visualize complex network concepts and protocols within Unity's dynamic environment, bridging the theoretical and practical aspects of the subject.
+
+By adopting [Unity](https://www.linkedin.com/company/unity/), we're not just teaching Computer Networks but preparing students to innovate and lead in the tech industry. This approach underscores our commitment to providing a modern, comprehensive education that equips students to shape the future of technology.\
+\
+P.S. Making things (3d objects) move via TCP socket programming can be super fun!\
+\
+[Emerging Analytics Center at UA Little Rock](https://www.linkedin.com/company/eac-ua-little-rock/)\
+[University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/)
+:::
