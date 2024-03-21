@@ -34,3 +34,7 @@ P.S. Making things (3d objects) move via TCP socket programming can be super fun
 [Emerging Analytics Center at UA Little Rock](https://www.linkedin.com/company/eac-ua-little-rock/)\
 [University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/)
 :::
+
+::: footer
+Copyright © Aryabrata Basu 2024
+:::
