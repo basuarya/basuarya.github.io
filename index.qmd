@@ -20,7 +20,7 @@ Dr. Basu invites you to explore his latest projects, publications, and collabora
 
 Below is an example video-grab of his current research topic into human spatial decision-making! There exists a stark difference between expert and non-expert navigators.
 
-![User trajectory features](images/Picture1-01.png)
+![User trajectory features](images/Picture1-01.png){fig-align="left"}
 
 {{< video /images/Non-Immersive_Trajectory.mov width="400" height="240" start="2">}}
 
