@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 <figure class="figure">
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="images/Picture1-01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="User trajectory features"><img src="images/Picture1-01.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="User trajectory features"></a></p>
+<p><a href="images/Picture1-01.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="User trajectory features"><img src="images/Picture1-01.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="User trajectory features"></a></p>
 </figure>
 </div>
 <figcaption>User trajectory features</figcaption>
@@ -580,7 +580,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 <script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
