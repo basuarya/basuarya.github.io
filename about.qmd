@@ -40,7 +40,9 @@ Dr. Basu is an assistant professor in the Department of Computer Science at UA L
 Email: abasu\[at\]ualr\[dot\]edu\
 Office:
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.2014832084446!2d-92.34326692548025!3d34.72531538189373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d2a4f62c0aca29%3A0x429b3d27ebe977b1!2sEmerging%20Analytics%20Center%20-%20University%20of%20Arkansas%20at%20Little%20Rock!5e0!3m2!1sen!2sus!4v1710969122541!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.2014832084446!2d-92.34326692548025!3d34.72531538189373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d2a4f62c0aca29%3A0x429b3d27ebe977b1!2sEmerging%20Analytics%20Center%20-%20University%20of%20Arkansas%20at%20Little%20Rock!5e0!3m2!1sen!2sus!4v1710969122541!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+</iframe>
 
 ::: footer
 Copyright © Aryabrata Basu 2024
