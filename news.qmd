@@ -14,7 +14,7 @@ mainfont: NowRegular
 ---
 
 ::: {#news0}
-\>\> I am thrilled to share the remarkable achievements of our students, ["Jayasri" Sai Nikitha Guthula](https://www.linkedin.com/in/ACoAACe8gl4B4UEQd5VKFiHMlqP6V9clU8PTF_g) and [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/ACoAAB2UKjgB8f9FPaUiNA1STJtBV5DF4cnvjO8), who presented their critical research at the [IEEE](https://www.linkedin.com/company/ieee/) VR 2024 conference.\
+\>\> **03/21/2024**: I am thrilled to share the remarkable achievements of our students, ["Jayasri" Sai Nikitha Guthula](https://www.linkedin.com/in/ACoAACe8gl4B4UEQd5VKFiHMlqP6V9clU8PTF_g) and [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/ACoAAB2UKjgB8f9FPaUiNA1STJtBV5DF4cnvjO8), who presented their critical research at the [IEEE](https://www.linkedin.com/company/ieee/) VR 2024 conference.\
 \
 Their work, exploring gender biases in XR technologies and spatial decision-making in immersive virtual environments, showcases our commitment to inclusive and innovative technology development. Their contributions underscore the importance of diversity in tech and the intricacies of navigation in virtual spaces. I am proud of their contributions and looking forward to further advancements they will bring to the field!\
 \
@@ -25,7 +25,7 @@ Special thanks to the [Emerging Analytics Center at UA Little Rock](https://www.
 :::
 
 ::: {#news1}
-\>\> Integrating the [Unity](https://www.linkedin.com/company/unity/) game engine into our Computer Networks curriculum represents a groundbreaking shift towards a more interactive and applied learning experience. This innovative approach allows students to practically apply and visualize complex network concepts and protocols within Unity's dynamic environment, bridging the theoretical and practical aspects of the subject.
+\>\> **02/21/2024**: Integrating the [Unity](https://www.linkedin.com/company/unity/) game engine into our Computer Networks curriculum represents a groundbreaking shift towards a more interactive and applied learning experience. This innovative approach allows students to practically apply and visualize complex network concepts and protocols within Unity's dynamic environment, bridging the theoretical and practical aspects of the subject.
 
 By adopting [Unity](https://www.linkedin.com/company/unity/), we're not just teaching Computer Networks but preparing students to innovate and lead in the tech industry. This approach underscores our commitment to providing a modern, comprehensive education that equips students to shape the future of technology.\
 \
