@@ -2,7 +2,7 @@
 title: "Home"
 format:
   html:
-    theme: vapor
+    theme: slate
     code-fold: false
     toc: false
     number-sections: false
@@ -18,7 +18,7 @@ As an Assistant Professor in the Department of Computer Science at the Universit
 
 Dr. Basu invites you to explore his latest projects, publications, and collaborative efforts designed to push the boundaries of what's possible in AI and VR, all while prioritizing the human experience at the core of technological advancement. Join him on a journey to redefine the future of immersive technologies and their role in shaping a better world.
 
-Below is an example video-grab of my current research topic into human spatial decision-making!
+Below is an example video-grab of his current research topic into human spatial decision-making! There exists a stark difference between expert and non-expert navigators.
 
 {{< video /images/Non-Immersive_Trajectory.mov width="400" height="240" start="2">}}
 
