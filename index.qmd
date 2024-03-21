@@ -1,0 +1,21 @@
+---
+title: "Spatio-temporal Basu"
+format:
+  html:
+    theme: vapor
+    code-fold: false
+    toc: false
+    number-sections: false
+    header-includes: |
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
+link-citations: true
+mainfont: NowRegular
+---
+
+Spatial decision making in Immersive Virtual Environments
+
+{{< video /images/Non-Immersive_Trajectory.mov width="480" height="320" start="2">}}
+
+::: footer
+Copyright © Aryabrata Basu 2024
+:::
