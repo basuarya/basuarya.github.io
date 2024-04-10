@@ -39,6 +39,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,6 +143,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div id="news0">
+<p>&gt;&gt; <strong>04/08/2024</strong>: In the tapestry of celestial events that adorn our sky, few phenomena evoke a sense of ethereal wonder and existential introspection as profoundly as a total solar eclipse. This surreal experience, where day momentarily succumbs to an eerie twilight, invites us not only to marvel at the spectacle but also to ponder the intricate dance between light and shadow, presence and absence, finitude and infinity.</p>
+<p><a href="images/IMG_4046.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/IMG_4046.jpeg" class="img-fluid"></a></p>
+</div>
+<div>
 <p>&gt;&gt; <strong>03/21/2024</strong>: I am thrilled to share the remarkable achievements of our students, <a href="https://www.linkedin.com/in/ACoAACe8gl4B4UEQd5VKFiHMlqP6V9clU8PTF_g">“Jayasri” Sai Nikitha Guthula</a> and <a href="https://www.linkedin.com/in/ACoAAB2UKjgB8f9FPaUiNA1STJtBV5DF4cnvjO8">Mohammad Jahed Murad Sunny</a>, who presented their critical research at the <a href="https://www.linkedin.com/company/ieee/">IEEE</a> VR 2024 conference.<br>
 <br>
 Their work, exploring gender biases in XR technologies and spatial decision-making in immersive virtual environments, showcases our commitment to inclusive and innovative technology development. Their contributions underscore the importance of diversity in tech and the intricacies of navigation in virtual spaces. I am proud of their contributions and looking forward to further advancements they will bring to the field!<br>
@@ -575,6 +582,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

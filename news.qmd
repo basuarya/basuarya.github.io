@@ -14,6 +14,13 @@ mainfont: NowRegular
 ---
 
 ::: {#news0}
+\>\> **04/08/2024**: In the tapestry of celestial events that adorn our sky, few phenomena evoke a sense of ethereal wonder and existential introspection as profoundly as a total solar eclipse. This surreal experience, where day momentarily succumbs to an eerie twilight, invites us not only to marvel at the spectacle but also to ponder the intricate dance between light and shadow, presence and absence, finitude and infinity.
+
+![](images/IMG_4046.jpeg)
+:::
+
+<div>
+
 \>\> **03/21/2024**: I am thrilled to share the remarkable achievements of our students, ["Jayasri" Sai Nikitha Guthula](https://www.linkedin.com/in/ACoAACe8gl4B4UEQd5VKFiHMlqP6V9clU8PTF_g) and [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/ACoAAB2UKjgB8f9FPaUiNA1STJtBV5DF4cnvjO8), who presented their critical research at the [IEEE](https://www.linkedin.com/company/ieee/) VR 2024 conference.\
 \
 Their work, exploring gender biases in XR technologies and spatial decision-making in immersive virtual environments, showcases our commitment to inclusive and innovative technology development. Their contributions underscore the importance of diversity in tech and the intricacies of navigation in virtual spaces. I am proud of their contributions and looking forward to further advancements they will bring to the field!\
@@ -22,7 +29,8 @@ Special thanks to the [Emerging Analytics Center at UA Little Rock](https://www.
 \
 [University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/)\
 [#IEEEVR2024](https://www.linkedin.com/feed/hashtag/?keywords=ieeevr2024&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457) [#InclusiveTech](https://www.linkedin.com/feed/hashtag/?keywords=inclusivetech&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457) [#VirtualReality](https://www.linkedin.com/feed/hashtag/?keywords=virtualreality&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457)
-:::
+
+</div>
 
 ::: {#news1}
 \>\> **02/21/2024**: Integrating the [Unity](https://www.linkedin.com/company/unity/) game engine into our Computer Networks curriculum represents a groundbreaking shift towards a more interactive and applied learning experience. This innovative approach allows students to practically apply and visualize complex network concepts and protocols within Unity's dynamic environment, bridging the theoretical and practical aspects of the subject.
