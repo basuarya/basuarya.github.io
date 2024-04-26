@@ -14,10 +14,20 @@ mainfont: NowRegular
 ---
 
 ::: {#news0}
+\>\> **04/25/2024**: I am thrilled to share that [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/jahed-murad-sunny/), a dedicated Master's student I have the privilege of mentoring, has been recognized with an award at this year's Student Research and Creative Works Expo at the [University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/) (UALR) for our collaborative work on human spatial decision-making in immersive virtual environments.\
+
+Congratulations to Jahed and all involved in this year's expo for pushing the boundaries of knowledge and creativity!\
+
+![](images/WhatsApp Image 2024-04-19 at 19.33.30.jpeg)
+:::
+
+<div>
+
 \>\> **04/08/2024**: In the tapestry of celestial events that adorn our sky, few phenomena evoke a sense of ethereal wonder and existential introspection as profoundly as a total solar eclipse. This surreal experience, where day momentarily succumbs to an eerie twilight, invites us not only to marvel at the spectacle but also to ponder the intricate dance between light and shadow, presence and absence, finitude and infinity.
 
 ![](images/IMG_4046.jpeg)
-:::
+
+</div>
 
 <div>
 
