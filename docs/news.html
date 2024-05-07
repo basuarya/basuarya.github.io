@@ -143,6 +143,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div id="news0">
+<p>&gt;&gt; <strong>05/07/2024</strong>: The last few weeks have been spent tackling novel technical challenges in my venture to truly distribute 3D meshes over a network using <a href="https://www.linkedin.com/company/unity/">Unity</a>. This subproject is part of the advanced data visualization efforts of the <a href="https://www.linkedin.com/feed/hashtag/?keywords=dart&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7191306605521428481">#DART</a> (Data Analytics that are Robust and Trusted) project, accessible at [<a href="https://dartproject.org/" class="uri">https://dartproject.org/</a>].<br>
+<br>
+Here are the key hurdles I navigated:<br>
+<br>
+Advanced Serialization: Developing a custom mesh serializer and deserializer (works on the fly) from scratch to ensure that complex 3D data transmits accurately and efficiently over different network conditions was challenging and rewarding.<br>
+<br>
+Network Efficiency: The main goal was to minimize latency and maximize throughput within a host-client topology. This required innovative solutions in data compression and chunking strategies to handle real-time mesh updates without sacrificing performance.</p>
+</div>
+<div>
 <p>&gt;&gt; <strong>04/25/2024</strong>: I am thrilled to share that <a href="https://www.linkedin.com/in/jahed-murad-sunny/">Mohammad Jahed Murad Sunny</a>, a dedicated Master’s student I have the privilege of mentoring, has been recognized with an award at this year’s Student Research and Creative Works Expo at the <a href="https://www.linkedin.com/company/university-of-arkansas-at-little-rock/">University of Arkansas at Little Rock</a> (UALR) for our collaborative work on human spatial decision-making in immersive virtual environments.<br>
 </p>
 <p>Congratulations to Jahed and all involved in this year’s expo for pushing the boundaries of knowledge and creativity!<br>
@@ -589,7 +598,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

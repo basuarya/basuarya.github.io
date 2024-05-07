@@ -14,12 +14,24 @@ mainfont: NowRegular
 ---
 
 ::: {#news0}
+\>\> **05/07/2024**: The last few weeks have been spent tackling novel technical challenges in my venture to truly distribute 3D meshes over a network using [Unity](https://www.linkedin.com/company/unity/). This subproject is part of the advanced data visualization efforts of the [#DART](https://www.linkedin.com/feed/hashtag/?keywords=dart&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7191306605521428481) (Data Analytics that are Robust and Trusted) project, accessible at \[<https://dartproject.org/>\].\
+\
+Here are the key hurdles I navigated:\
+\
+Advanced Serialization: Developing a custom mesh serializer and deserializer (works on the fly) from scratch to ensure that complex 3D data transmits accurately and efficiently over different network conditions was challenging and rewarding.\
+\
+Network Efficiency: The main goal was to minimize latency and maximize throughput within a host-client topology. This required innovative solutions in data compression and chunking strategies to handle real-time mesh updates without sacrificing performance.
+:::
+
+<div>
+
 \>\> **04/25/2024**: I am thrilled to share that [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/jahed-murad-sunny/), a dedicated Master's student I have the privilege of mentoring, has been recognized with an award at this year's Student Research and Creative Works Expo at the [University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/) (UALR) for our collaborative work on human spatial decision-making in immersive virtual environments.\
 
 Congratulations to Jahed and all involved in this year's expo for pushing the boundaries of knowledge and creativity!\
 
 ![](images/WhatsApp%20Image%202024-04-19%20at%2019.33.30.jpeg){width="258"}
-:::
+
+</div>
 
 <div>
 
