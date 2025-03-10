@@ -14,6 +14,23 @@ mainfont: NowRegular
 ---
 
 ::: {#news0}
+\>\> **03/10/2025**: Just got word of the news that we got the Best Paper Award (honorable mention) at the IEEE VR 2025 in St. Malo, France.
+
+![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){fig-align="left"}
+:::
+
+<div>
+
+\>\> **03/09/2025**: Updated my research statement after a while. Please get it here: <https://spatiotemporalbasu.com/documents/research_statement_basu.pdf>
+
+</div>
+
+<div>
+
+</div>
+
+<div>
+
 \>\> **05/07/2024**: The last few weeks have been spent tackling novel technical challenges in my venture to truly distribute 3D meshes over a network using [Unity](https://www.linkedin.com/company/unity/). This subproject is part of the advanced data visualization efforts of the [#DART](https://www.linkedin.com/feed/hashtag/?keywords=dart&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7191306605521428481) (Data Analytics that are Robust and Trusted) project, accessible at \[<https://dartproject.org/>\].\
 \
 Here are the key hurdles I navigated:\
@@ -21,7 +38,8 @@ Here are the key hurdles I navigated:\
 Advanced Serialization: Developing a custom mesh serializer and deserializer (works on the fly) from scratch to ensure that complex 3D data transmits accurately and efficiently over different network conditions was challenging and rewarding.\
 \
 Network Efficiency: The main goal was to minimize latency and maximize throughput within a host-client topology. This required innovative solutions in data compression and chunking strategies to handle real-time mesh updates without sacrificing performance.
-:::
+
+</div>
 
 <div>
 
