@@ -45,5 +45,5 @@ Office:
 </iframe>
 
 ::: footer
-Copyright © Aryabrata Basu 2024
+Copyright © Aryabrata Basu 2025
 :::
