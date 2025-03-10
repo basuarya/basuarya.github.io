@@ -84,5 +84,5 @@ P.S. Making things (3d objects) move via TCP socket programming can be super fun
 :::
 
 ::: footer
-Copyright © Aryabrata Basu 2024
+Copyright © Aryabrata Basu 2025
 :::

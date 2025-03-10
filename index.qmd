@@ -26,5 +26,5 @@ Below is an example video-grab of his current research topic into human spatial 
 {{< video /images/Non-Immersive_Trajectory.mov width="400" height="240" start="2">}}
 
 ::: footer
-Copyright © Aryabrata Basu 2024
+Copyright © Aryabrata Basu 2025
 :::
