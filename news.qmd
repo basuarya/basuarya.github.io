@@ -16,7 +16,11 @@ mainfont: NowRegular
 ::: {#news0}
 \>\> **03/10/2025**: Just got word of the news that we got the Best Paper Award (honorable mention) at the IEEE VR 2025 in St. Malo, France.
 
-![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){fig-align="left"}
+This marks a decade in which I got my first Best Paper Award in 2014.
+
+![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){fig-align="left" width="800"}
+
+![](images/Best paper award 2014.jpg){fig-align="left" width="800"}
 :::
 
 <div>
