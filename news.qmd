@@ -14,13 +14,11 @@ mainfont: NowRegular
 ---
 
 ::: {#news0}
-\>\> **03/10/2025**: Just got word of the news that we got the Best Paper Award (honorable mention) at the IEEE VR 2025 in St. Malo, France.
+\>\> **03/10/2025**: Just got word of the news that we got the Best Paper Award (honorable mention) at the IEEE VR 2025 in St. Malo, France. This marks a decade in which I got my first Best Paper Award in 2014.
 
-This marks a decade in which I got my first Best Paper Award in 2014.
+![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){fig-align="left" width="400"}
 
-![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){fig-align="left" width="800"}
-
-![](images/Best paper award 2014.jpg){fig-align="left" width="800"}
+![](images/Best%20paper%20award%202014.jpg){fig-align="left" width="400"}
 :::
 
 <div>
@@ -51,7 +49,7 @@ Network Efficiency: The main goal was to minimize latency and maximize throughpu
 
 Congratulations to Jahed and all involved in this year's expo for pushing the boundaries of knowledge and creativity!\
 
-![](images/WhatsApp%20Image%202024-04-19%20at%2019.33.30.jpeg){width="258"}
+![](images/WhatsApp%20Image%202024-04-19%20at%2019.33.30.jpeg){width="350"}
 
 </div>
 
@@ -59,7 +57,7 @@ Congratulations to Jahed and all involved in this year's expo for pushing the bo
 
 \>\> **04/08/2024**: In the tapestry of celestial events that adorn our sky, few phenomena evoke a sense of ethereal wonder and existential introspection as profoundly as a total solar eclipse. This surreal experience, where day momentarily succumbs to an eerie twilight, invites us not only to marvel at the spectacle but also to ponder the intricate dance between light and shadow, presence and absence, finitude and infinity.
 
-![](images/IMG_4046.jpeg){width="354"}
+![](images/IMG_4046.jpeg){width="350"}
 
 </div>
 
