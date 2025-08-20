@@ -2,7 +2,7 @@
 title: "Links"
 format:
   html:
-    theme: vapor
+    theme: readable
     code-fold: true
     toc: false
     number-sections: false

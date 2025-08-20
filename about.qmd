@@ -2,7 +2,7 @@
 title: "About"
 format:
   html:
-    theme: vapor
+    theme: readable
     code-fold: true
     toc: false
     lightbox: auto

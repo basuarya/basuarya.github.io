@@ -2,7 +2,7 @@
 title: "Home"
 format:
   html:
-    theme: slate
+    theme: readable
     code-fold: false
     toc: false
     number-sections: false
@@ -10,7 +10,7 @@ format:
     header-includes: |
       <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
 link-citations: true
-mainfont: NowRegular
+mainfont: Sans
 ---
 
 Welcome to the homepage of Dr. Aryabrata Basu, an innovative researcher and thought leader at the intersection of virtual reality (VR), human-computer interaction, and artificial intelligence (AI) policy. With a rich background in crafting immersive technologies and a keen eye on the ethical implications of AI, Dr. Basu's work aims to enhance human capabilities and decision-making processes through the thoughtful integration of AI into VR and augmented reality (AR) environments.
