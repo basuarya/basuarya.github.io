@@ -18,7 +18,7 @@ mainfont: NowRegular
 
 <p><a href="https://basuarya.github.io/documents/research_statement_basu.pdf" target="_blank"> <i> Research Statement</i> </a></p>
 
-<p><a href="https://basuarya.github.io/documents/mentoring_teaching_philosophy_basu.pdf" target="_blank"> <i> Teaching Statement</i> </a></p>
+<p><a href="https://basuarya.github.io/documents/mentoring_teaching_philosophy_basu.pdf" target="_blank"> <i> Teaching/Mentoring Statement</i> </a></p>
 
 <p><a href="https://basuarya.github.io/documents/diversity_statement_basu.pdf" target="_blank"> <i> Diversity Statement</i> </a></p>
 
