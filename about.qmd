@@ -21,7 +21,7 @@ Dr. Aryabrata Basu is a Virtual Reality/Human-Computer Interaction researcher in
 
 From 2016 to 2022, Dr. Basu has spearheaded the public scholarship mission through meaningful 3D visualization and effective human-computer interaction at Emory University’s Center for Digital Scholarship. As a staff research scientist, he has created and configured real-time simulations (of places/spaces of historical importance) using a variety of 3D computer modeling, simulation software, and geospatial data. He has been engaged in the active development of Virtual Reality, Augmented Reality, and Mixed Reality-based visualization projects in an academic setting by serving various departments ranging from Art History to the School of Medicine.
 
-Dr. Basu is an assistant professor in the Department of Computer Science at UA Little Rock and a research fellow in the [Emerging Analytics Center](https://www.eac.ualr.edu) in the EIT building. Dr. Basu is passionate about creating experiential simulations of places that do not exist or hyper-realistic spaces to understand human behavior in simulated space-time.
+Dr. Basu is an assistant professor in the Department of Computer Science at UA Little Rock and a research fellow in the [Emerging Analytics Center](https://eac.ualr.edu/) in the EIT building. Dr. Basu is passionate about creating experiential simulations of places that do not exist or hyper-realistic spaces to understand human behavior in simulated space-time.
 
 ## **Areas of Expertise:**
 
