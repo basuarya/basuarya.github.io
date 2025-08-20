@@ -14,6 +14,10 @@ mainfont: NowRegular
 ---
 
 ::: {#news0}
+\>\> **08/20/25**:Updated the whole stack of CV, Research Statement, integrated Teaching and Mentoring into one document and all of them are listed here: <https://spatiotemporalbasu.com/links.html>
+
+\>\> **08/19/25**: Appointed as the new Undergraduate Program Coordinator of the Computer Science department at UA Little Rock.
+
 \>\> **03/10/2025**: Just got word of the news that we got the Best Paper Award (honorable mention) at the IEEE VR 2025 in St. Malo, France. This marks a decade in which I got my first Best Paper Award in 2014.
 
 ![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){fig-align="left" width="400"}
@@ -23,7 +27,7 @@ mainfont: NowRegular
 
 <div>
 
-\>\> **03/09/2025**: Updated my research statement after a while. Please get it here: <https://spatiotemporalbasu.com/documents/research_statement_basu.pdf>
+\>\> ~~**03/09/2025**: Updated my research statement after a while. Please get it here: <https://spatiotemporalbasu.com/documents/research_statement_basu.pdf>~~
 
 </div>
 
