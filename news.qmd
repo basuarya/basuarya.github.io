@@ -13,7 +13,7 @@ link-citations: true
 mainfont: NowRegular
 ---
 
-\>\> **08/20/25**: New updates have been made to the full portfolio—including the CV, Research Statement, and integrated Teaching & Mentoring—compiled into a single document. All materials are available here: https://spatiotemporalbasu.com/links.html
+\>\> **08/20/25**: New updates have been made to the full portfolio—including the CV, Research Statement, and integrated Teaching & Mentoring—compiled into a single document. All materials are available here: <https://spatiotemporalbasu.com/links.html>
 
 \>\> **08/19/25**: Appointed as the new Undergraduate Program Coordinator of the Computer Science department at UA Little Rock.
 
