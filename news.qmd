@@ -13,8 +13,7 @@ link-citations: true
 mainfont: NowRegular
 ---
 
-::: {#news0}
-\>\> **08/20/25**:Updated the whole stack of CV, Research Statement, integrated Teaching and Mentoring into one document and all of them are listed here: <https://spatiotemporalbasu.com/links.html>
+\>\> **08/20/25**: New updates have been made to the full portfolio—including the CV, Research Statement, and integrated Teaching & Mentoring—compiled into a single document. All materials are available here: https://spatiotemporalbasu.com/links.html
 
 \>\> **08/19/25**: Appointed as the new Undergraduate Program Coordinator of the Computer Science department at UA Little Rock.
 
@@ -23,7 +22,6 @@ mainfont: NowRegular
 ![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){fig-align="left" width="400"}
 
 ![](images/Best%20paper%20award%202014.jpg){fig-align="left" width="400"}
-:::
 
 <div>
 
