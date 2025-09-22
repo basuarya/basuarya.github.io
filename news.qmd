@@ -13,6 +13,10 @@ link-citations: true
 mainfont: NowRegular
 ---
 
+\>\> **09/22/25**: Dr. Arya Basu was recently featured on KUAR, Little Rock’s NPR *Morning Edition*, in conversation with Nathan Treece. The interview spotlighted his project, *“Robust 2D to 3D Cardiac Arterial Mapping and Visualization for Surgical Pre-planning,”* which aims to convert standard 2D angiograms into accurate 3D models of the heart’s vascular system. This advancement has the potential to enhance surgical planning, improve patient understanding, and bridge computer science with clinical practice.
+
+🎧 Listen to the full interview here: \[<https://www.ualrpublicradio.org/local-regional-news/2025-09-11/ua-little-rock-computer-scientist-maps-blood-vessels-in-3d>\]
+
 \>\> **08/20/25**: New updates have been made to the full portfolio—including the CV, Research Statement, and integrated Teaching & Mentoring—compiled into a single document. All materials are available here: <https://spatiotemporalbasu.com/links.html>
 
 \>\> **08/19/25**: Appointed as the new Undergraduate Program Coordinator of the Computer Science department at UA Little Rock.
