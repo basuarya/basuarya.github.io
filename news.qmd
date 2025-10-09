@@ -13,6 +13,22 @@ link-citations: true
 mainfont: NowRegular
 ---
 
+\>\> **10/09/25**: Dr. Aryabrata Basu, Assistant Professor of Computer Science at the University of Arkansas at Little Rock, was recently selected to be featured in *America250’s “Our American Story”*, a national project commemorating the 250th anniversary of the United States.
+
+![](images/clipboard-989604019.jpeg)
+
+The initiative, produced under the U.S. Semiquincentennial Commission, highlights voices and stories that capture the spirit of innovation and resilience shaping America today. Filmed on location at the **Old State House** in Little Rock, Arkansas, the interview highlights voices and stories that capture the spirit of innovation and resilience shaping America today. Dr. Basu was chosen as **the sole researcher from the state of Arkansas** to share his personal and professional journey in this living archive. His full interview will be **preserved in the Library of Congress** as part of the nation’s historical record.
+
+In the interview, Dr. Basu reflects on his early inspirations growing up in Kolkata, India, his family’s influence on his passion for heart visualization research, and the mission of his lab at UA Little Rock — using immersive technologies to turn applied research into real-world impact.
+
+![](images/clipboard-520353764.jpeg)
+
+> “At UA Little Rock, innovation is a core pillar guiding our work,” Dr. Basu shared during the conversation. “Our goal is to make research matter — to use technology to create meaningful improvements in people’s lives.”
+
+The *Our American Story* series is part of *America250*, a national effort to honor the nation’s history, celebrate its diversity, and inspire dialogue about its future.
+
+For more on the project, visit [America250.org](https://america250.org).
+
 \>\> **09/22/25**: Dr. Arya Basu was recently featured on KUAR, Little Rock’s NPR *Morning Edition*, in conversation with Nathan Treece. The interview spotlighted his project, *“Robust 2D to 3D Cardiac Arterial Mapping and Visualization for Surgical Pre-planning,”* which aims to convert standard 2D angiograms into accurate 3D models of the heart’s vascular system. This advancement has the potential to enhance surgical planning, improve patient understanding, and bridge computer science with clinical practice.
 
 🎧 Listen to the full interview here: \[<https://www.ualrpublicradio.org/local-regional-news/2025-09-11/ua-little-rock-computer-scientist-maps-blood-vessels-in-3d>\]
