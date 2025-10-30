@@ -15,6 +15,8 @@ mainfont: NowRegular
 
 \>\> **10/09/25**: Dr. Aryabrata Basu, Assistant Professor of Computer Science at the University of Arkansas at Little Rock, was recently selected to be featured in *America250’s “Our American Story”*, a national project commemorating the 250th anniversary of the United States.
 
+<iframe width="600" height="400" src="https://www.youtube.com/embed/vKtBRKDKHtA" frameborder="0" allowfullscreen></iframe>
+
 ![](images/clipboard-989604019.jpeg)
 
 The initiative, produced under the U.S. Semiquincentennial Commission, highlights voices and stories that capture the spirit of innovation and resilience shaping America today. Filmed on location at the **Old State House** in Little Rock, Arkansas, the interview highlights voices and stories that capture the spirit of innovation and resilience shaping America today. Dr. Basu was chosen as **the sole researcher from the state of Arkansas** to share his personal and professional journey in this living archive. His full interview will be **preserved in the Library of Congress** as part of the nation’s historical record.
