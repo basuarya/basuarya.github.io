@@ -13,9 +13,13 @@ link-citations: true
 mainfont: NowRegular
 ---
 
+\>\> **12/05/2025**: Dr. Aryabrata Basu founded his new research group called 'Spatiotemporality' comprising his active graduate students at UA Little Rock.
+
 \>\> **10/09/25**: Dr. Aryabrata Basu, Assistant Professor of Computer Science at the University of Arkansas at Little Rock, was recently selected to be featured in *America250’s “Our American Story”*, a national project commemorating the 250th anniversary of the United States.
 
-<iframe width="600" height="400" src="https://www.youtube.com/embed/vKtBRKDKHtA" frameborder="0" allowfullscreen></iframe>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/vKtBRKDKHtA" frameborder="0" allowfullscreen>
+
+</iframe>
 
 ![](images/clipboard-989604019.jpeg)
 
