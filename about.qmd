@@ -25,15 +25,15 @@ Dr. Basu is an assistant professor in the Department of Computer Science at UA L
 
 ## **Areas of Expertise:**
 
--   Human-Computer Interaction
+- Human-Computer Interaction
 
--   Design and evaluation of (Virtual Reality + Augmented Reality = Extended Reality) experiences
+- Design and evaluation of (Virtual Reality + Augmented Reality = Extended Reality) experiences
 
--   Natural User Interfaces (2D/3D)
+- Natural User Interfaces (2D/3D)
 
--   Usability Analytics
+- Usability Analytics
 
--   Assistive Artificial Intelligence
+- Assistive Artificial Intelligence
 
 ## Contact information:
 
