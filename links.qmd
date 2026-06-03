@@ -42,6 +42,8 @@ mainfont: NowRegular
 
 <p><a href="https://sites.pitt.edu/~jdnorton/lectures/Rotman_Summer_School_2013/Einstein_1905_docs/Einstein_Dissertation_English.pdf" target="_blank"> <i> Albert Einstein's 1905 Dissertation (English)</i> </a></p>
 
+<p><a href="https://web.archive.org/web/20190923003312/https://www.math.wisc.edu/~boston/869.pdf" target="_blank"> <i> Fermat's Last Theorem (Explanation of the Proof, Archived)</i> </a></p>
+
 </article>
 
 ::: footer
