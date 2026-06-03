@@ -35,6 +35,10 @@ Dr. Basu is an assistant professor in the Department of Computer Science at UA L
 
 - Assistive Artificial Intelligence
 
+- Nanoscale Visualization
+
+- Quantum Visualization
+
 ## Contact information:
 
 Email: abasu\[at\]ualr\[dot\]edu\
@@ -45,5 +49,5 @@ Office:
 </iframe>
 
 ::: footer
-Copyright © Aryabrata Basu 2025
+Copyright © Aryabrata Basu 2026
 :::
