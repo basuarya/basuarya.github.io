@@ -13,93 +13,119 @@ link-citations: true
 mainfont: NowRegular
 ---
 
-\>\> **12/05/2025**: Dr. Aryabrata Basu founded his new research group called 'Spatiotemporality' comprising his active graduate students at UA Little Rock.
+::: news-item
+<span class="news-date">12/05/2025</span>
+<span class="news-title">Founding of Spatiotemporality Research Group</span>
 
-\>\> **10/09/25**: Dr. Aryabrata Basu, Assistant Professor of Computer Science at the University of Arkansas at Little Rock, was recently selected to be featured in *America250’s “Our American Story”*, a national project commemorating the 250th anniversary of the United States.
+Dr. Aryabrata Basu founded his new research group called **'Spatiotemporality'** comprising his active graduate students at UA Little Rock.
+:::
 
-<iframe width="600" height="400" src="https://www.youtube.com/embed/vKtBRKDKHtA" frameborder="0" allowfullscreen>
+::: news-item
+<span class="news-date">10/09/2025</span>
+<span class="news-title">America250's "Our American Story" - Featured Researcher</span>
 
-</iframe>
+Dr. Aryabrata Basu, Assistant Professor of Computer Science at the University of Arkansas at Little Rock, was recently selected to be featured in *America250's "Our American Story"*, a national project commemorating the 250th anniversary of the United States.
 
-![](images/clipboard-989604019.jpeg)
+::: video-container
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/vKtBRKDKHtA" frameborder="0" allowfullscreen></iframe>
+:::
 
-The initiative, produced under the U.S. Semiquincentennial Commission, highlights voices and stories that capture the spirit of innovation and resilience shaping America today. Filmed on location at the **Old State House** in Little Rock, Arkansas, the interview highlights voices and stories that capture the spirit of innovation and resilience shaping America today. Dr. Basu was chosen as **the sole researcher from the state of Arkansas** to share his personal and professional journey in this living archive. His full interview will be **preserved in the Library of Congress** as part of the nation’s historical record.
+![](images/clipboard-989604019.jpeg){.news-image}
 
-In the interview, Dr. Basu reflects on his early inspirations growing up in Kolkata, India, his family’s influence on his passion for heart visualization research, and the mission of his lab at UA Little Rock — using immersive technologies to turn applied research into real-world impact.
+The initiative, produced under the U.S. Semiquincentennial Commission, highlights voices and stories that capture the spirit of innovation and resilience shaping America today. Filmed on location at the **Old State House** in Little Rock, Arkansas, Dr. Basu was chosen as **the sole researcher from the state of Arkansas** to share his personal and professional journey. His full interview will be **preserved in the Library of Congress** as part of the nation's historical record.
 
-![](images/clipboard-520353764.jpeg)
+In the interview, Dr. Basu reflects on his early inspirations growing up in Kolkata, India, his family's influence on his passion for heart visualization research, and the mission of his lab at UA Little Rock — using immersive technologies to turn applied research into real-world impact.
 
-> “At UA Little Rock, innovation is a core pillar guiding our work,” Dr. Basu shared during the conversation. “Our goal is to make research matter — to use technology to create meaningful improvements in people’s lives.”
+![](images/clipboard-520353764.jpeg){.news-image}
 
-The *Our American Story* series is part of *America250*, a national effort to honor the nation’s history, celebrate its diversity, and inspire dialogue about its future.
+> "At UA Little Rock, innovation is a core pillar guiding our work," Dr. Basu shared during the conversation. "Our goal is to make research matter — to use technology to create meaningful improvements in people's lives."
 
 For more on the project, visit [America250.org](https://america250.org).
-
-\>\> **09/22/25**: Dr. Arya Basu was recently featured on KUAR, Little Rock’s NPR *Morning Edition*, in conversation with Nathan Treece. The interview spotlighted his project, *“Robust 2D to 3D Cardiac Arterial Mapping and Visualization for Surgical Pre-planning,”* which aims to convert standard 2D angiograms into accurate 3D models of the heart’s vascular system. This advancement has the potential to enhance surgical planning, improve patient understanding, and bridge computer science with clinical practice.
-
-🎧 Listen to the full interview here: \[<https://www.ualrpublicradio.org/local-regional-news/2025-09-11/ua-little-rock-computer-scientist-maps-blood-vessels-in-3d>\]
-
-\>\> **08/20/25**: New updates have been made to the full portfolio—including the CV, Research Statement, and integrated Teaching & Mentoring—compiled into a single document. All materials are available here: <https://spatiotemporalbasu.com/links.html>
-
-\>\> **08/19/25**: Appointed as the new Undergraduate Program Coordinator of the Computer Science department at UA Little Rock.
-
-\>\> **03/10/2025**: Just got word of the news that we got the Best Paper Award (honorable mention) at the IEEE VR 2025 in St. Malo, France. This marks a decade in which I got my first Best Paper Award in 2014.
-
-![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){fig-align="left" width="400"}
-
-![](images/Best%20paper%20award%202014.jpg){fig-align="left" width="400"}
-
-::: {}
-\>\> ~~**03/09/2025**: Updated my research statement after a while. Please get it here: <https://spatiotemporalbasu.com/documents/research_statement_basu.pdf>~~
 :::
 
-::: {}
+::: news-item
+<span class="news-date">09/22/2025</span>
+<span class="news-title">NPR Interview: Cardiac Arterial Mapping Project</span>
+
+Dr. Arya Basu was recently featured on KUAR, Little Rock's NPR *Morning Edition*, in conversation with Nathan Treece. The interview spotlighted his project, *"Robust 2D to 3D Cardiac Arterial Mapping and Visualization for Surgical Pre-planning,"* which aims to convert standard 2D angiograms into accurate 3D models of the heart's vascular system.
+
+🎧 **Listen to the full interview:** [https://www.ualrpublicradio.org/local-regional-news/2025-09-11/ua-little-rock-computer-scientist-maps-blood-vessels-in-3d](https://www.ualrpublicradio.org/local-regional-news/2025-09-11/ua-little-rock-computer-scientist-maps-blood-vessels-in-3d)
 :::
 
-::: {}
-\>\> **05/07/2024**: The last few weeks have been spent tackling novel technical challenges in my venture to truly distribute 3D meshes over a network using [Unity](https://www.linkedin.com/company/unity/). This subproject is part of the advanced data visualization efforts of the [#DART](https://www.linkedin.com/feed/hashtag/?keywords=dart&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7191306605521428481) (Data Analytics that are Robust and Trusted) project, accessible at \[<https://dartproject.org/>\].\
-\
-Here are the key hurdles I navigated:\
-\
-Advanced Serialization: Developing a custom mesh serializer and deserializer (works on the fly) from scratch to ensure that complex 3D data transmits accurately and efficiently over different network conditions was challenging and rewarding.\
-\
-Network Efficiency: The main goal was to minimize latency and maximize throughput within a host-client topology. This required innovative solutions in data compression and chunking strategies to handle real-time mesh updates without sacrificing performance.
+::: news-item
+<span class="news-date">08/20/2025</span>
+<span class="news-title">Portfolio Materials Updated</span>
+
+New updates have been made to the full portfolio—including the CV, Research Statement, and integrated Teaching & Mentoring—compiled into a single document. All materials are available here: [https://spatiotemporalbasu.com/links.html](https://spatiotemporalbasu.com/links.html)
 :::
 
-::: {}
-\>\> **04/25/2024**: I am thrilled to share that [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/jahed-murad-sunny/), a dedicated Master's student I have the privilege of mentoring, has been recognized with an award at this year's Student Research and Creative Works Expo at the [University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/) (UALR) for our collaborative work on human spatial decision-making in immersive virtual environments.\
+::: news-item
+<span class="news-date">08/19/2025</span>
+<span class="news-title">New Undergraduate Program Coordinator</span>
 
-Congratulations to Jahed and all involved in this year's expo for pushing the boundaries of knowledge and creativity!\
-
-![](images/WhatsApp%20Image%202024-04-19%20at%2019.33.30.jpeg){width="350"}
+Appointed as the new Undergraduate Program Coordinator of the Computer Science department at UA Little Rock.
 :::
 
-::: {}
-\>\> **04/08/2024**: In the tapestry of celestial events that adorn our sky, few phenomena evoke a sense of ethereal wonder and existential introspection as profoundly as a total solar eclipse. This surreal experience, where day momentarily succumbs to an eerie twilight, invites us not only to marvel at the spectacle but also to ponder the intricate dance between light and shadow, presence and absence, finitude and infinity.
+::: news-item
+<span class="news-date">03/10/2025</span>
+<span class="news-title">🏆 Best Paper Award - IEEE VR 2025</span>
 
-![](images/IMG_4046.jpeg){width="350"}
+Received the Best Paper Award (honorable mention) at the IEEE VR 2025 conference in St. Malo, France. This marks a decade since the first Best Paper Award in 2014.
+
+![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){.news-image}
+
+![](images/Best%20paper%20award%202014.jpg){.news-image}
 :::
 
-::: {}
-\>\> **03/21/2024**: I am thrilled to share the remarkable achievements of our students, ["Jayasri" Sai Nikitha Guthula](https://www.linkedin.com/in/ACoAACe8gl4B4UEQd5VKFiHMlqP6V9clU8PTF_g) and [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/ACoAAB2UKjgB8f9FPaUiNA1STJtBV5DF4cnvjO8), who presented their critical research at the [IEEE](https://www.linkedin.com/company/ieee/) VR 2024 conference.\
-\
-Their work, exploring gender biases in XR technologies and spatial decision-making in immersive virtual environments, showcases our commitment to inclusive and innovative technology development. Their contributions underscore the importance of diversity in tech and the intricacies of navigation in virtual spaces. I am proud of their contributions and looking forward to further advancements they will bring to the field!\
-\
-Special thanks to the [Emerging Analytics Center at UA Little Rock](https://www.linkedin.com/company/eac-ua-little-rock/) for providing our students with the perfect tinkering space as budding engineers.\
-\
-[University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/)\
-[#IEEEVR2024](https://www.linkedin.com/feed/hashtag/?keywords=ieeevr2024&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457) [#InclusiveTech](https://www.linkedin.com/feed/hashtag/?keywords=inclusivetech&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457) [#VirtualReality](https://www.linkedin.com/feed/hashtag/?keywords=virtualreality&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7175506199956627457)
+::: news-item
+<span class="news-date">05/07/2024</span>
+<span class="news-title">Advanced 3D Mesh Networking - DART Project</span>
+
+Tackled novel technical challenges in distributing 3D meshes over a network using [Unity](https://www.linkedin.com/company/unity/). This subproject is part of the advanced data visualization efforts of the [DART](https://dartproject.org/) (Data Analytics that are Robust and Trusted) project.
+
+**Key hurdles navigated:**
+- **Advanced Serialization**: Developing a custom mesh serializer and deserializer to ensure that complex 3D data transmits accurately and efficiently over different network conditions
+- **Network Efficiency**: Minimizing latency and maximizing throughput within a host-client topology through innovative solutions in data compression and chunking strategies
 :::
 
-::: {#news1}
-\>\> **02/21/2024**: Integrating the [Unity](https://www.linkedin.com/company/unity/) game engine into our Computer Networks curriculum represents a groundbreaking shift towards a more interactive and applied learning experience. This innovative approach allows students to practically apply and visualize complex network concepts and protocols within Unity's dynamic environment, bridging the theoretical and practical aspects of the subject.
+::: news-item
+<span class="news-date">04/25/2024</span>
+<span class="news-title">Student Recognition - Spatiotemporality Research</span>
 
-By adopting [Unity](https://www.linkedin.com/company/unity/), we're not just teaching Computer Networks but preparing students to innovate and lead in the tech industry. This approach underscores our commitment to providing a modern, comprehensive education that equips students to shape the future of technology.\
-\
-P.S. Making things (3d objects) move via TCP socket programming can be super fun!\
-\
-[Emerging Analytics Center at UA Little Rock](https://www.linkedin.com/company/eac-ua-little-rock/)\
-[University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/)
+[Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/jahed-murad-sunny/), a dedicated Master's student, has been recognized with an award at this year's Student Research and Creative Works Expo at the [University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/) (UALR) for our collaborative work on human spatial decision-making in immersive virtual environments.
+
+![](images/WhatsApp%20Image%202024-04-19%20at%2019.33.30.jpeg){.news-image}
+
+Congratulations to Jahed and all involved in this year's expo for pushing the boundaries of knowledge and creativity!
+:::
+
+::: news-item
+<span class="news-date">04/08/2024</span>
+<span class="news-title">Total Solar Eclipse Reflection</span>
+
+In the tapestry of celestial events that adorn our sky, few phenomena evoke a sense of ethereal wonder and existential introspection as profoundly as a total solar eclipse. This surreal experience, where day momentarily succumbs to an eerie twilight, invites us to ponder the intricate dance between light and shadow.
+
+![](images/IMG_4046.jpeg){.news-image}
+:::
+
+::: news-item
+<span class="news-date">03/21/2024</span>
+<span class="news-title">IEEE VR 2024 - Student Research Presentations</span>
+
+Thrilled to share the remarkable achievements of students ["Jayasri" Sai Nikitha Guthula](https://www.linkedin.com/in/ACoAACe8gl4B4UEQd5VKFiHMlqP6V9clU8PTF_g) and [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/ACoAAB2UKjgB8f9FPaUiNA1STJtBV5DF4cnvjO8), who presented their critical research at the [IEEE](https://www.linkedin.com/company/ieee/) VR 2024 conference.
+
+Their work explores gender biases in XR technologies and spatial decision-making in immersive virtual environments, showcasing our commitment to inclusive and innovative technology development. Special thanks to the [Emerging Analytics Center](https://www.linkedin.com/company/eac-ua-little-rock/) for providing our students with the perfect tinkering space!
+:::
+
+::: news-item
+<span class="news-date">02/21/2024</span>
+<span class="news-title">Unity Integration in Computer Networks Curriculum</span>
+
+Integrating the [Unity](https://www.linkedin.com/company/unity/) game engine into our Computer Networks curriculum represents a groundbreaking shift towards a more interactive and applied learning experience. Students can practically apply and visualize complex network concepts and protocols within Unity's dynamic environment.
+
+By adopting [Unity](https://www.linkedin.com/company/unity/), we're preparing students to innovate and lead in the tech industry. This approach underscores our commitment to providing a modern, comprehensive education.
+
+💡 **Pro tip:** Making things (3D objects) move via TCP socket programming can be super fun!
 :::
 
 ::: footer

@@ -1,10 +1,740 @@
 /* css styles */
-/* Whole document: */
+/* Dark Mode Variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-muted: #999;
+  --border-color: #ddd;
+  --border-light: #e2e8f0;
+  --footer-bg: #f8f9fa;
+  --footer-border: #ddd;
+  --nyt-red: #d0021b;
+  --nyt-red-dark: #a00116;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-muted: #888;
+    --border-color: #444;
+    --border-light: #3a3a3a;
+    --footer-bg: #252525;
+    --footer-border: #444;
+  }
+}
+
+body.dark-mode {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #888;
+  --border-color: #444;
+  --border-light: #3a3a3a;
+  --footer-bg: #252525;
+  --footer-border: #444;
+}
+
+/* Whole document: Classical & Elegant Academic Style */
 body{
-  font-family: Georgia;
+  font-family: "Garamond", "Georgia", "Palatino", serif;
   font-size: 14pt;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* Headers */
-h1,h2,h3,h4,h5,h6{
+
+/* Headers - Elegant serif for sophisticated academic look */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Garamond", "Georgia", "Palatino", serif;
   font-size: 20pt;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin-bottom: 0.75em;
+  margin-top: 1.2em;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
 }
+
+/* All paragraphs with improved day mode styling */
+p, li, dd, dt {
+  color: #1a1a1a;
+}
+
+/* Dark mode overrides for all content */
+body.dark-mode {
+  color: #e0e0e0 !important;
+  background-color: #1a1a1a !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode dd,
+body.dark-mode dt {
+  color: #e0e0e0 !important;
+}
+
+/* Responsive video container */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 1em 0;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive iframe wrapper */
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile typography adjustments */
+@media (max-width: 576px) {
+  body {
+    font-size: 12pt;
+    color: #1a1a1a !important;
+    background-color: #ffffff !important;
+  }
+  
+  h1 {
+    font-size: 18pt;
+    color: #1a1a1a !important;
+  }
+  
+  h2 {
+    font-size: 16pt;
+    color: #1a1a1a !important;
+  }
+  
+  h3, h4, h5, h6 {
+    font-size: 14pt;
+    color: #1a1a1a !important;
+  }
+  
+  p, li, a, span {
+    color: #1a1a1a !important;
+  }
+  
+  /* Better spacing on mobile */
+  .navbar {
+    font-size: 12pt;
+  }
+  
+  main {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+  }
+  
+  footer {
+    background-color: #ffffff !important;
+    color: #666666 !important;
+    border-top-color: #e0e0e0 !important;
+  }
+}
+
+/* Gallery styles */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  aspect-ratio: 1;
+  background: #f0f0f0;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 1em;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  transform: translateY(0);
+}
+
+/* Lightbox styles */
+.lightbox-img {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+  }
+}
+
+/* Footer & Copyright styles */
+html {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  margin-top: 4em;
+  padding: 2.5em 1em;
+  border-top: 2px solid #e0e0e0;
+  background-color: #ffffff;
+  text-align: center;
+  color: #666666;
+  font-size: 0.9em;
+  font-family: "Cambria", "Georgia", serif;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.copyright {
+  margin: 0;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+.copyright-year {
+  font-weight: 500;
+}
+
+/* Navbar typography - Cambria serif for professional style */
+.navbar-brand,
+.navbar-title,
+.nav-link,
+.navbar {
+  font-family: "Cambria", "Georgia", "Times New Roman", serif;
+}
+
+.navbar-title {
+  font-family: "Garamond", "Georgia", "Palatino", serif !important;
+  font-weight: 500;
+  font-size: 1.3em;
+  letter-spacing: 0.3px;
+}
+
+/* Tablet adjustments */
+@media (min-width: 577px) and (max-width: 992px) {
+  body {
+    font-size: 13pt;
+  }
+  
+  h1 {
+    font-size: 19pt;
+  }
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Constrain large images for news section */
+.news-image {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 1em 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* New York Times-Inspired News Log */
+.news-item {
+  background: #ffffff;
+  border-left: 5px solid var(--nyt-red);
+  padding: 1.75em 0 1.75em 1.5em;
+  margin: 2.5em 0;
+  border-radius: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e0e0e0;
+  transition: padding-left 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.news-item:hover {
+  padding-left: 1.75em;
+  border-left-color: var(--nyt-red-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.news-item::before {
+  content: "•";
+  position: absolute;
+  left: -12px;
+  top: 1.5em;
+  color: var(--nyt-red);
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.news-date {
+  color: #666666;
+  font-weight: 500;
+  font-size: 0.75em;
+  margin-bottom: 0.5em;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: "Garamond", "Georgia", serif;
+  display: block;
+}
+
+.news-title {
+  font-size: 1.35em;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.75em;
+  font-family: "Garamond", "Georgia", "Palatino", serif;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+/* Responsive news items on mobile */
+@media (max-width: 576px) {
+  .news-item {
+    padding: 1.25em 0 1.25em 1.25em;
+    margin: 1.5em 0;
+    border-left-width: 4px;
+  }
+  
+  .news-item::before {
+    left: -10px;
+    top: 1.2em;
+    font-size: 1.2em;
+  }
+  
+  .news-title {
+    font-size: 1.1em;
+  }
+  
+  .news-image {
+    max-width: 100%;
+  }
+}
+
+/* Dark Mode Toggle Button - Navbar */
+#dark-mode-toggle {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0.5em 0.75em;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#dark-mode-toggle:hover {
+  opacity: 0.7;
+}
+
+#dark-mode-toggle:focus {
+  outline: none;
+}
+
+.navbar-dark-toggle {
+  color: inherit !important;
+}
+
+@media (max-width: 576px) {
+  #dark-mode-toggle {
+    font-size: 1em;
+    padding: 0.4em 0.6em;
+  }
+}
+
+/* ===== SMOOTH DARK MODE TRANSITIONS ===== */
+body,
+h1, h2, h3, h4, h5, h6,
+p, li, td, th, a,
+main, footer,
+.news-item,
+.news-date, .news-title {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Dark mode body */
+body.dark-mode {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode main content */
+body.dark-mode main {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode text */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode td,
+body.dark-mode th {
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode links */
+body.dark-mode a {
+  color: #64b5f6 !important;
+}
+
+/* Dark mode footer */
+body.dark-mode footer {
+  background-color: #252525 !important;
+  color: #b0b0b0 !important;
+  border-top-color: #444 !important;
+}
+
+/* Dark mode news items */
+body.dark-mode .news-item {
+  background-color: #2d2d2d !important;
+  color: #e0e0e0 !important;
+  border-bottom-color: #3a3a3a !important;
+}
+
+body.dark-mode .news-date {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode .news-title {
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode table */
+body.dark-mode table {
+  background-color: #2d2d2d !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #444 !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode code blocks */
+body.dark-mode code,
+body.dark-mode pre {
+  background-color: #2d2d2d !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+/* Dark mode blockquote */
+body.dark-mode blockquote {
+  border-left-color: #d0021b !important;
+  color: #b0b0b0 !important;
+}
+
+/* Position toggle and search next to each other (detached from hamburger) */
+#dark-mode-toggle {
+  position: absolute !important;
+  right: 60px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+  padding: 0.4rem 0.2rem !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 1.1em !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  line-height: 1 !important;
+  width: 40px !important;
+}
+
+#quarto-search {
+  position: absolute !important;
+  right: 0px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0.4rem !important;
+  height: auto !important;
+  line-height: 1 !important;
+  width: 40px !important;
+}
+
+/* Navbar elements always white */
+.navbar,
+.navbar-brand,
+.navbar-title,
+.nav-link,
+.nav-item,
+.navbar-text {
+  color: #ffffff !important;
+}
+
+.navbar-title {
+  font-family: Cambria, serif !important;
+}
+
+/* Override dark mode for navbar */
+body.dark-mode .navbar-title,
+body.dark-mode .nav-link,
+body.dark-mode .nav-item,
+body.dark-mode .navbar-text {
+  color: #ffffff !important;
+}
+
+/* Mobile dark mode styling - ensure consistency */
+@media (max-width: 576px) {
+  body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+  }
+  
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3,
+  body.dark-mode h4,
+  body.dark-mode h5,
+  body.dark-mode h6 {
+    color: #e0e0e0 !important;
+  }
+  
+  body.dark-mode p,
+  body.dark-mode li,
+  body.dark-mode a,
+  body.dark-mode span {
+    color: #e0e0e0 !important;
+  }
+  
+  body.dark-mode main {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+  }
+  
+  body.dark-mode footer {
+    background-color: #252525 !important;
+    color: #b0b0b0 !important;
+    border-top-color: #444 !important;
+  }
+  
+  body.dark-mode .news-item {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-bottom-color: #3a3a3a !important;
+  }
+  
+  body.dark-mode .news-title {
+    color: #e0e0e0 !important;
+  }
+  
+  body.dark-mode .news-date {
+    color: #b0b0b0 !important;
+  }
+}
+
+/* Stabilize Quarto container to prevent jumping */
+#quarto-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quarto-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-columns {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure content wrapper is stable */
+.quarto-container.page-layout-article {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar should not affect content width */
+nav.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* AGGRESSIVE FIX: Force consistent layout to prevent jumping */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll !important;
+  width: 100% !important;
+}
+
+body {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Override Bootstrap container defaults */
+.container,
+.container-fluid {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Force Quarto content to be stable */
+#quarto-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#quarto-content {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.page-columns {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Main content area */
+main,
+#quarto-content main {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 1.5em !important;
+  box-sizing: border-box !important;
+}
+
+/* Hide page title headings */
+h1.title,
+.title {
+  display: none !important;
+}
+
+/* Add space below fixed navbar */
+body {
+  padding-top: 70px !important;
+}
+
+#quarto-content {
+  margin-top: 0 !important;
