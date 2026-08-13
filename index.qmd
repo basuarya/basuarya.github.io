@@ -77,6 +77,9 @@ Below is an example video-grab of his current research topic into human spatial 
 {{< video /images/Non-Immersive_Trajectory.mov width="100%" start="2">}}
 :::
 
-::: footer
-Copyright © Aryabrata Basu 2026
-:::
+<div class="footer">
+  <div class="footer-content">
+    <p>© 2026 Aryabrata Basu. All rights reserved.</p>
+    <p>Spatio-temporal Basu | UALR</p>
+  </div>
+</div>
