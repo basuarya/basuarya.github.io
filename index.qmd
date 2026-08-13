@@ -19,11 +19,63 @@ As an Assistant Professor in the Department of Computer Science at the Universit
 
 Dr. Basu invites you to explore his latest projects, publications, and collaborative efforts designed to push the boundaries of what's possible in AI and VR, all while prioritizing the human experience at the core of technological advancement. Join him on a journey to redefine the future of immersive technologies and their role in shaping a better world.
 
+## Research & Media Gallery
+
+Explore Dr. Basu's research, publications, and project highlights through this curated gallery of media:
+
+:::: {.gallery}
+
+::: {.gallery-item}
+![Research Visualization](images/Picture1-01.png){.lightbox-img}
+<div class="gallery-item-overlay">Research Visualization</div>
+:::
+
+::: {.gallery-item}
+![Profile - UALR](images/AryaBasu_UALR_croppped.jpg){.lightbox-img}
+<div class="gallery-item-overlay">Dr. Basu at UALR</div>
+:::
+
+::: {.gallery-item}
+![IEEE VR 2025 Award](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){.lightbox-img}
+<div class="gallery-item-overlay">IEEE VR 2025 Honor</div>
+:::
+
+::: {.gallery-item}
+![Best Paper 2014](images/Best%20paper%20award%202014.jpg){.lightbox-img}
+<div class="gallery-item-overlay">Best Paper Award</div>
+:::
+
+::: {.gallery-item}
+![Solar Eclipse](images/IMG_4046.jpeg){.lightbox-img}
+<div class="gallery-item-overlay">Solar Eclipse Wonder</div>
+:::
+
+::: {.gallery-item}
+![America250 Interview](images/clipboard-989604019.jpeg){.lightbox-img}
+<div class="gallery-item-overlay">America250 Feature</div>
+:::
+
+::: {.gallery-item}
+![Emory Work](images/AryaBasu_Emory.jpeg){.lightbox-img}
+<div class="gallery-item-overlay">Emory Collaboration</div>
+:::
+
+::: {.gallery-item}
+![Background](images/background-photo.png){.lightbox-img}
+<div class="gallery-item-overlay">Immersive Technologies</div>
+:::
+
+::::
+
+## Research Highlights
+
 Below is an example video-grab of his current research topic into human spatial decision-making! There exists a stark difference between expert and non-expert navigators.
 
 ![User trajectory features](images/Picture1-01.png){fig-align="left"}
 
-{{< video /images/Non-Immersive_Trajectory.mov width="400" height="240" start="2">}}
+::: video-container
+{{< video /images/Non-Immersive_Trajectory.mov width="100%" start="2">}}
+:::
 
 ::: footer
 Copyright © Aryabrata Basu 2026
