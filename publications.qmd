@@ -13,6 +13,7 @@ link-citations: true
 mainfont: NowRegular
 ---
 
+```{=html}
 <div id="publications-shell">
   <div class="pub-summary-bar">
     <div class="pub-stat">
@@ -41,15 +42,68 @@ mainfont: NowRegular
   </div>
 
   <div id="publications-list"></div>
-  <div id="pub-status" class="pub-status">Loading publications…</div>
 </div>
+```
 
 <script>
 const PUBLICATIONS_CACHE_KEY = 'basu-publications-cache-v1';
 const PUBLICATIONS_CACHE_TTL = 1000 * 60 * 60 * 24; // 24 hours
 const AUTHOR_ID = '3227042';
+const MANUAL_PUBLICATIONS_URL = './manual_publications.json';
 
 const apiUrl = `https://api.semanticscholar.org/graph/v1/author/${AUTHOR_ID}/papers?fields=title,year,venue,authors,citationCount,externalIds,publicationTypes,abstract,openAccessPdf&limit=100`;
+
+function normalizePaper(paper) {
+  return {
+    title: paper?.title || '',
+    year: Number(paper?.year || 0),
+    venue: paper?.venue || '',
+    authors: Array.isArray(paper?.authors)
+      ? paper.authors.map(author => typeof author === 'string' ? { name: author } : author).filter(author => author?.name)
+      : [],
+    citationCount: Number(paper?.citationCount || 0),
+    externalIds: paper?.externalIds || {},
+    publicationTypes: Array.isArray(paper?.publicationTypes) ? paper.publicationTypes : [],
+    abstract: paper?.abstract || '',
+    openAccessPdf: paper?.openAccessPdf || null,
+  };
+}
+
+function publicationKey(paper) {
+  const doi = paper.externalIds?.DOI ? String(paper.externalIds.DOI).toLowerCase() : '';
+  if (doi) return `doi:${doi}`;
+  return `title:${paper.title.trim().toLowerCase()}|year:${paper.year || 0}`;
+}
+
+function mergePublications(primaryPapers, manualPapers) {
+  const merged = new Map();
+
+  [...manualPapers, ...primaryPapers]
+    .map(normalizePaper)
+    .filter(paper => paper.title)
+    .forEach(paper => {
+      merged.set(publicationKey(paper), paper);
+    });
+
+  return Array.from(merged.values()).sort((a, b) => {
+    const yearDiff = Number(b.year || 0) - Number(a.year || 0);
+    return yearDiff !== 0 ? yearDiff : paperTitleCompare(a.title, b.title);
+  });
+}
+
+function paperTitleCompare(a, b) {
+  return String(a || '').localeCompare(String(b || ''));
+}
+
+async function loadManualPublications() {
+  const response = await fetch(MANUAL_PUBLICATIONS_URL, { cache: 'no-store' });
+  if (!response.ok) {
+    throw new Error(`Manual publications status: ${response.status}`);
+  }
+
+  const json = await response.json();
+  return Array.isArray(json.papers) ? json.papers : [];
+}
 
 function renderYearSection(year, items) {
   const cards = items.map(item => {
@@ -163,17 +217,14 @@ document.querySelectorAll('.pub-filter').forEach(btn => {
 });
 
 async function fetchPublications() {
-  const status = document.getElementById('pub-status');
-  status.textContent = 'Refreshing publication list…';
-
   try {
+    const manualPapers = await loadManualPublications().catch(() => []);
     const cached = localStorage.getItem(PUBLICATIONS_CACHE_KEY);
     if (cached) {
       const parsed = JSON.parse(cached);
       const age = Date.now() - (parsed.cachedAt || 0);
       if (age < PUBLICATIONS_CACHE_TTL && Array.isArray(parsed.data)) {
-        renderPublications(parsed.data);
-        status.textContent = 'Showing cached publications';
+        renderPublications(mergePublications(parsed.data, manualPapers));
         return;
       }
     }
@@ -186,17 +237,14 @@ async function fetchPublications() {
     const papers = (json.data || []).filter(p => p && p.title);
 
     localStorage.setItem(PUBLICATIONS_CACHE_KEY, JSON.stringify({ cachedAt: Date.now(), data: papers }));
-    renderPublications(papers);
-    status.textContent = 'Showing live Semantic Scholar data';
+    renderPublications(mergePublications(papers, manualPapers));
   } catch (error) {
     try {
+      const manualPapers = await loadManualPublications().catch(() => []);
       const fallback = await fetch('./publications_cache.json');
       const json = await fallback.json();
-      renderPublications(json.papers || []);
-      status.textContent = 'Using local backup cache';
-    } catch {
-      status.textContent = 'Could not load publications right now.';
-    }
+      renderPublications(mergePublications(json.papers || [], manualPapers));
+    } catch {}
   }
 }
 
@@ -403,14 +451,6 @@ body.dark-mode .pub-abstract {
   color: #d7d7d7;
 }
 .hidden { display: none; }
-
-.pub-status {
-  margin-top: 1rem;
-  color: #666;
-  font-size: 0.9rem;
-  font-style: italic;
-}
-body.dark-mode .pub-status { color: #c0c0c0; }
 
 @media (max-width: 700px) {
   .pub-year-group { display: block; }
