@@ -17,5 +17,6 @@ format:
     theme: readable
     css: styles.css
     toc: true
+    include-after-body: footer.html
 
 editor: visual

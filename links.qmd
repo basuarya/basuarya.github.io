@@ -45,10 +45,3 @@ mainfont: NowRegular
 <p><a href="https://web.archive.org/web/20190923003312/https://www.math.wisc.edu/~boston/869.pdf" target="_blank"> <i> Fermat's Last Theorem (Explanation of the Proof, Archived)</i> </a></p>
 
 </article>
-
-<div class="footer">
-  <div class="footer-content">
-    <p>© 2026 Aryabrata Basu. All rights reserved.</p>
-    <p>Spatio-temporal Basu | UALR</p>
-  </div>
-</div>
