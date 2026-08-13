@@ -1,0 +1,460 @@
+---
+title: "Publications"
+format:
+  html:
+    theme: readable
+    code-fold: false
+    toc: false
+    number-sections: false
+    lightbox: auto
+    header-includes: |
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
+link-citations: true
+mainfont: NowRegular
+---
+
+```{=html}
+<div id="publications-shell">
+  <div class="pub-summary-bar">
+    <div class="pub-stat">
+      <div id="pub-total-count" class="pub-number">0</div>
+      <div class="pub-label">Publications</div>
+    </div>
+    <div class="pub-stat">
+      <div id="pub-citation-count" class="pub-number">0</div>
+      <div class="pub-label">Citations</div>
+    </div>
+    <div class="pub-stat">
+      <div id="pub-conf-count" class="pub-number">0</div>
+      <div class="pub-label">Conference</div>
+    </div>
+    <div class="pub-stat">
+      <div id="pub-journal-count" class="pub-number">0</div>
+      <div class="pub-label">Journal / Review</div>
+    </div>
+  </div>
+
+  <div class="pub-filters">
+    <button class="pub-filter active" data-filter="all">All</button>
+    <button class="pub-filter" data-filter="Conference">Conference</button>
+    <button class="pub-filter" data-filter="Journal">Journal</button>
+    <button class="pub-filter" data-filter="Review">Review</button>
+  </div>
+
+  <div id="publications-list"></div>
+</div>
+```
+
+<script>
+const PUBLICATIONS_CACHE_KEY = 'basu-publications-cache-v1';
+const PUBLICATIONS_CACHE_TTL = 1000 * 60 * 60 * 24; // 24 hours
+const AUTHOR_ID = '3227042';
+const MANUAL_PUBLICATIONS_URL = './manual_publications.json';
+
+const apiUrl = `https://api.semanticscholar.org/graph/v1/author/${AUTHOR_ID}/papers?fields=title,year,venue,authors,citationCount,externalIds,publicationTypes,abstract,openAccessPdf&limit=100`;
+
+function normalizePaper(paper) {
+  return {
+    title: paper?.title || '',
+    year: Number(paper?.year || 0),
+    venue: paper?.venue || '',
+    authors: Array.isArray(paper?.authors)
+      ? paper.authors.map(author => typeof author === 'string' ? { name: author } : author).filter(author => author?.name)
+      : [],
+    citationCount: Number(paper?.citationCount || 0),
+    externalIds: paper?.externalIds || {},
+    publicationTypes: Array.isArray(paper?.publicationTypes) ? paper.publicationTypes : [],
+    abstract: paper?.abstract || '',
+    openAccessPdf: paper?.openAccessPdf || null,
+  };
+}
+
+function publicationKey(paper) {
+  const doi = paper.externalIds?.DOI ? String(paper.externalIds.DOI).toLowerCase() : '';
+  if (doi) return `doi:${doi}`;
+  return `title:${paper.title.trim().toLowerCase()}|year:${paper.year || 0}`;
+}
+
+function mergePublications(primaryPapers, manualPapers) {
+  const merged = new Map();
+
+  [...manualPapers, ...primaryPapers]
+    .map(normalizePaper)
+    .filter(paper => paper.title)
+    .forEach(paper => {
+      merged.set(publicationKey(paper), paper);
+    });
+
+  return Array.from(merged.values()).sort((a, b) => {
+    const yearDiff = Number(b.year || 0) - Number(a.year || 0);
+    return yearDiff !== 0 ? yearDiff : paperTitleCompare(a.title, b.title);
+  });
+}
+
+function paperTitleCompare(a, b) {
+  return String(a || '').localeCompare(String(b || ''));
+}
+
+async function loadManualPublications() {
+  const response = await fetch(MANUAL_PUBLICATIONS_URL, { cache: 'no-store' });
+  if (!response.ok) {
+    throw new Error(`Manual publications status: ${response.status}`);
+  }
+
+  const json = await response.json();
+  return Array.isArray(json.papers) ? json.papers : [];
+}
+
+function renderYearSection(year, items) {
+  const cards = items.map(item => {
+    const authors = item.authors?.map(a => a.name === 'Aryabrata Basu' ? '<strong>Aryabrata Basu</strong>' : a.name).join(', ') || '';
+    const venue = item.venue ? `<div class="pub-venue">${item.venue}</div>` : '';
+    const pubTypes = item.publicationTypes || [];
+    let pubType = 'Journal';
+    if (pubTypes.includes('Conference')) pubType = 'Conference';
+    else if (pubTypes.includes('Review')) pubType = 'Review';
+    else if (pubTypes.includes('Book')) pubType = 'Book Chapter';
+
+    const citationText = Number(item.citationCount || 0) > 0 ? `<span class="pub-cite">${item.citationCount} citations</span>` : '';
+    const badgeClass = pubType.toLowerCase().replace(/\s+/g, '-');
+    const doi = item.externalIds && item.externalIds.DOI ? `https://doi.org/${item.externalIds.DOI}` : '';
+    const pdf = item.openAccessPdf && item.openAccessPdf.url ? item.openAccessPdf.url : '';
+
+    const links = [];
+    if (doi) links.push(`<a href="${doi}" target="_blank" rel="noreferrer">DOI ↗</a>`);
+    if (pdf) links.push(`<a href="${pdf}" target="_blank" rel="noreferrer">PDF ↗</a>`);
+
+    const abstract = item.abstract ? item.abstract.trim() : '';
+    const abstractBlock = abstract
+      ? `
+        <div class="pub-abstract-wrap">
+          <button class="pub-abstract-toggle" type="button">Abstract ▾</button>
+          <div class="pub-abstract hidden">${abstract}</div>
+        </div>
+      `
+      : '';
+
+    return `
+      <article class="pub-item" data-type="${pubType}">
+        <div class="pub-meta">
+          <span class="pub-type ${badgeClass}">${pubType}</span>
+          ${citationText}
+        </div>
+        <h3 class="pub-title">${item.title}</h3>
+        <div class="pub-authors">${authors}</div>
+        ${venue}
+        <div class="pub-links">${links.join('')}</div>
+        ${abstractBlock}
+      </article>
+    `;
+  }).join('');
+
+  return `
+    <div class="pub-year-group">
+      <div class="pub-year">${year}</div>
+      <div class="pub-year-items">${cards}</div>
+    </div>
+  `;
+}
+
+function renderPublications(papers) {
+  const container = document.getElementById('publications-list');
+  if (!container) return;
+
+  const byYear = {};
+  papers.forEach(p => {
+    const year = Number(p.year || 0);
+    if (!year) return;
+    if (!byYear[year]) byYear[year] = [];
+    byYear[year].push(p);
+  });
+
+  const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
+  const html = years.map(year => renderYearSection(year, byYear[year])).join('');
+  container.innerHTML = html;
+
+  document.querySelectorAll('.pub-abstract-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const abstract = btn.nextElementSibling;
+      const isHidden = abstract.classList.toggle('hidden');
+      btn.textContent = isHidden ? 'Abstract ▾' : 'Abstract ▴';
+    });
+  });
+
+  const total = papers.length;
+  const totalCitations = papers.reduce((sum, p) => sum + Number(p.citationCount || 0), 0);
+  const conferenceCount = papers.filter(p => (p.publicationTypes || []).includes('Conference')).length;
+  const journalReviewCount = papers.filter(p => {
+    const types = p.publicationTypes || [];
+    return types.includes('JournalArticle') || types.includes('Review');
+  }).length;
+
+  document.getElementById('pub-total-count').textContent = total;
+  document.getElementById('pub-citation-count').textContent = totalCitations;
+  document.getElementById('pub-conf-count').textContent = conferenceCount;
+  document.getElementById('pub-journal-count').textContent = journalReviewCount;
+}
+
+function filterPublications(type) {
+  const items = document.querySelectorAll('.pub-item');
+  items.forEach(item => {
+    const match = type === 'all' || item.dataset.type === type;
+    item.style.display = match ? '' : 'none';
+  });
+
+  document.querySelectorAll('.pub-year-group').forEach(group => {
+    const visible = group.querySelectorAll('.pub-item:not([style*="display: none"])').length;
+    group.style.display = visible ? '' : 'none';
+  });
+}
+
+document.querySelectorAll('.pub-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pub-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterPublications(btn.dataset.filter);
+  });
+});
+
+async function fetchPublications() {
+  try {
+    const manualPapers = await loadManualPublications().catch(() => []);
+    const cached = localStorage.getItem(PUBLICATIONS_CACHE_KEY);
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      const age = Date.now() - (parsed.cachedAt || 0);
+      if (age < PUBLICATIONS_CACHE_TTL && Array.isArray(parsed.data)) {
+        renderPublications(mergePublications(parsed.data, manualPapers));
+        return;
+      }
+    }
+
+    const response = await fetch(apiUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+    if (!response.ok) {
+      throw new Error(`API status: ${response.status}`);
+    }
+    const json = await response.json();
+    const papers = (json.data || []).filter(p => p && p.title);
+
+    localStorage.setItem(PUBLICATIONS_CACHE_KEY, JSON.stringify({ cachedAt: Date.now(), data: papers }));
+    renderPublications(mergePublications(papers, manualPapers));
+  } catch (error) {
+    try {
+      const manualPapers = await loadManualPublications().catch(() => []);
+      const fallback = await fetch('./publications_cache.json');
+      const json = await fallback.json();
+      renderPublications(mergePublications(json.papers || [], manualPapers));
+    } catch {}
+  }
+}
+
+fetchPublications();
+</script>
+
+<style>
+#publications-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pub-summary-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.5rem;
+  background: #f5f7fa;
+  border-left: 4px solid #2c5282;
+  border-radius: 0 8px 8px 0;
+}
+body.dark-mode .pub-summary-bar {
+  background: #242424;
+  border-left-color: #64b5f6;
+}
+
+.pub-stat {
+  min-width: 120px;
+}
+.pub-number {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #2c5282;
+  font-family: "Garamond", "Georgia", serif;
+}
+body.dark-mode .pub-number {
+  color: #a8d4ff;
+}
+.pub-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #666;
+}
+body.dark-mode .pub-label {
+  color: #b0b0b0;
+}
+
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.pub-filter {
+  border: 1px solid #2c5282;
+  background: transparent;
+  color: #2c5282;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: "Garamond", "Georgia", serif;
+  font-size: 1rem;
+}
+body.dark-mode .pub-filter {
+  border-color: #64b5f6;
+  color: #64b5f6;
+}
+.pub-filter.active {
+  background: #2c5282;
+  color: white;
+}
+body.dark-mode .pub-filter.active {
+  background: #64b5f6;
+  color: #111;
+}
+
+.pub-year-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.9rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+body.dark-mode .pub-year-group {
+  border-bottom-color: #333;
+}
+
+.pub-year {
+  min-width: 60px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c5282;
+  font-family: "Garamond", "Georgia", serif;
+}
+body.dark-mode .pub-year {
+  color: #a8d4ff;
+}
+
+.pub-year-items {
+  flex: 1;
+}
+
+.pub-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #efefef;
+}
+body.dark-mode .pub-item {
+  border-bottom-color: #2d2d2d;
+}
+
+.pub-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.pub-type {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.pub-type.conference { background: #eaf2ff; color: #214bb5; }
+.pub-type.journal { background: #fff2d6; color: #9a6200; }
+.pub-type.review { background: #e4f8ef; color: #196b46; }
+.pub-type.book-chapter { background: #f1ebff; color: #5d3ea8; }
+body.dark-mode .pub-type.conference { background: #1a2e4d; color: #b7d8ff; }
+body.dark-mode .pub-type.journal { background: #3d2d10; color: #f5d48a; }
+body.dark-mode .pub-type.review { background: #153a2a; color: #9ee9c4; }
+body.dark-mode .pub-type.book-chapter { background: #2e2344; color: #d1beff; }
+
+.pub-cite {
+  font-size: 0.8rem;
+  color: #777;
+}
+body.dark-mode .pub-cite { color: #b8b8b8; }
+
+.pub-title {
+  font-family: "Garamond", "Georgia", serif;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  margin: 0.5rem 0 0.2rem;
+}
+.pub-authors {
+  font-family: "Garamond", "Georgia", serif;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+body.dark-mode .pub-authors { color: #d0d0d0; }
+.pub-venue {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+body.dark-mode .pub-venue { color: #b5b5b5; }
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+.pub-links a {
+  color: #2c5282;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+body.dark-mode .pub-links a { color: #a8d4ff; }
+
+.pub-abstract-wrap {
+  margin-top: 0.65rem;
+}
+.pub-abstract-toggle {
+  border: none;
+  background: transparent;
+  color: #666;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Garamond", "Georgia", serif;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+body.dark-mode .pub-abstract-toggle { color: #d8d8d8; }
+.pub-abstract {
+  margin-top: 0.5rem;
+  padding: 0.8rem 0.9rem;
+  background: #f8f8f8;
+  border-left: 3px solid #d9d9d9;
+  color: #454545;
+  line-height: 1.6;
+  font-family: "Garamond", "Georgia", serif;
+  font-size: 0.95rem;
+}
+body.dark-mode .pub-abstract {
+  background: #242424;
+  border-left-color: #4a4a4a;
+  color: #d7d7d7;
+}
+.hidden { display: none; }
+
+@media (max-width: 700px) {
+  .pub-year-group { display: block; }
+  .pub-year { margin-bottom: 0.5rem; }
+  .pub-summary-bar { gap: 0.75rem; }
+}
+</style>

@@ -8,9 +8,9 @@ website:
       - href: index.qmd
         text: Home
       - news.qmd
+      - publications.qmd
       - links.qmd
-      - about.qmd 
-      
+      - about.qmd
 
 format:
   html:
@@ -19,4 +19,3 @@ format:
     toc: true
 
 editor: visual
-

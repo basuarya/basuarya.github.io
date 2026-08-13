@@ -128,6 +128,9 @@ By adopting [Unity](https://www.linkedin.com/company/unity/), we're preparing st
 💡 **Pro tip:** Making things (3D objects) move via TCP socket programming can be super fun!
 :::
 
-::: footer
-Copyright © Aryabrata Basu 2026
-:::
+<div class="footer">
+  <div class="footer-content">
+    <p>© 2026 Aryabrata Basu. All rights reserved.</p>
+    <p>Spatio-temporal Basu | UALR</p>
+  </div>
+</div>
