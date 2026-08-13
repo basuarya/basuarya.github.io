@@ -21,8 +21,8 @@ mainfont: NowRegular
       <div class="pub-label">Publications</div>
     </div>
     <div class="pub-stat">
-      <div id="pub-citation-count" class="pub-number">0</div>
-      <div class="pub-label">Citations</div>
+      <div id="pub-citation-count" class="pub-number">451</div>
+      <div class="pub-label">Scholar citations</div>
     </div>
     <div class="pub-stat">
       <div id="pub-conf-count" class="pub-number">0</div>
@@ -32,7 +32,24 @@ mainfont: NowRegular
       <div id="pub-journal-count" class="pub-number">0</div>
       <div class="pub-label">Journal / Review</div>
     </div>
+    <div class="pub-stat">
+      <div id="pub-other-count" class="pub-number">0</div>
+      <div class="pub-label">Other</div>
+    </div>
+    <div class="pub-stat">
+      <div id="pub-h-index" class="pub-number">11</div>
+      <div class="pub-label">Scholar h-index</div>
+    </div>
+    <div class="pub-stat">
+      <div id="pub-i10-index" class="pub-number">11</div>
+      <div class="pub-label">Scholar i10-index</div>
+    </div>
+    <div class="pub-stat">
+      <div id="pub-average-citations" class="pub-number">16.1</div>
+      <div class="pub-label">Scholar cites / listed paper</div>
+    </div>
   </div>
+  <p class="pub-metrics-source">Google Scholar metrics retrieved August 13, 2026. <a href="https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en" target="_blank" rel="noreferrer">View profile ↗</a></p>
 
   <div class="pub-filters">
     <button class="pub-filter active" data-filter="all">All</button>
@@ -46,14 +63,30 @@ mainfont: NowRegular
 ```
 
 <script>
-const PUBLICATIONS_CACHE_KEY = 'basu-publications-cache-v1';
+const PUBLICATIONS_CACHE_KEY = 'basu-publications-cache-v2';
 const PUBLICATIONS_CACHE_TTL = 1000 * 60 * 60 * 24; // 24 hours
 const AUTHOR_ID = '3227042';
 const MANUAL_PUBLICATIONS_URL = './manual_publications.json';
+const GOOGLE_SCHOLAR_METRICS = Object.freeze({
+  citations: 451,
+  hIndex: 11,
+  i10Index: 11,
+});
 
 const apiUrl = `https://api.semanticscholar.org/graph/v1/author/${AUTHOR_ID}/papers?fields=title,year,venue,authors,citationCount,externalIds,publicationTypes,abstract,openAccessPdf&limit=100`;
 
 function normalizePaper(paper) {
+  const citationCount = Number(paper?.citationCount ?? paper?.citations ?? 0);
+  const publicationTypes = Array.isArray(paper?.publicationTypes)
+    ? paper.publicationTypes
+    : paper?.pub_type ? [paper.pub_type] : [];
+  const externalIds = paper?.externalIds || (paper?.doi_url
+    ? { DOI: paper.doi_url.replace(/^https:\/\/doi\.org\//, '') }
+    : {});
+  const openAccessPdf = paper?.openAccessPdf || (paper?.pdf_url
+    ? { url: paper.pdf_url }
+    : null);
+
   return {
     title: paper?.title || '',
     year: Number(paper?.year || 0),
@@ -61,11 +94,11 @@ function normalizePaper(paper) {
     authors: Array.isArray(paper?.authors)
       ? paper.authors.map(author => typeof author === 'string' ? { name: author } : author).filter(author => author?.name)
       : [],
-    citationCount: Number(paper?.citationCount || 0),
-    externalIds: paper?.externalIds || {},
-    publicationTypes: Array.isArray(paper?.publicationTypes) ? paper.publicationTypes : [],
+    citationCount: Number.isFinite(citationCount) ? citationCount : 0,
+    externalIds,
+    publicationTypes,
     abstract: paper?.abstract || '',
-    openAccessPdf: paper?.openAccessPdf || null,
+    openAccessPdf,
   };
 }
 
@@ -157,6 +190,14 @@ function renderYearSection(year, items) {
   `;
 }
 
+function summaryCategory(paper) {
+  const publicationTypes = paper.publicationTypes || [];
+
+  if (publicationTypes.includes('Conference')) return 'conference';
+  if (publicationTypes.includes('JournalArticle') || publicationTypes.includes('Review')) return 'journalReview';
+  return 'other';
+}
+
 function renderPublications(papers) {
   const container = document.getElementById('publications-list');
   if (!container) return;
@@ -181,18 +222,23 @@ function renderPublications(papers) {
     });
   });
 
-  const total = papers.length;
-  const totalCitations = papers.reduce((sum, p) => sum + Number(p.citationCount || 0), 0);
-  const conferenceCount = papers.filter(p => (p.publicationTypes || []).includes('Conference')).length;
-  const journalReviewCount = papers.filter(p => {
-    const types = p.publicationTypes || [];
-    return types.includes('JournalArticle') || types.includes('Review');
-  }).length;
+  const summary = papers.reduce((counts, paper) => {
+    counts.total += 1;
+    counts[summaryCategory(paper)] += 1;
+    return counts;
+  }, { total: 0, conference: 0, journalReview: 0, other: 0 });
+  const averageCitations = summary.total
+    ? (GOOGLE_SCHOLAR_METRICS.citations / summary.total).toFixed(1)
+    : '0.0';
 
-  document.getElementById('pub-total-count').textContent = total;
-  document.getElementById('pub-citation-count').textContent = totalCitations;
-  document.getElementById('pub-conf-count').textContent = conferenceCount;
-  document.getElementById('pub-journal-count').textContent = journalReviewCount;
+  document.getElementById('pub-total-count').textContent = summary.total;
+  document.getElementById('pub-citation-count').textContent = GOOGLE_SCHOLAR_METRICS.citations;
+  document.getElementById('pub-conf-count').textContent = summary.conference;
+  document.getElementById('pub-journal-count').textContent = summary.journalReview;
+  document.getElementById('pub-other-count').textContent = summary.other;
+  document.getElementById('pub-h-index').textContent = GOOGLE_SCHOLAR_METRICS.hIndex;
+  document.getElementById('pub-i10-index').textContent = GOOGLE_SCHOLAR_METRICS.i10Index;
+  document.getElementById('pub-average-citations').textContent = averageCitations;
 }
 
 function filterPublications(type) {
@@ -229,7 +275,7 @@ async function fetchPublications() {
       }
     }
 
-    const response = await fetch(apiUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+    const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error(`API status: ${response.status}`);
     }
@@ -293,6 +339,25 @@ body.dark-mode .pub-number {
 }
 body.dark-mode .pub-label {
   color: #b0b0b0;
+}
+
+.pub-metrics-source {
+  margin: -1.25rem 0 2rem;
+  color: #667780;
+  font-size: 0.8rem;
+}
+
+.pub-metrics-source a {
+  color: #2c5282;
+  text-underline-offset: 0.15em;
+}
+
+body.dark-mode .pub-metrics-source {
+  color: #bac7cc;
+}
+
+body.dark-mode .pub-metrics-source a {
+  color: #a8d4ff;
 }
 
 .pub-filters {
