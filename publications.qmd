@@ -1,5 +1,6 @@
 ---
 title: "Publications"
+description: "Selected conference papers, journal articles, reviews, citation metrics, and open-access research by Dr. Aryabrata Basu."
 format:
   html:
     theme: readable
@@ -7,10 +8,7 @@ format:
     toc: false
     number-sections: false
     lightbox: auto
-    header-includes: |
-      <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
 link-citations: true
-mainfont: NowRegular
 ---
 
 ```{=html}
@@ -49,15 +47,16 @@ mainfont: NowRegular
       <div class="pub-label">Scholar cites / listed paper</div>
     </div>
   </div>
-  <p class="pub-metrics-source">Google Scholar metrics retrieved August 13, 2026. <a href="https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en" target="_blank" rel="noreferrer">View profile ↗</a></p>
+  <p class="pub-metrics-source">Google Scholar metrics retrieved August 13, 2026. <a href="https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">View profile ↗</a></p>
 
-  <div class="pub-filters">
-    <button class="pub-filter active" data-filter="all">All</button>
-    <button class="pub-filter" data-filter="Conference">Conference</button>
-    <button class="pub-filter" data-filter="Journal">Journal</button>
-    <button class="pub-filter" data-filter="Review">Review</button>
+  <div class="pub-filters" aria-label="Filter publications by type">
+    <button type="button" class="pub-filter active" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" class="pub-filter" data-filter="Conference" aria-pressed="false">Conference</button>
+    <button type="button" class="pub-filter" data-filter="Journal" aria-pressed="false">Journal</button>
+    <button type="button" class="pub-filter" data-filter="Review" aria-pressed="false">Review</button>
   </div>
 
+  <p id="publications-status" class="visually-hidden" role="status" aria-live="polite">Loading publications…</p>
   <div id="publications-list"></div>
 </div>
 ```
@@ -139,7 +138,7 @@ async function loadManualPublications() {
 }
 
 function renderYearSection(year, items) {
-  const cards = items.map(item => {
+  const cards = items.map((item, index) => {
     const authors = item.authors?.map(a => a.name === 'Aryabrata Basu' ? '<strong>Aryabrata Basu</strong>' : a.name).join(', ') || '';
     const venue = item.venue ? `<div class="pub-venue">${item.venue}</div>` : '';
     const pubTypes = item.publicationTypes || [];
@@ -154,15 +153,16 @@ function renderYearSection(year, items) {
     const pdf = item.openAccessPdf && item.openAccessPdf.url ? item.openAccessPdf.url : '';
 
     const links = [];
-    if (doi) links.push(`<a href="${doi}" target="_blank" rel="noreferrer">DOI ↗</a>`);
-    if (pdf) links.push(`<a href="${pdf}" target="_blank" rel="noreferrer">PDF ↗</a>`);
+    if (doi) links.push(`<a href="${doi}" target="_blank" rel="noopener noreferrer">DOI ↗</a>`);
+    if (pdf) links.push(`<a href="${pdf}" target="_blank" rel="noopener noreferrer">PDF ↗</a>`);
 
     const abstract = item.abstract ? item.abstract.trim() : '';
+    const abstractId = `pub-abstract-${year}-${index}`;
     const abstractBlock = abstract
       ? `
         <div class="pub-abstract-wrap">
-          <button class="pub-abstract-toggle" type="button">Abstract ▾</button>
-          <div class="pub-abstract hidden">${abstract}</div>
+          <button class="pub-abstract-toggle" type="button" aria-expanded="false" aria-controls="${abstractId}">Abstract ▾</button>
+          <div id="${abstractId}" class="pub-abstract hidden">${abstract}</div>
         </div>
       `
       : '';
@@ -219,6 +219,7 @@ function renderPublications(papers) {
       const abstract = btn.nextElementSibling;
       const isHidden = abstract.classList.toggle('hidden');
       btn.textContent = isHidden ? 'Abstract ▾' : 'Abstract ▴';
+      btn.setAttribute('aria-expanded', String(!isHidden));
     });
   });
 
@@ -239,6 +240,7 @@ function renderPublications(papers) {
   document.getElementById('pub-h-index').textContent = GOOGLE_SCHOLAR_METRICS.hIndex;
   document.getElementById('pub-i10-index').textContent = GOOGLE_SCHOLAR_METRICS.i10Index;
   document.getElementById('pub-average-citations').textContent = averageCitations;
+  document.getElementById('publications-status').textContent = `${summary.total} publications loaded.`;
 }
 
 function filterPublications(type) {
@@ -252,12 +254,19 @@ function filterPublications(type) {
     const visible = group.querySelectorAll('.pub-item:not([style*="display: none"])').length;
     group.style.display = visible ? '' : 'none';
   });
+
+  const visibleCount = document.querySelectorAll('.pub-item:not([style*="display: none"])').length;
+  document.getElementById('publications-status').textContent = `Showing ${visibleCount} publications.`;
 }
 
 document.querySelectorAll('.pub-filter').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.pub-filter').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.pub-filter').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
+    });
     btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
     filterPublications(btn.dataset.filter);
   });
 });
@@ -290,7 +299,10 @@ async function fetchPublications() {
       const fallback = await fetch('./publications_cache.json');
       const json = await fallback.json();
       renderPublications(mergePublications(json.papers || [], manualPapers));
-    } catch {}
+    } catch {
+      document.getElementById('publications-status').classList.remove('visually-hidden');
+      document.getElementById('publications-status').textContent = 'Publications could not be loaded. Please try again later.';
+    }
   }
 }
 

@@ -1,0 +1,399 @@
+{
+  "last_updated": "2026-08-13T12:15:21.163412+00:00",
+  "author": "Aryabrata Basu",
+  "semantic_scholar_id": "3227042",
+  "total": 25,
+  "papers": [
+    {
+      "title": "XR for Knowledge Work: Ten Challenges",
+      "year": 2026,
+      "venue": "IEEE Computer Graphics and Applications",
+      "authors": [
+        "Verena Biener",
+        "Leonardo Pavanatto",
+        "Feiyu Lu",
+        "Y. Dubinsky",
+        "Michal Shlomy",
+        "Jayasri Sai Nikitha Guthula",
+        "Aryabrata Basu",
+        "Richard Skarbez",
+        "Richard Stoakley",
+        "Dieter Schmalstieg",
+        "Jens Grubert",
+        "Doug A. Bowman",
+        "Kyle Johnsen",
+        "M. Billinghurst",
+        "Michele Fiorentino"
+      ],
+      "citations": 0,
+      "doi_url": "https://doi.org/10.1109/MCG.2026.3702793",
+      "pdf_url": "",
+      "pub_type": "Review",
+      "abstract": "Extended reality (XR) can be a valuable tool for knowledge workers. This idea is reflected in the advertisements for current XR devices, which promote them as productivity tools. However, a future work culture in which XR plays a significant role involves a variety of research areas, many of which are arguably not well explored yet. Through expert discussions, we identified 10 challenges in this e"
+    },
+    {
+      "title": "Vibrotactile Mass Cues for Planetary Interaction in VR",
+      "year": 2026,
+      "venue": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "M. Karim",
+        "Mohammad Jahed Murad Sunny",
+        "Aryabrata Basu"
+      ],
+      "citations": 0,
+      "doi_url": "https://doi.org/10.1109/VRW70859.2026.00070",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": ""
+    },
+    {
+      "title": "DataEcho: Reflective Telemetry Replay for Studying Navigation Strategy Refinement in XR",
+      "year": 2026,
+      "venue": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "Atit Kharel",
+        "Mohammad Jahed Murad Sunny",
+        "Aryabrata Basu"
+      ],
+      "citations": 0,
+      "doi_url": "https://doi.org/10.1109/VRW70859.2026.00057",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": ""
+    },
+    {
+      "title": "CARED-VR: Context-Aware Reinforcement and Enforcement for Drill Training in VR",
+      "year": 2026,
+      "venue": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "M. Karim",
+        "Karun Shrestha",
+        "Atit Kharel",
+        "Mohammad Jahed Murad Sunny",
+        "Aryabrata Basu"
+      ],
+      "citations": 0,
+      "doi_url": "https://doi.org/10.1109/VRW70859.2026.00159",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": ""
+    },
+    {
+      "title": "Combined Effects of VR and Gaming Expertise on Precision Performance",
+      "year": 2025,
+      "venue": "AHFE International",
+      "authors": [
+        "Mohammad Jahed Murad Sunny",
+        "Jan P. Springer",
+        "Aryabrata Basu"
+      ],
+      "citations": 3,
+      "doi_url": "https://doi.org/10.54941/ahfe1006907",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": "The rapid integration of VR in various application domains necessitates a deeper understanding of how levels of user experience impact user performance and task efficiency. We investigate the relationship between experience with VR, 3d computer games, and physical skills across multiple performance metrics. In a comprehensive analysis of multiple levels of VR experience and 3d computer-game expert"
+    },
+    {
+      "title": "Evaluating Adjustment and Proficiency Disparities in Virtual Reality",
+      "year": 2025,
+      "venue": "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "Mohammad Jahed Murad Sunny",
+        "Jan P. Springer",
+        "Aryabrata Basu"
+      ],
+      "citations": 2,
+      "doi_url": "https://doi.org/10.1109/VRW66409.2025.00287",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": "Our study explores the relationship between VR experience, 3D gaming expertise, and performance metrics like task completion time, accuracy, and workload. Analysis reveals that combined expertise in VR and 3D gaming improves efficiency, reduces workload, and enhances accuracy. Notably, users with experiences in both domains consistently perform better, with higher accuracy and lower task-load scor"
+    },
+    {
+      "title": "Gaze Insights in XR: Real-Time Eye-Tracking Analytics with Elasticsearch",
+      "year": 2025,
+      "venue": "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "Mohammad Jahed Murad Sunny",
+        "Jayasri Sai Nikitha Guthula",
+        "Atit Kharel",
+        "Meherun Nesa Shraboni",
+        "Hadi Rashid",
+        "Praveshika Bhandari",
+        "Jan P. Springer",
+        "Aryabrata Basu"
+      ],
+      "citations": 0,
+      "doi_url": "https://doi.org/10.1109/VRW66409.2025.00028",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": "Gaze tracking serves as a critical component in human-computer interaction, significantly enhancing the capabilities of immersive extended-reality (XR) applications. Despite the integration of advanced eye-tracking technologies in modern XR devices, challenges surrounding usability, scalability, and privacy remain unresolved. This study presents a technical framework leveraging the Elastic Stack ("
+    },
+    {
+      "title": "Preserving Privacy in VR Telemetry Data",
+      "year": 2025,
+      "venue": "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "Jayasri Sai Nikitha Guthula",
+        "Hadi Rashid",
+        "Jan P. Springer",
+        "Aryabrata Basu"
+      ],
+      "citations": 2,
+      "doi_url": "https://doi.org/10.1109/VRW66409.2025.00281",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": "Telemetry data is essential for optimizing VR systems and poses privacy risks due to re-identification vulnerabilities. Our study introduces a privacy-preserving framework using Wasserstein GANs with Gradient Penalty to generate synthetic datasets that retain the statistical integrity of real data while mitigating re-identification risks. Differentially Private Stochastic Gradient Descent is used "
+    },
+    {
+      "title": "Navigating Gender Biases in XR: Towards Equitable Technological Future",
+      "year": 2024,
+      "venue": "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "Jayasri Sai Nikitha Guthula",
+        "Aryabrata Basu"
+      ],
+      "citations": 2,
+      "doi_url": "https://doi.org/10.1109/VRW62533.2024.00065",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": "In the evolving landscape of Extended Reality (XR), encompassing Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR), addressing gender disparity is crucial for inclusive development. This paper examines the underrepresentation of women in XR, attributing it to systemic gender biases in education and pro-fessional environments. While acknowledging the barriers women face, the stud"
+    },
+    {
+      "title": "Non-linear parameterization of spatial decision making in immersive virtual environment",
+      "year": 2024,
+      "venue": "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "Mohammad Jahed Murad Sunny",
+        "Aryabrata Basu"
+      ],
+      "citations": 6,
+      "doi_url": "https://doi.org/10.1109/VRW62533.2024.00076",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": "We explore spatial navigability in virtual environments, focusing on the role of reflexive motor skills and decision-making processes. Maze-solving scenarios serve as a highly effective tool for stimulating spatial reasoning. Both expert and non-expert navigators' responses to these spatial experiences may vary, depending on their individual capacity for spatial decision-making and reflexive motor"
+    },
+    {
+      "title": "Privacy concerns from variances in spatial navigability in VR",
+      "year": 2023,
+      "venue": "arXiv.org",
+      "authors": [
+        "Aryabrata Basu",
+        "Mohammad Jahed Murad Sunny",
+        "Jayasri Sai Nikitha Guthula"
+      ],
+      "citations": 4,
+      "doi_url": "https://doi.org/10.48550/arXiv.2302.02525",
+      "pdf_url": "http://arxiv.org/pdf/2302.02525",
+      "pub_type": "Journal",
+      "abstract": "Current Virtual Reality (VR) input devices make it possible to navigate a virtual environment and record immersive, personalized data regarding the user's movement and specific behavioral habits, which brings the question of the user's privacy concern to the forefront. In this article, the authors propose to investigate Machine Learning driven learning algorithms that try to learn with human users"
+    },
+    {
+      "title": "STAG: A Tool for realtime Replay and Analysis of Spatial Trajectory and Gaze Information captured in Immersive Environments",
+      "year": 2022,
+      "venue": "2022 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+      "authors": [
+        "Aryabrata Basu"
+      ],
+      "citations": 2,
+      "doi_url": "https://doi.org/10.1109/VRW55335.2022.00016",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": "This article describes a toolkit called S.T.A.G for real-time capture, playback, and further analysis of user spatial trajectory and gaze information. We developed S.T.A.G as part of our ongoing inves-tigation of spatial trajectory analysis by capturing real-time user behavior inside a maze-like immersive environment. S.T.A.G can be generally applied to any immersive environment setup and is meant"
+    },
+    {
+      "title": "Work-in-Progress\u2014Augmented Reality at Scale: Using Physical Dimensionality of Spaces to Our Advantage!",
+      "year": 2020,
+      "venue": "International Conference on Immersive Learning Research Network",
+      "authors": [
+        "Aryabrata Basu"
+      ],
+      "citations": 0,
+      "doi_url": "https://doi.org/10.23919/ilrn47897.2020.9155156",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": "A behemoth painting measuring 49 feet high and 358 feet in length, the Battle of Atlanta Cyclorama exhibits opened to the public at the Atlanta History Center on February 22, 2019, fully restored to its original form as painted by the artists of the American Panorama Company in the 1880s. The Cyclorama is an immersive experience depicting the battlefield at approximately 4:45 p.m., July 22, 1864. "
+    },
+    {
+      "title": "A brief chronology of Virtual Reality",
+      "year": 2019,
+      "venue": "arXiv.org",
+      "authors": [
+        "Aryabrata Basu"
+      ],
+      "citations": 12,
+      "doi_url": "",
+      "pdf_url": "",
+      "pub_type": "Review",
+      "abstract": "In this article, we are going to review a brief history of the field of Virtual Reality (VR), VR systems, and applications and discuss how they evolved. After that, we will familiarize ourselves with the essential components of VR experiences and common VR terminology. Finally, we discuss the evolution of ubiquitous VR as a subfield of VR and its current trends."
+    },
+    {
+      "title": "Tracking the untracked",
+      "year": 2019,
+      "venue": "arXiv.org",
+      "authors": [
+        "Aryabrata Basu"
+      ],
+      "citations": 0,
+      "doi_url": "",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": "The issue of seamless identification of users previously tracked using existing real-time optical position tracking system such as the OptiTrack system and maintaining continuous tracking state (history) of each of those users is a hard problem. In this article, we present a theoretical framework to integrate existing tracking systems with features such as user identification and history of up to "
+    },
+    {
+      "title": "Navigating a maze differently - a user study",
+      "year": 2018,
+      "venue": "arXiv.org",
+      "authors": [
+        "Aryabrata Basu",
+        "K. Johnsen"
+      ],
+      "citations": 1,
+      "doi_url": "",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": "Navigating spaces is an embodied experience. Examples can vary from rescue workers trying to save people from natural disasters; a tourist finding their way to the nearest coffee shop, or a gamer solving a maze. Virtual reality allows these experiences to be simulated in a controlled virtual environment. However, virtual reality users remain anchored in the real world and the conventions by which "
+    },
+    {
+      "title": "Effects of user physical fitness on performance in virtual reality",
+      "year": 2016,
+      "venue": "IEEE Symposium on 3D User Interfaces",
+      "authors": [
+        "Aryabrata Basu",
+        "Catherine Ball",
+        "Benjamin Manning",
+        "K. Johnsen"
+      ],
+      "citations": 8,
+      "doi_url": "https://doi.org/10.1109/3DUI.2016.7460057",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Mixed Reality Virtual Pets to Reduce Childhood Obesity",
+      "year": 2014,
+      "venue": "IEEE Transactions on Visualization and Computer Graphics",
+      "authors": [
+        "K. Johnsen",
+        "Sun Joo Grace Ahn",
+        "James Moore",
+        "Scott Brown",
+        "T. Robertson",
+        "Amanda Marable",
+        "Aryabrata Basu"
+      ],
+      "citations": 69,
+      "doi_url": "https://doi.org/10.1109/TVCG.2014.33",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Off-the-Shelf Electronics Prototyping for Virtual Reality",
+      "year": 2014,
+      "venue": "",
+      "authors": [
+        "Peter Wins",
+        "Aryabrata Basu",
+        "K. Johnsen"
+      ],
+      "citations": 0,
+      "doi_url": "",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Ubiquitous virtual reality \u2018To-Go\u2019",
+      "year": 2014,
+      "venue": "IEEE Conference on Virtual Reality and 3D User Interfaces",
+      "authors": [
+        "Aryabrata Basu",
+        "K. Johnsen"
+      ],
+      "citations": 10,
+      "doi_url": "https://doi.org/10.1109/VR.2014.6802101",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Poster: Evolution and usability of ubiquitous immersive 3D interfaces",
+      "year": 2013,
+      "venue": "IEEE Symposium on 3D User Interfaces",
+      "authors": [
+        "Aryabrata Basu",
+        "K. Johnsen",
+        "K. Bogert"
+      ],
+      "citations": 2,
+      "doi_url": "https://doi.org/10.1109/3DUI.2013.6550213",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Immersive virtual reality on-the-go",
+      "year": 2013,
+      "venue": "IEEE Conference on Virtual Reality and 3D User Interfaces",
+      "authors": [
+        "Aryabrata Basu",
+        "K. Johnsen",
+        "K. Bogert",
+        "Peter Wins"
+      ],
+      "citations": 2,
+      "doi_url": "https://doi.org/10.1109/VR.2013.6549426",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Ubiquitous collaborative activity virtual environments",
+      "year": 2012,
+      "venue": "Conference on Computer Supported Cooperative Work",
+      "authors": [
+        "Aryabrata Basu",
+        "A. Raij",
+        "K. Johnsen"
+      ],
+      "citations": 14,
+      "doi_url": "https://doi.org/10.1145/2145204.2145302",
+      "pdf_url": "",
+      "pub_type": "Conference",
+      "abstract": ""
+    },
+    {
+      "title": "Immersive 3DUI on one dollar a day",
+      "year": 2012,
+      "venue": "IEEE Symposium on 3D User Interfaces",
+      "authors": [
+        "Aryabrata Basu",
+        "Christian Saupe",
+        "Eric Refour",
+        "A. Raij",
+        "K. Johnsen"
+      ],
+      "citations": 22,
+      "doi_url": "https://doi.org/10.1109/3DUI.2012.6184191",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Do-It-Yourself Interface Device Prototyping for Virtual Reality",
+      "year": 2012,
+      "venue": "International Journal of Virtual Reality",
+      "authors": [
+        "Peter Wins",
+        "Aryabrata Basu",
+        "K. Johnsen"
+      ],
+      "citations": 2,
+      "doi_url": "https://doi.org/10.20870/ijvr.2012.11.3.2849",
+      "pdf_url": "https://ijvr.eu/article/download/2849/8907",
+      "pub_type": "Journal",
+      "abstract": "the off-the-shelf virtual reality community is well aware of the wide variety of inexpensive and robust tracking and display technologies that have emerged from the entertainment industry in recent years. Alongside these developments, there has also been a vast improvement in the accessibility and usability of hobbyist-grade electronics components, which make incorporating lower-level sensing and "
+    }
+  ]
+}

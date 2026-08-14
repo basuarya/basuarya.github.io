@@ -1,0 +1,53 @@
+{
+  "papers": [
+    {
+      "title": "PerPlot & PerScan: tools for analysis of DNA curvature-related periodicity in genomic nucleotide sequences",
+      "year": 2011,
+      "venue": "Microbial Informatics and Experimentation",
+      "authors": [
+        "Jan Mrázek",
+        "Tejas Chaudhari",
+        "Aryabrata Basu"
+      ],
+      "citationCount": 11,
+      "externalIds": {},
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "abstract": "",
+      "openAccessPdf": null
+    },
+    {
+      "title": "An Optimal Scheme for Multiprocessor Task Scheduling: a Machine Learning Approach",
+      "year": 2009,
+      "venue": "Work-In-Progress Proceedings",
+      "authors": [
+        "Aryabrata Basu",
+        "Shelby Funk"
+      ],
+      "citationCount": 3,
+      "externalIds": {},
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "abstract": "",
+      "openAccessPdf": null
+    },
+    {
+      "title": "OWA filters: A robust filtering method and its application to color images",
+      "year": 2009,
+      "venue": "2009 IEEE Symposium on Computational Intelligence for Image Processing",
+      "authors": [
+        "Aryabrata Basu",
+        "Mike Nachtegael"
+      ],
+      "citationCount": 3,
+      "externalIds": {},
+      "publicationTypes": [
+        "Conference"
+      ],
+      "abstract": "",
+      "openAccessPdf": null
+    }
+  ]
+}

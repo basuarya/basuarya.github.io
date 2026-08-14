@@ -1,14 +1,35 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - news.qmd
+    - publications.qmd
+    - grants.qmd
+    - links.qmd
+    - about.qmd
+  resources:
+    - CNAME
+    - dossier/**
+    - images/**
+    - manual_publications.json
+    - publications_cache.json
+    - fetch_publications.py
 website:
   title: "Spatio-temporal Basu"
+  description: "Academic portfolio of Dr. Aryabrata Basu, featuring research in immersive systems, human-computer interaction, spatial cognition, and responsible AI."
+  site-url: "https://spatiotemporalbasu.com"
+  image: "images/AryaBasu_UALR_croppped.jpg"
+  image-alt: "Portrait of Dr. Aryabrata Basu at UA Little Rock"
+  open-graph: true
+  twitter-card: true
   navbar:
     left:
       - href: index.qmd
         text: Home
       - news.qmd
       - publications.qmd
+      - grants.qmd
       - links.qmd
       - about.qmd
 
@@ -17,6 +38,7 @@ format:
     theme: readable
     css: styles.css
     toc: true
+    canonical-url: true
     include-after-body: footer.html
 
 editor: visual

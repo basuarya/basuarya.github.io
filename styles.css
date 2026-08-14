@@ -63,6 +63,18 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
 
+h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+h2 {
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+}
+
 /* All paragraphs with improved day mode styling */
 p, li, dd, dt {
   color: #1a1a1a;
@@ -198,7 +210,7 @@ iframe {
   counter-reset: gallery-plate;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-auto-rows: 13rem;
+  grid-auto-rows: 16rem;
   gap: 1rem;
   margin: 0 0 4.5rem;
 }
@@ -254,6 +266,24 @@ iframe {
 
 .scholar-gallery__item--feature .gallery-story {
   height: 70%;
+}
+
+@media (min-width: 901px) {
+  .scholar-gallery > .scholar-gallery__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery-story,
+  .scholar-gallery__item--feature .gallery-story {
+    flex: 1 1 0;
+    min-height: 6.5rem;
+    height: auto;
+  }
+
+  .scholar-gallery__item figcaption {
+    flex: 0 0 auto;
+  }
 }
 
 .scholar-gallery__item img {
@@ -412,7 +442,6 @@ iframe {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-}
 }
 
 body.dark-mode .gallery-masthead {
@@ -718,8 +747,11 @@ img {
   opacity: 0.7;
 }
 
-#dark-mode-toggle:focus {
-  outline: none;
+#dark-mode-toggle:focus-visible,
+#quarto-search button:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 3px solid #f2cf8f;
+  outline-offset: 2px;
 }
 
 .navbar-dark-toggle {
@@ -1046,10 +1078,10 @@ main,
   box-sizing: border-box !important;
 }
 
-/* Hide page title headings */
-h1.title,
-.title {
-  display: none !important;
+/* Keep page identity visible and preserve a clear heading hierarchy. */
+h1.title {
+  display: block !important;
+  margin-top: 0.35rem;
 }
 
 /* Add space below fixed navbar */
@@ -1214,9 +1246,10 @@ body.dark-mode .links-directory__item strong {
   .links-directory {
     margin-top: 0.75rem;
   }
+}
 
-  /* Simple resource lists prioritize familiar link behavior and readable hierarchy. */
-  .resources {
+/* Simple resource lists prioritize familiar link behavior and readable hierarchy. */
+.resources {
     max-width: 52rem;
     margin: 1.75rem auto 4.5rem;
   }
@@ -1314,16 +1347,17 @@ body.dark-mode .links-directory__item strong {
     color: #efd19f !important;
   }
 
-  @media (max-width: 700px) {
-    .resources {
+@media (max-width: 700px) {
+  .resources {
       margin-top: 0.75rem;
-    }
-
-    .resources__section a {
-      padding: 0.9rem 0.1rem;
-    }
   }
 
+  .resources__section a {
+      padding: 0.9rem 0.1rem;
+  }
+}
+
+@media (max-width: 700px) {
   .links-directory__header {
     margin-bottom: 2.25rem;
   }
@@ -1331,3 +1365,324 @@ body.dark-mode .links-directory__item strong {
   .links-directory__grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Grants and sponsored research portfolio. */
+.grants-page {
+  max-width: 54rem;
+  margin: 0 auto 4.5rem;
+}
+
+.grants-page__lede {
+  max-width: 48rem;
+  margin: 0 0 1.5rem;
+  color: #314b5c;
+  font-size: 1.12rem;
+  line-height: 1.65;
+}
+
+.grant-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.5rem 0;
+  padding: 0;
+  border-top: 2px solid #17384f;
+  border-bottom: 1px solid #b6c0c5;
+  list-style: none;
+}
+
+.grant-summary__item {
+  display: flex;
+  min-width: 0;
+  padding: 1.1rem 1rem;
+  flex-direction: column;
+  border-right: 1px solid #d2d8da;
+}
+
+.grant-summary__item:last-child {
+  border-right: 0;
+}
+
+.grant-summary__item strong {
+  color: #17384f;
+  font-family: "Cambria", "Georgia", serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.05;
+}
+
+.grant-summary__item span {
+  margin-top: 0.35rem;
+  color: #607684;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grants-page__source,
+.grant-section-note {
+  color: #526976;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.grants-page__source {
+  margin-bottom: 2.5rem;
+}
+
+.grant-section-note {
+  margin: -0.5rem 0 1.25rem;
+}
+
+.grant-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 3.25rem;
+}
+
+.grant-card {
+  padding: 1.2rem 1.35rem 1.3rem;
+  border: 1px solid #c4cdd1;
+  border-left: 4px solid #607684;
+  background: #fbfaf7;
+  box-shadow: 0 0.18rem 0.45rem rgb(23 56 79 / 7%);
+}
+
+.grant-card--funded {
+  border-left-color: #a47638;
+}
+
+.grant-card__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+  color: #5d7180;
+  font-family: "Cambria", "Georgia", serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grant-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid #9eacb3;
+  border-radius: 999px;
+  color: #3f5968;
+  background: #f1f4f2;
+  white-space: nowrap;
+}
+
+.grant-status--funded {
+  border-color: #b78b4f;
+  color: #6b4719;
+  background: #f6eddd;
+}
+
+.grant-status--pending {
+  border-color: #6e8ea0;
+  color: #274f65;
+  background: #eaf1f4;
+}
+
+.grant-card h3 {
+  margin: 0 0 0.75rem;
+  color: #17384f;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.25;
+}
+
+.grant-card__facts {
+  display: flex;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.2rem;
+}
+
+.grant-card__facts div {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.grant-card__facts dt {
+  color: #526976;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.grant-card__facts dt::after {
+  content: ":";
+}
+
+.grant-card__facts dd {
+  margin: 0;
+  color: #263d4b;
+  font-size: 0.92rem;
+}
+
+.grant-card > p {
+  margin: 0;
+  color: #314b5c;
+  line-height: 1.55;
+}
+
+body.dark-mode .grants-page__lede,
+body.dark-mode .grant-card > p,
+body.dark-mode .grant-card__facts dd {
+  color: #d2dde2 !important;
+}
+
+body.dark-mode .grants-page__source,
+body.dark-mode .grant-section-note,
+body.dark-mode .grant-card__topline,
+body.dark-mode .grant-card__facts dt,
+body.dark-mode .grant-summary__item span {
+  color: #b8c8cf !important;
+}
+
+body.dark-mode .grant-summary {
+  border-top-color: #9bb6c5;
+  border-bottom-color: #60747d;
+}
+
+body.dark-mode .grant-summary__item {
+  border-right-color: #52656e;
+}
+
+body.dark-mode .grant-summary__item strong,
+body.dark-mode .grant-card h3 {
+  color: #eef2ed !important;
+}
+
+body.dark-mode .grant-card {
+  border-color: #60747d;
+  border-left-color: #91a9b5;
+  background: #29353d;
+  box-shadow: none;
+}
+
+body.dark-mode .grant-card--funded {
+  border-left-color: #d3a868;
+}
+
+body.dark-mode .grant-status {
+  border-color: #8096a0;
+  color: #d5e1e6;
+  background: #34434c;
+}
+
+body.dark-mode .grant-status--funded {
+  border-color: #c79d60;
+  color: #f1d5a7;
+  background: #4b3d2b;
+}
+
+body.dark-mode .grant-status--pending {
+  border-color: #83a9ba;
+  color: #c8e1ec;
+  background: #294757;
+}
+
+@media (max-width: 700px) {
+  .grant-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .grant-summary__item {
+    border-right: 0;
+    border-bottom: 1px solid #d2d8da;
+  }
+
+  .grant-summary__item:last-child {
+    border-bottom: 0;
+  }
+
+  .grant-card {
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  .grant-card__topline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body.dark-mode .grant-summary__item {
+    border-bottom-color: #52656e;
+  }
+}
+
+/* Touch targets and compact branding for narrow navigation bars. */
+@media (max-width: 576px) {
+  .navbar-title {
+    font-size: 1.05rem !important;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .navbar-brand-container {
+    max-width: calc(100% - 148px);
+  }
+
+  #dark-mode-toggle,
+  #quarto-search,
+  #quarto-search button,
+  .navbar-toggler {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  #dark-mode-toggle {
+    right: 52px !important;
+    padding: 0.5rem !important;
+  }
+
+  #quarto-search {
+    right: 4px !important;
+  }
+}
+
+/* Keep the brand readable between the navigation controls on ultra-narrow screens. */
+@media (max-width: 320px) {
+  .navbar-brand-container {
+    position: absolute;
+    left: 50%;
+    max-width: none;
+    margin: 0 !important;
+    transform: translateX(-50%);
+  }
+
+  .navbar-brand {
+    margin: 0 !important;
+  }
+
+  .navbar-title {
+    display: block;
+    width: 2.4rem;
+    overflow: hidden;
+    direction: rtl;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

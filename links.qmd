@@ -1,15 +1,13 @@
 ---
 title: "Links"
+description: "Academic dossier, scholarly profiles, institutional affiliations, and foundational references for Dr. Aryabrata Basu."
 format:
   html:
     theme: readable
     code-fold: true
     toc: false
     number-sections: false
-    header-includes: |
-      <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
 link-citations: true
-mainfont: NowRegular
 ---
 
 <section class="resources" aria-label="Academic links and resources">
@@ -20,39 +18,39 @@ mainfont: NowRegular
   <section class="resources__section" aria-labelledby="dossier-heading">
     <h3 id="dossier-heading">Academic dossier</h3>
     <ul>
-      <li><a href="https://basuarya.github.io/dossier/CV_Aryabrata_Basu_UALR.pdf" target="_blank" rel="noreferrer">Curriculum Vitae <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://basuarya.github.io/dossier/research_statement_basu.pdf" target="_blank" rel="noreferrer">Research Statement <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://basuarya.github.io/dossier/mentoring_teaching_philosophy_basu.pdf" target="_blank" rel="noreferrer">Teaching &amp; Mentoring Statement <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://basuarya.github.io/dossier/diversity_statement_basu.pdf" target="_blank" rel="noreferrer">Diversity Statement <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://basuarya.github.io/dossier/service_statement_basu.pdf" target="_blank" rel="noreferrer">Service Statement <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://openscholar.uga.edu/record/20950?v=pdf" target="_blank" rel="noreferrer">Doctoral Dissertation <span aria-hidden="true">↗</span></a></li>
+      <li><a href="dossier/CV_Aryabrata_Basu_UALR.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae <span aria-hidden="true">↗</span></a></li>
+      <li><a href="dossier/research_statement_basu.pdf" target="_blank" rel="noopener noreferrer">Research Statement <span aria-hidden="true">↗</span></a></li>
+      <li><a href="dossier/mentoring_teaching_philosophy_basu.pdf" target="_blank" rel="noopener noreferrer">Teaching &amp; Mentoring Statement <span aria-hidden="true">↗</span></a></li>
+      <li><a href="dossier/diversity_statement_basu.pdf" target="_blank" rel="noopener noreferrer">Diversity Statement <span aria-hidden="true">↗</span></a></li>
+      <li><a href="dossier/service_statement_basu.pdf" target="_blank" rel="noopener noreferrer">Service Statement <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://openscholar.uga.edu/record/20950?v=pdf" target="_blank" rel="noopener noreferrer">Doctoral Dissertation <span aria-hidden="true">↗</span></a></li>
     </ul>
   </section>
 
   <section class="resources__section" aria-labelledby="profiles-heading">
     <h3 id="profiles-heading">Scholarly profiles</h3>
     <ul>
-      <li><a href="https://www.linkedin.com/in/arya-basu-ph-d-11796b36/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://www.researchgate.net/profile/Aryabrata_Basu" target="_blank" rel="noreferrer">ResearchGate <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.linkedin.com/in/arya-basu-ph-d-11796b36/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.researchgate.net/profile/Aryabrata_Basu" target="_blank" rel="noopener noreferrer">ResearchGate <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a></li>
     </ul>
   </section>
 
   <section class="resources__section" aria-labelledby="affiliations-heading">
     <h3 id="affiliations-heading">Institutional affiliations</h3>
     <ul>
-      <li><a href="https://vel.engr.uga.edu/about/" target="_blank" rel="noreferrer">Virtual Experiences Laboratory, University of Georgia <span aria-hidden="true">↗</span></a></li>
-      <li><a href="http://digitalscholarship.emory.edu/" target="_blank" rel="noreferrer">Emory's Center for Digital Scholarship <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://ualr.edu/computerscience" target="_blank" rel="noreferrer">Department of Computer Science, UA Little Rock <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://eac.ualr.edu/" target="_blank" rel="noreferrer">Donaghey Emerging Analytics Center, UA Little Rock <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://vel.engr.uga.edu/about/" target="_blank" rel="noopener noreferrer">Virtual Experiences Laboratory, University of Georgia <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://digitalscholarship.emory.edu/" target="_blank" rel="noopener noreferrer">Emory's Center for Digital Scholarship <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://ualr.edu/computerscience" target="_blank" rel="noopener noreferrer">Department of Computer Science, UA Little Rock <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://eac.ualr.edu/" target="_blank" rel="noopener noreferrer">Donaghey Emerging Analytics Center, UA Little Rock <span aria-hidden="true">↗</span></a></li>
     </ul>
   </section>
 
   <section class="resources__section" aria-labelledby="references-heading">
     <h3 id="references-heading">Foundational references</h3>
     <ul>
-      <li><a href="https://sites.pitt.edu/~jdnorton/lectures/Rotman_Summer_School_2013/Einstein_1905_docs/Einstein_Dissertation_English.pdf" target="_blank" rel="noreferrer">Einstein's 1905 Dissertation <span aria-hidden="true">↗</span></a></li>
-      <li><a href="https://web.archive.org/web/20190923003312/https://www.math.wisc.edu/~boston/869.pdf" target="_blank" rel="noreferrer">Fermat's Last Theorem <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://sites.pitt.edu/~jdnorton/lectures/Rotman_Summer_School_2013/Einstein_1905_docs/Einstein_Dissertation_English.pdf" target="_blank" rel="noopener noreferrer">Einstein's 1905 Dissertation <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://web.archive.org/web/20190923003312/https://www.math.wisc.edu/~boston/869.pdf" target="_blank" rel="noopener noreferrer">Fermat's Last Theorem <span aria-hidden="true">↗</span></a></li>
     </ul>
   </section>
 </section>
