@@ -1379,6 +1379,29 @@ body.dark-mode .links-directory__item strong {
   }
 }
 
+/* Keep the brand readable between the navigation controls on ultra-narrow screens. */
+@media (max-width: 320px) {
+  .navbar-brand-container {
+    position: absolute;
+    left: 50%;
+    max-width: none;
+    margin: 0 !important;
+    transform: translateX(-50%);
+  }
+
+  .navbar-brand {
+    margin: 0 !important;
+  }
+
+  .navbar-title {
+    display: block;
+    width: 2.4rem;
+    overflow: hidden;
+    direction: rtl;
+    text-align: left;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
