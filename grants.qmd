@@ -1,0 +1,115 @@
+---
+title: "Grants"
+description: "Funded awards and active sponsored research proposals led or supported by Dr. Aryabrata Basu across cybersecurity, immersive systems, digital twins, scientific visualization, and responsible AI."
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+<div class="grants-page">
+  <p class="grants-page__lede">Dr. Aryabrata Basu's sponsored research portfolio connects immersive computing with cybersecurity, digital cardiology, scientific visualization, digital twins, responsible AI, and workforce development.</p>
+
+  <ul class="grant-summary" aria-label="Grant portfolio summary">
+    <li class="grant-summary__item"><strong>3</strong><span>Funded awards</span></li>
+    <li class="grant-summary__item"><strong>8</strong><span>Active proposal themes</span></li>
+    <li class="grant-summary__item"><strong>PI + collaborative</strong><span>Research leadership</span></li>
+  </ul>
+
+  <p class="grants-page__source">This portfolio reflects the grants and sponsored research activities documented in the <a href="dossier/CV_Aryabrata_Basu_UALR.pdf" target="_blank" rel="noopener noreferrer">curriculum vitae (PDF)</a>. Proposal statuses are shown separately from funded awards and may evolve.</p>
+
+## Funded Awards
+
+<div class="grant-list grant-list--funded">
+  <article class="grant-card grant-card--funded">
+    <div class="grant-card__topline"><span>2024-2025</span><span class="grant-status grant-status--funded">Funded</span></div>
+    <h3>Cybersecurity Consortium for Innovation</h3>
+    <dl class="grant-card__facts">
+      <div><dt>Sponsor</dt><dd>U.S. Department of Energy, National Energy Technology Laboratory</dd></div>
+      <div><dt>Role</dt><dd>Co-Investigator</dd></div>
+      <div><dt>Total funding</dt><dd>$5.0 million</dd></div>
+    </dl>
+    <p><strong>Focus:</strong> Immersive industrial control systems cybersecurity training, workforce development, and cyber-physical simulation.</p>
+  </article>
+
+  <article class="grant-card grant-card--funded">
+    <div class="grant-card__topline"><span>2023-2024</span><span class="grant-status grant-status--funded">Funded</span></div>
+    <h3>Robust 2D to 3D Cardiac Arterial Mapping and Visualization for Surgical Preplanning</h3>
+    <dl class="grant-card__facts">
+      <div><dt>Sponsor</dt><dd>NSF/EPSCoR-DART</dd></div>
+      <div><dt>Role</dt><dd>Principal Investigator</dd></div>
+      <div><dt>Total funding</dt><dd>$100,000</dd></div>
+    </dl>
+    <p><strong>Focus:</strong> Digital cardiology, conformal arterial mapping, 3D visualization, and surgical preplanning.</p>
+  </article>
+
+  <article class="grant-card grant-card--funded">
+    <div class="grant-card__topline"><span>2025-2026</span><span class="grant-status grant-status--funded">Funded</span></div>
+    <h3>Project Aria Research Kit Grant</h3>
+    <dl class="grant-card__facts">
+      <div><dt>Sponsor</dt><dd>Meta</dd></div>
+      <div><dt>Role</dt><dd>Principal Investigator</dd></div>
+      <div><dt>Support</dt><dd>In-kind hardware award ($6,000-$10,000 estimated market value)</dd></div>
+    </dl>
+    <p><strong>Focus:</strong> Spatial AI, human-computer interaction, virtual reality, and secure telemetry data collection.</p>
+  </article>
+</div>
+
+## Active Proposal Portfolio
+
+<p class="grant-section-note">Pending and in-preparation activities are listed as proposals, not funded awards.</p>
+
+<div class="grant-list grant-list--proposals">
+  <article class="grant-card grant-card--proposal">
+    <div class="grant-card__topline"><span>Advanced Air Mobility and Digital Twins</span><span class="grant-status grant-status--pending">Pending</span></div>
+    <h3>NASA EPSCoR FY 2026 Basic Research: Human-in-the-Loop Digital Twin for Noise-Aware Regional AAM Fleet Planning</h3>
+    <dl class="grant-card__facts"><div><dt>Role</dt><dd>Principal Investigator</dd></div></dl>
+    <p><strong>Focus:</strong> Human-in-the-loop digital twins, Advanced Air Mobility/UAS corridor planning, noise-aware fleet scenario comparison, acoustic exposure and human-response modeling, telemetry replay, 3D geospatial visualization, and NASA-aligned regional aviation decision support.</p>
+  </article>
+
+  <article class="grant-card grant-card--proposal">
+    <div class="grant-card__topline"><span>Quantum and Nanotechnology Infrastructure</span><span class="grant-status grant-status--pending">Pending</span></div>
+    <h3>NSF NQNI: Arkansas Open-Access Quantum and Nanotechnology User Facility for Secure User Enablement, Digital Twin Workflows, and Workforce Development</h3>
+    <dl class="grant-card__facts"><div><dt>Role</dt><dd>Co-Principal Investigator</dd></div></dl>
+    <p><strong>Focus:</strong> Open-access nanotechnology and QISE user infrastructure, secure immersive user enablement, digital-twin onboarding, AI-enabled discovery workflows, workforce training, external-user support, and Mid-South regional research capacity.</p>
+  </article>
+
+  <article class="grant-card grant-card--proposal">
+    <div class="grant-card__topline"><span>Immersive AI and Human-Centered Computing</span><span class="grant-status grant-status--preparation">In preparation</span></div>
+    <h3>NSF CAREER: Persistent Virtual Reality Spaces; Secure Analytics for Immersive Environments</h3>
+    <p><strong>Focus:</strong> Persistent immersive environments, embodied interaction, privacy-preserving behavioral telemetry, responsible immersive analytics, human-centered AI, and AI-mediated learning.</p>
+  </article>
+
+  <article class="grant-card grant-card--proposal">
+    <div class="grant-card__topline"><span>Secure XR Training and Evidence-Based Assessment</span><span class="grant-status grant-status--pending">Pending</span></div>
+    <h3>ORETTC / Y-12: SPECTRA - Secure Platform for Encrypted Content Transmission, Replay, and Analytics</h3>
+    <dl class="grant-card__facts"><div><dt>Role</dt><dd>Principal Investigator</dd></div></dl>
+    <p><strong>Focus:</strong> Secure real-time 3D mesh distribution, encrypted XR content streaming, distributed digital twin training, Unity-based immersive simulation, ELK telemetry ingestion, behavioral replay, usability analytics, after-action review, and evidence-based training assessment for national security, nuclear operations, cybersecurity, and emergency preparedness contexts.</p>
+  </article>
+
+  <article class="grant-card grant-card--proposal">
+    <div class="grant-card__topline"><span>Scientific and Medical Visualization</span><span class="grant-status grant-status--preparation">In preparation</span></div>
+    <h3>Digital Cardiology; Open Carbon Atlas; Remote Sensing-Assist Crop Phenology Detection and Immersive Visualization</h3>
+    <p><strong>Focus:</strong> AI-assisted scientific infrastructure, 3D medical visualization, carbon science, agricultural decision support, remote sensing, and immersive data interaction.</p>
+  </article>
+
+  <article class="grant-card grant-card--proposal">
+    <div class="grant-card__topline"><span>AI Assurance, Sensing, and Cyber-Physical Awareness</span><span class="grant-status grant-status--preparation">In preparation</span></div>
+    <h3>DARPA Young Faculty Award; AFOSR/ARO Conformal Augmented Reality for Passive Wireless Signal Decoding</h3>
+    <p><strong>Focus:</strong> Formal assurance, loss-of-control containment of AI, passive RF sensing, electromagnetic awareness, conformal mapping, and augmented reality visualization.</p>
+  </article>
+
+  <article class="grant-card grant-card--proposal">
+    <div class="grant-card__topline"><span>Society, Law, and Scientific Communication</span><span class="grant-status grant-status--preparation">In preparation</span></div>
+    <h3>NSF Science of Science: Discovery, Communication, and Impact; NSF Law and Science: Spatially Queryable Crime Scene Simulation Platform</h3>
+    <p><strong>Focus:</strong> Computational analysis of scientific discourse, scientific correspondence, communication media, forensic simulation, spatial querying, and law-science research infrastructure.</p>
+  </article>
+
+  <article class="grant-card grant-card--proposal">
+    <div class="grant-card__topline"><span>Edge Intelligence and Immersive Infrastructure Digital Twins</span><span class="grant-status grant-status--preparation">In preparation</span></div>
+    <h3>NSF VINES Track 1: Augmented Reality and Edge-Aware Digital Twins for Multi-Utility Infrastructure Management</h3>
+    <dl class="grant-card__facts"><div><dt>Role</dt><dd>Co-Principal Investigator / Senior Personnel</dd></div></dl>
+    <p><strong>Focus:</strong> Edge-resident digital twins, multi-utility infrastructure modeling, Bayesian filtering, distributed and federated learning, resource-aware 3D visualization, augmented reality field interfaces, privacy-preserving telemetry, and human-centered evaluation for utility maintenance.</p>
+  </article>
+</div>
+</div>

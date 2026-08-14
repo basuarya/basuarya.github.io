@@ -1367,6 +1367,258 @@ body.dark-mode .links-directory__item strong {
   }
 }
 
+/* Grants and sponsored research portfolio. */
+.grants-page {
+  max-width: 54rem;
+  margin: 0 auto 4.5rem;
+}
+
+.grants-page__lede {
+  max-width: 48rem;
+  margin: 0 0 1.5rem;
+  color: #314b5c;
+  font-size: 1.12rem;
+  line-height: 1.65;
+}
+
+.grant-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.5rem 0;
+  padding: 0;
+  border-top: 2px solid #17384f;
+  border-bottom: 1px solid #b6c0c5;
+  list-style: none;
+}
+
+.grant-summary__item {
+  display: flex;
+  min-width: 0;
+  padding: 1.1rem 1rem;
+  flex-direction: column;
+  border-right: 1px solid #d2d8da;
+}
+
+.grant-summary__item:last-child {
+  border-right: 0;
+}
+
+.grant-summary__item strong {
+  color: #17384f;
+  font-family: "Cambria", "Georgia", serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.05;
+}
+
+.grant-summary__item span {
+  margin-top: 0.35rem;
+  color: #607684;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grants-page__source,
+.grant-section-note {
+  color: #526976;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.grants-page__source {
+  margin-bottom: 2.5rem;
+}
+
+.grant-section-note {
+  margin: -0.5rem 0 1.25rem;
+}
+
+.grant-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 3.25rem;
+}
+
+.grant-card {
+  padding: 1.2rem 1.35rem 1.3rem;
+  border: 1px solid #c4cdd1;
+  border-left: 4px solid #607684;
+  background: #fbfaf7;
+  box-shadow: 0 0.18rem 0.45rem rgb(23 56 79 / 7%);
+}
+
+.grant-card--funded {
+  border-left-color: #a47638;
+}
+
+.grant-card__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+  color: #5d7180;
+  font-family: "Cambria", "Georgia", serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grant-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid #9eacb3;
+  border-radius: 999px;
+  color: #3f5968;
+  background: #f1f4f2;
+  white-space: nowrap;
+}
+
+.grant-status--funded {
+  border-color: #b78b4f;
+  color: #6b4719;
+  background: #f6eddd;
+}
+
+.grant-status--pending {
+  border-color: #6e8ea0;
+  color: #274f65;
+  background: #eaf1f4;
+}
+
+.grant-card h3 {
+  margin: 0 0 0.75rem;
+  color: #17384f;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.25;
+}
+
+.grant-card__facts {
+  display: flex;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.2rem;
+}
+
+.grant-card__facts div {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.grant-card__facts dt {
+  color: #526976;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.grant-card__facts dt::after {
+  content: ":";
+}
+
+.grant-card__facts dd {
+  margin: 0;
+  color: #263d4b;
+  font-size: 0.92rem;
+}
+
+.grant-card > p {
+  margin: 0;
+  color: #314b5c;
+  line-height: 1.55;
+}
+
+body.dark-mode .grants-page__lede,
+body.dark-mode .grant-card > p,
+body.dark-mode .grant-card__facts dd {
+  color: #d2dde2 !important;
+}
+
+body.dark-mode .grants-page__source,
+body.dark-mode .grant-section-note,
+body.dark-mode .grant-card__topline,
+body.dark-mode .grant-card__facts dt,
+body.dark-mode .grant-summary__item span {
+  color: #b8c8cf !important;
+}
+
+body.dark-mode .grant-summary {
+  border-top-color: #9bb6c5;
+  border-bottom-color: #60747d;
+}
+
+body.dark-mode .grant-summary__item {
+  border-right-color: #52656e;
+}
+
+body.dark-mode .grant-summary__item strong,
+body.dark-mode .grant-card h3 {
+  color: #eef2ed !important;
+}
+
+body.dark-mode .grant-card {
+  border-color: #60747d;
+  border-left-color: #91a9b5;
+  background: #29353d;
+  box-shadow: none;
+}
+
+body.dark-mode .grant-card--funded {
+  border-left-color: #d3a868;
+}
+
+body.dark-mode .grant-status {
+  border-color: #8096a0;
+  color: #d5e1e6;
+  background: #34434c;
+}
+
+body.dark-mode .grant-status--funded {
+  border-color: #c79d60;
+  color: #f1d5a7;
+  background: #4b3d2b;
+}
+
+body.dark-mode .grant-status--pending {
+  border-color: #83a9ba;
+  color: #c8e1ec;
+  background: #294757;
+}
+
+@media (max-width: 700px) {
+  .grant-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .grant-summary__item {
+    border-right: 0;
+    border-bottom: 1px solid #d2d8da;
+  }
+
+  .grant-summary__item:last-child {
+    border-bottom: 0;
+  }
+
+  .grant-card {
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  .grant-card__topline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body.dark-mode .grant-summary__item {
+    border-bottom-color: #52656e;
+  }
+}
+
 /* Touch targets and compact branding for narrow navigation bars. */
 @media (max-width: 576px) {
   .navbar-title {

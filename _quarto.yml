@@ -5,6 +5,7 @@ project:
     - index.qmd
     - news.qmd
     - publications.qmd
+    - grants.qmd
     - links.qmd
     - about.qmd
   resources:
@@ -28,6 +29,7 @@ website:
         text: Home
       - news.qmd
       - publications.qmd
+      - grants.qmd
       - links.qmd
       - about.qmd
 
