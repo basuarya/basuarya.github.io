@@ -25,11 +25,24 @@
     if (toggle) {
       const isDark = document.body.classList.contains('dark-mode');
       toggle.textContent = isDark ? '☀️' : '🌙';
+      toggle.setAttribute('aria-pressed', String(isDark));
+      toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      toggle.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
     }
   }
 
   function setupToggleButton() {
-    const toggle = document.getElementById('dark-mode-toggle');
+    let toggle = document.getElementById('dark-mode-toggle');
+    const search = document.getElementById('quarto-search');
+
+    if (!toggle && search?.parentNode) {
+      toggle = document.createElement('button');
+      toggle.id = 'dark-mode-toggle';
+      toggle.type = 'button';
+      toggle.className = 'btn btn-link navbar-dark-toggle';
+      search.parentNode.insertBefore(toggle, search);
+    }
+
     if (toggle) {
       toggle.onclick = function(e) {
         e.preventDefault();
@@ -44,28 +57,17 @@
     }
   }
 
-  function syncHomepageIntroCopy() {
-    const path = window.location.pathname.replace(/\/+$/, '/');
-    const isHomepage = path === '/' || path.endsWith('/index.html');
-    if (!isHomepage) return;
-
-    const main = document.getElementById('quarto-document-content');
-    if (!main) return;
-
-    const introParagraphs = Array.from(main.children).filter((element) => element.tagName === 'P').slice(0, 3);
-    if (introParagraphs.length < 3) return;
-
-    const hasOldIntro = introParagraphs[0].textContent.includes('innovative researcher and thought leader');
-    if (!hasOldIntro) return;
-
-    introParagraphs[0].textContent = 'Dr. Aryabrata Basu is an Assistant Professor of Computer Science at the University of Arkansas at Little Rock and a research fellow in the Emerging Analytics Center. His research examines how virtual, augmented, and mixed reality systems can support human spatial decision-making, training, and collaboration, with careful attention to responsible AI and human-centered design.';
-    introParagraphs[1].textContent = 'At UA Little Rock, Dr. Basu leads Spatiotemporality, a research group exploring immersive systems as environments for learning, analysis, and public scholarship. His work brings together VR/AR/XR, human-computer interaction, spatial cognition, and AI policy to ask how emerging technologies can extend human capability while remaining inclusive and accountable.';
-    introParagraphs[2].textContent = 'Explore the site for recent news, publications, selected media, and links to academic materials, collaborators, and affiliated research centers.';
+  function restoreSavedPreference() {
+    if (localStorage.getItem(DARK_MODE_KEY) === 'enabled') {
+      enableDarkMode();
+    } else {
+      updateToggleButton();
+    }
   }
 
   function initialize() {
     setupToggleButton();
-    syncHomepageIntroCopy();
+    restoreSavedPreference();
   }
 
   // Initialize on DOM ready

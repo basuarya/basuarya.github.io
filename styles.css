@@ -63,6 +63,18 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
 
+h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+h2 {
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+}
+
 /* All paragraphs with improved day mode styling */
 p, li, dd, dt {
   color: #1a1a1a;
@@ -413,7 +425,6 @@ iframe {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-}
 
 body.dark-mode .gallery-masthead {
   border-top-color: #9bb6c5;
@@ -718,8 +729,11 @@ img {
   opacity: 0.7;
 }
 
-#dark-mode-toggle:focus {
-  outline: none;
+#dark-mode-toggle:focus-visible,
+#quarto-search button:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 3px solid #f2cf8f;
+  outline-offset: 2px;
 }
 
 .navbar-dark-toggle {
@@ -1046,10 +1060,10 @@ main,
   box-sizing: border-box !important;
 }
 
-/* Hide page title headings */
-h1.title,
-.title {
-  display: none !important;
+/* Keep page identity visible and preserve a clear heading hierarchy. */
+h1.title {
+  display: block !important;
+  margin-top: 0.35rem;
 }
 
 /* Add space below fixed navbar */
@@ -1214,9 +1228,10 @@ body.dark-mode .links-directory__item strong {
   .links-directory {
     margin-top: 0.75rem;
   }
+}
 
-  /* Simple resource lists prioritize familiar link behavior and readable hierarchy. */
-  .resources {
+/* Simple resource lists prioritize familiar link behavior and readable hierarchy. */
+.resources {
     max-width: 52rem;
     margin: 1.75rem auto 4.5rem;
   }
@@ -1314,16 +1329,17 @@ body.dark-mode .links-directory__item strong {
     color: #efd19f !important;
   }
 
-  @media (max-width: 700px) {
-    .resources {
+@media (max-width: 700px) {
+  .resources {
       margin-top: 0.75rem;
-    }
-
-    .resources__section a {
-      padding: 0.9rem 0.1rem;
-    }
   }
 
+  .resources__section a {
+      padding: 0.9rem 0.1rem;
+  }
+}
+
+@media (max-width: 700px) {
   .links-directory__header {
     margin-bottom: 2.25rem;
   }
@@ -1331,3 +1347,49 @@ body.dark-mode .links-directory__item strong {
   .links-directory__grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Touch targets and compact branding for narrow navigation bars. */
+@media (max-width: 576px) {
+  .navbar-title {
+    font-size: 1.05rem !important;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .navbar-brand-container {
+    max-width: calc(100% - 148px);
+  }
+
+  #dark-mode-toggle,
+  #quarto-search,
+  #quarto-search button,
+  .navbar-toggler {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  #dark-mode-toggle {
+    right: 52px !important;
+    padding: 0.5rem !important;
+  }
+
+  #quarto-search {
+    right: 4px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,5 +1,6 @@
 ---
 title: "News"
+description: "News, awards, interviews, student achievements, and research updates from Dr. Aryabrata Basu and the Spatiotemporality research group."
 format:
   html:
     theme: readable
@@ -7,10 +8,7 @@ format:
     toc: false
     lightbox: auto
     number-sections: false
-    header-includes: |
-      <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/now" type="text/css"/>
 link-citations: true
-mainfont: NowRegular
 ---
 
 ::: news-item
@@ -27,16 +25,16 @@ Dr. Aryabrata Basu founded his new research group called **'Spatiotemporality'**
 Dr. Aryabrata Basu, Assistant Professor of Computer Science at the University of Arkansas at Little Rock, was recently selected to be featured in *America250's "Our American Story"*, a national project commemorating the 250th anniversary of the United States.
 
 ::: video-container
-<iframe width="100%" height="auto" src="https://www.youtube.com/embed/vKtBRKDKHtA" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/vKtBRKDKHtA" title="Dr. Aryabrata Basu's America250 Our American Story interview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::
 
-![](images/clipboard-989604019.jpeg){.news-image}
+![Dr. Aryabrata Basu seated during the America250 interview recording](images/clipboard-989604019.jpeg){.news-image loading="lazy" decoding="async"}
 
 The initiative, produced under the U.S. Semiquincentennial Commission, highlights voices and stories that capture the spirit of innovation and resilience shaping America today. Filmed on location at the **Old State House** in Little Rock, Arkansas, Dr. Basu was chosen as **the sole researcher from the state of Arkansas** to share his personal and professional journey. His full interview will be **preserved in the Library of Congress** as part of the nation's historical record.
 
 In the interview, Dr. Basu reflects on his early inspirations growing up in Kolkata, India, his family's influence on his passion for heart visualization research, and the mission of his lab at UA Little Rock — using immersive technologies to turn applied research into real-world impact.
 
-![](images/clipboard-520353764.jpeg){.news-image}
+![A camera operator recording Dr. Aryabrata Basu for the America250 interview](images/clipboard-520353764.jpeg){.news-image loading="lazy" decoding="async"}
 
 > "At UA Little Rock, innovation is a core pillar guiding our work," Dr. Basu shared during the conversation. "Our goal is to make research matter — to use technology to create meaningful improvements in people's lives."
 
@@ -49,14 +47,14 @@ For more on the project, visit [America250.org](https://america250.org).
 
 Dr. Arya Basu was recently featured on KUAR, Little Rock's NPR *Morning Edition*, in conversation with Nathan Treece. The interview spotlighted his project, *"Robust 2D to 3D Cardiac Arterial Mapping and Visualization for Surgical Pre-planning,"* which aims to convert standard 2D angiograms into accurate 3D models of the heart's vascular system.
 
-🎧 **Listen to the full interview:** [https://www.ualrpublicradio.org/local-regional-news/2025-09-11/ua-little-rock-computer-scientist-maps-blood-vessels-in-3d](https://www.ualrpublicradio.org/local-regional-news/2025-09-11/ua-little-rock-computer-scientist-maps-blood-vessels-in-3d)
+🎧 **Listen to the full interview:** [UA Little Rock Public Radio](https://www.ualrpublicradio.org/local-regional-news/2025-09-11/ua-little-rock-computer-scientist-maps-blood-vessels-in-3d)
 :::
 
 ::: news-item
 <span class="news-date">08/20/2025</span>
 <span class="news-title">Portfolio Materials Updated</span>
 
-New updates have been made to the full portfolio—including the CV, Research Statement, and integrated Teaching & Mentoring—compiled into a single document. All materials are available here: [https://spatiotemporalbasu.com/links.html](https://spatiotemporalbasu.com/links.html)
+New updates have been made to the full portfolio—including the CV, Research Statement, and integrated Teaching & Mentoring—compiled into a single document. See the [academic links and materials](links.qmd).
 :::
 
 ::: news-item
@@ -72,9 +70,9 @@ Appointed as the new Undergraduate Program Coordinator of the Computer Science d
 
 Received the Best Paper Award (honorable mention) at the IEEE VR 2025 conference in St. Malo, France. This marks a decade since the first Best Paper Award in 2014.
 
-![](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){.news-image}
+![IEEE VR 2025 Best Paper Honorable Mention certificate](images/Best%20Paper%20Honorable%20Mention%20IEEE%20VR%202025.jpeg){.news-image loading="lazy" decoding="async"}
 
-![](images/Best%20paper%20award%202014.jpg){.news-image}
+![Best Paper Award certificate from 2014](images/Best%20paper%20award%202014.jpg){.news-image loading="lazy" decoding="async"}
 :::
 
 ::: news-item
@@ -94,7 +92,7 @@ Tackled novel technical challenges in distributing 3D meshes over a network usin
 
 [Mohammad Jahed Murad Sunny](https://www.linkedin.com/in/jahed-murad-sunny/), a dedicated Master's student, has been recognized with an award at this year's Student Research and Creative Works Expo at the [University of Arkansas at Little Rock](https://www.linkedin.com/company/university-of-arkansas-at-little-rock/) (UALR) for our collaborative work on human spatial decision-making in immersive virtual environments.
 
-![](images/WhatsApp%20Image%202024-04-19%20at%2019.33.30.jpeg){.news-image}
+![Mohammad Jahed Murad Sunny presenting spatial decision-making research at UA Little Rock](images/WhatsApp%20Image%202024-04-19%20at%2019.33.30.jpeg){.news-image loading="lazy" decoding="async"}
 
 Congratulations to Jahed and all involved in this year's expo for pushing the boundaries of knowledge and creativity!
 :::
@@ -105,7 +103,7 @@ Congratulations to Jahed and all involved in this year's expo for pushing the bo
 
 In the tapestry of celestial events that adorn our sky, few phenomena evoke a sense of ethereal wonder and existential introspection as profoundly as a total solar eclipse. This surreal experience, where day momentarily succumbs to an eerie twilight, invites us to ponder the intricate dance between light and shadow.
 
-![](images/IMG_4046.jpeg){.news-image}
+![The sun's corona visible during the April 2024 total solar eclipse](images/IMG_4046.jpeg){.news-image loading="lazy" decoding="async"}
 :::
 
 ::: news-item
