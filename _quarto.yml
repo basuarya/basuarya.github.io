@@ -6,6 +6,7 @@ project:
     - news.qmd
     - publications.qmd
     - grants.qmd
+    - atlas.qmd
     - links.qmd
     - about.qmd
   resources:
@@ -15,6 +16,8 @@ project:
     - manual_publications.json
     - publications_cache.json
     - fetch_publications.py
+    - atlas-data.js
+    - atlas.js
 website:
   title: "Spatio-temporal Basu"
   description: "Academic portfolio of Dr. Aryabrata Basu, featuring research in immersive systems, human-computer interaction, spatial cognition, and responsible AI."
@@ -30,6 +33,8 @@ website:
       - news.qmd
       - publications.qmd
       - grants.qmd
+      - href: atlas.qmd
+        text: Atlas
       - links.qmd
       - about.qmd
 
