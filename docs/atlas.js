@@ -19,6 +19,14 @@
     learn: "#a85f43", protect: "#33757a", train: "#6f6091", decide: "#627d42", all: "#17384f"
   };
   const state = { thread: "all", selectedId: "human-judgment", scale: 1 };
+  const interaction = {
+    anchorX: 0,
+    anchorY: 0,
+    pendingPanX: 0,
+    pendingPanY: 0,
+    panRafId: 0,
+    gestureScale: 1
+  };
   const element = (id) => document.getElementById(id);
   const clamp = (value, minimum, maximum) => Math.min(maximum, Math.max(minimum, value));
   const edgeKey = (source, target) => `${source}→${target}`;
@@ -358,9 +366,12 @@
   function scrollNodeIntoView(id, behavior = "smooth") {
     const node = nodesById.get(id);
     if (!node) return;
+    const maxLeft = Math.max(0, pane.scrollWidth - pane.clientWidth);
+    const maxTop = Math.max(0, pane.scrollHeight - pane.clientHeight);
     pane.scrollTo({
-      left: Math.max(0, node.x * state.scale - pane.clientWidth / 2),
-      top: Math.max(0, node.y * state.scale - pane.clientHeight / 2), behavior
+      left: clamp(node.x * state.scale + map.offsetLeft - pane.clientWidth / 2, 0, maxLeft),
+      top: clamp(node.y * state.scale + map.offsetTop - pane.clientHeight / 2, 0, maxTop),
+      behavior
     });
   }
 
@@ -393,21 +404,38 @@
   function applyScale() {
     map.style.width = `${Math.round(graph.width * state.scale)}px`;
     map.style.height = `${Math.round(graph.height * state.scale)}px`;
+    const horizontalInset = Math.max(0, (pane.clientWidth - graph.width * state.scale) / 2);
+    const verticalInset = Math.max(0, (pane.clientHeight - graph.height * state.scale) / 2);
+    map.style.margin = `${verticalInset}px ${horizontalInset}px`;
   }
 
-  function setScale(nextScale) {
+  function fitScaleForPane() {
+    const padding = 24;
+    const widthScale = (pane.clientWidth - padding) / graph.width;
+    const heightScale = (pane.clientHeight - padding) / graph.height;
+    return clamp(Math.min(widthScale, heightScale), 0.1, 1);
+  }
+
+  function setScale(nextScale, anchor = null) {
+    const minimumScale = fitScaleForPane();
     const oldScale = state.scale;
-    const graphX = (pane.scrollLeft + pane.clientWidth / 2) / oldScale;
-    const graphY = (pane.scrollTop + pane.clientHeight / 2) / oldScale;
-    state.scale = clamp(nextScale, 0.42, 1.5);
+    const anchorX = anchor?.x ?? pane.clientWidth / 2;
+    const anchorY = anchor?.y ?? pane.clientHeight / 2;
+    const graphX = (pane.scrollLeft + anchorX - map.offsetLeft) / oldScale;
+    const graphY = (pane.scrollTop + anchorY - map.offsetTop) / oldScale;
+    state.scale = clamp(nextScale, minimumScale, 1.5);
     applyScale();
-    pane.scrollLeft = graphX * state.scale - pane.clientWidth / 2;
-    pane.scrollTop = graphY * state.scale - pane.clientHeight / 2;
+    const maxLeft = Math.max(0, pane.scrollWidth - pane.clientWidth);
+    const maxTop = Math.max(0, pane.scrollHeight - pane.clientHeight);
+    pane.scrollLeft = clamp(graphX * state.scale + map.offsetLeft - anchorX, 0, maxLeft);
+    pane.scrollTop = clamp(graphY * state.scale + map.offsetTop - anchorY, 0, maxTop);
   }
 
   function fitGraph() {
-    state.scale = clamp(Math.min((pane.clientWidth - 24) / graph.width, (pane.clientHeight - 24) / graph.height), 0.42, 1);
-    applyScale(); pane.scrollLeft = 0; pane.scrollTop = 0;
+    state.scale = fitScaleForPane();
+    applyScale();
+    pane.scrollLeft = 0;
+    pane.scrollTop = 0;
     element("rae-status").textContent = "The complete research graph is fitted in the map panel.";
   }
 
@@ -444,7 +472,66 @@
     const node = nodeAt(canvasPoint(event));
     if (node) selectNode(node.id);
   });
+  function updateZoomAnchor(point) {
+    interaction.anchorX = clamp(point.x, 0, pane.clientWidth);
+    interaction.anchorY = clamp(point.y, 0, pane.clientHeight);
+  }
+  function panePoint(event) {
+    const bounds = pane.getBoundingClientRect();
+    return { x: event.clientX - bounds.left, y: event.clientY - bounds.top };
+  }
+  function queuePan(deltaX, deltaY) {
+    interaction.pendingPanX += deltaX;
+    interaction.pendingPanY += deltaY;
+    if (interaction.panRafId) return;
+    interaction.panRafId = requestAnimationFrame(() => {
+      pane.scrollLeft += interaction.pendingPanX;
+      pane.scrollTop += interaction.pendingPanY;
+      interaction.pendingPanX = 0;
+      interaction.pendingPanY = 0;
+      interaction.panRafId = 0;
+    });
+  }
+  function wheelDeltaInPixels(event) {
+    const mode = event.deltaMode;
+    if (mode === 1) return { x: event.deltaX * 16, y: event.deltaY * 16 };
+    if (mode === 2) return { x: event.deltaX * pane.clientWidth, y: event.deltaY * pane.clientHeight };
+    return { x: event.deltaX, y: event.deltaY };
+  }
+  function zoomAt(deltaY, anchor) {
+    const zoomFactor = Math.exp(-deltaY * 0.0025);
+    setScale(state.scale * zoomFactor, anchor);
+  }
+  pane.addEventListener("pointermove", (event) => updateZoomAnchor(panePoint(event)), { passive: true });
+  pane.addEventListener("wheel", (event) => {
+    const anchor = panePoint(event);
+    updateZoomAnchor(anchor);
+    const delta = wheelDeltaInPixels(event);
+    if (event.ctrlKey) {
+      event.preventDefault();
+      zoomAt(delta.y, anchor);
+      return;
+    }
+    event.preventDefault();
+    queuePan(delta.x, delta.y);
+  }, { passive: false });
+  pane.addEventListener("gesturestart", (event) => {
+    event.preventDefault();
+    interaction.gestureScale = 1;
+  }, { passive: false });
+  pane.addEventListener("gesturechange", (event) => {
+    event.preventDefault();
+    const anchor = { x: interaction.anchorX || pane.clientWidth / 2, y: interaction.anchorY || pane.clientHeight / 2 };
+    const incrementalScale = event.scale / interaction.gestureScale;
+    interaction.gestureScale = event.scale;
+    setScale(state.scale * incrementalScale, anchor);
+  }, { passive: false });
+  pane.addEventListener("gestureend", (event) => {
+    event.preventDefault();
+    interaction.gestureScale = 1;
+  }, { passive: false });
   canvas.addEventListener("pointermove", (event) => {
+    updateZoomAnchor(panePoint(event));
     canvas.style.cursor = nodeAt(canvasPoint(event)) ? "pointer" : "default";
   });
   document.querySelectorAll("[data-rae-thread]").forEach((button) => {
@@ -454,6 +541,7 @@
   element("rae-zoom-in")?.addEventListener("click", () => setScale(state.scale * 1.18));
   element("rae-zoom-out")?.addEventListener("click", () => setScale(state.scale / 1.18));
 
+  updateZoomAnchor({ x: pane.clientWidth / 2, y: pane.clientHeight / 2 });
   applyScale(); drawGraph(); updateDetail(); renderIndex();
   requestAnimationFrame(() => scrollNodeIntoView(state.selectedId, "auto"));
 })();
