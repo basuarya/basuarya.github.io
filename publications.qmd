@@ -19,8 +19,8 @@ link-citations: true
       <div class="pub-label">Publications</div>
     </div>
     <div class="pub-stat">
-      <div id="pub-citation-count" class="pub-number">451</div>
-      <div class="pub-label">Scholar citations</div>
+      <div id="pub-citation-count" class="pub-number">0</div>
+      <div class="pub-label">Citations</div>
     </div>
     <div class="pub-stat">
       <div id="pub-conf-count" class="pub-number">0</div>
@@ -35,19 +35,19 @@ link-citations: true
       <div class="pub-label">Other</div>
     </div>
     <div class="pub-stat">
-      <div id="pub-h-index" class="pub-number">11</div>
-      <div class="pub-label">Scholar h-index</div>
+      <div id="pub-h-index" class="pub-number">0</div>
+      <div class="pub-label">h-index</div>
     </div>
     <div class="pub-stat">
-      <div id="pub-i10-index" class="pub-number">11</div>
-      <div class="pub-label">Scholar i10-index</div>
+      <div id="pub-i10-index" class="pub-number">0</div>
+      <div class="pub-label">i10-index</div>
     </div>
     <div class="pub-stat">
-      <div id="pub-average-citations" class="pub-number">16.1</div>
-      <div class="pub-label">Scholar cites / listed paper</div>
+      <div id="pub-average-citations" class="pub-number">0.0</div>
+      <div class="pub-label">Cites / listed paper</div>
     </div>
   </div>
-  <p class="pub-metrics-source">Google Scholar metrics retrieved August 13, 2026. <a href="https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">View profile ↗</a></p>
+  <p id="pub-metrics-source" class="pub-metrics-source">Loading citation metrics…</p>
 
   <div class="pub-filters" aria-label="Filter publications by type">
     <button type="button" class="pub-filter active" data-filter="all" aria-pressed="true">All</button>
@@ -62,17 +62,26 @@ link-citations: true
 ```
 
 <script>
-const PUBLICATIONS_CACHE_KEY = 'basu-publications-cache-v2';
-const PUBLICATIONS_CACHE_TTL = 1000 * 60 * 60 * 24; // 24 hours
 const AUTHOR_ID = '3227042';
 const MANUAL_PUBLICATIONS_URL = './manual_publications.json';
-const GOOGLE_SCHOLAR_METRICS = Object.freeze({
-  citations: 451,
-  hIndex: 11,
-  i10Index: 11,
-});
+const AUTHOR_PROFILE_URL = 'https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en';
+const SCHOLAR_PROXY_URL = `https://api.allorigins.win/raw?url=${encodeURIComponent(AUTHOR_PROFILE_URL)}`;
+const PAPERS_API_URL = `https://api.semanticscholar.org/graph/v1/author/${AUTHOR_ID}/papers?fields=title,year,venue,authors,citationCount,externalIds,publicationTypes,abstract,openAccessPdf&limit=100`;
+let latestPapers = [];
+let latestSummary = { total: 0, conference: 0, journalReview: 0, other: 0 };
 
-const apiUrl = `https://api.semanticscholar.org/graph/v1/author/${AUTHOR_ID}/papers?fields=title,year,venue,authors,citationCount,externalIds,publicationTypes,abstract,openAccessPdf&limit=100`;
+function toFiniteInt(value, fallback = 0) {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return fallback;
+  return Math.max(0, Math.round(parsed));
+}
+
+function formatMetricDate(value) {
+  if (!value) return '';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  return date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+}
 
 function normalizePaper(paper) {
   const citationCount = Number(paper?.citationCount ?? paper?.citations ?? 0);
@@ -127,8 +136,16 @@ function paperTitleCompare(a, b) {
   return String(a || '').localeCompare(String(b || ''));
 }
 
+function publicationBadgeType(paper) {
+  const publicationTypes = paper.publicationTypes || [];
+  if (publicationTypes.includes('Conference')) return 'Conference';
+  if (publicationTypes.includes('Review')) return 'Review';
+  if (publicationTypes.includes('Book')) return 'Book Chapter';
+  return 'Journal';
+}
+
 async function loadManualPublications() {
-  const response = await fetch(MANUAL_PUBLICATIONS_URL, { cache: 'no-store' });
+  const response = await fetch(MANUAL_PUBLICATIONS_URL, { cache: 'no-cache' });
   if (!response.ok) {
     throw new Error(`Manual publications status: ${response.status}`);
   }
@@ -141,11 +158,7 @@ function renderYearSection(year, items) {
   const cards = items.map((item, index) => {
     const authors = item.authors?.map(a => a.name === 'Aryabrata Basu' ? '<strong>Aryabrata Basu</strong>' : a.name).join(', ') || '';
     const venue = item.venue ? `<div class="pub-venue">${item.venue}</div>` : '';
-    const pubTypes = item.publicationTypes || [];
-    let pubType = 'Journal';
-    if (pubTypes.includes('Conference')) pubType = 'Conference';
-    else if (pubTypes.includes('Review')) pubType = 'Review';
-    else if (pubTypes.includes('Book')) pubType = 'Book Chapter';
+    const pubType = publicationBadgeType(item);
 
     const citationText = Number(item.citationCount || 0) > 0 ? `<span class="pub-cite">${item.citationCount} citations</span>` : '';
     const badgeClass = pubType.toLowerCase().replace(/\s+/g, '-');
@@ -191,14 +204,77 @@ function renderYearSection(year, items) {
 }
 
 function summaryCategory(paper) {
-  const publicationTypes = paper.publicationTypes || [];
-
-  if (publicationTypes.includes('Conference')) return 'conference';
-  if (publicationTypes.includes('JournalArticle') || publicationTypes.includes('Review')) return 'journalReview';
+  const pubType = publicationBadgeType(paper);
+  if (pubType === 'Conference') return 'conference';
+  if (pubType === 'Journal' || pubType === 'Review') return 'journalReview';
   return 'other';
 }
 
-function renderPublications(papers) {
+function computeDerivedStats(papers) {
+  const citationCounts = papers.map((paper) => toFiniteInt(paper.citationCount)).sort((a, b) => b - a);
+  const citationCount = citationCounts.reduce((sum, count) => sum + count, 0);
+  const i10Index = citationCounts.filter((count) => count >= 10).length;
+  let hIndex = 0;
+  citationCounts.forEach((count, index) => {
+    if (count >= index + 1) hIndex = index + 1;
+  });
+  return {
+    citationCount,
+    hIndex,
+    i10Index,
+    paperCount: papers.length,
+  };
+}
+
+function normalizeStats(rawStats, papers, lastUpdatedFallback = null) {
+  const derived = computeDerivedStats(papers);
+  const citationCount = toFiniteInt(rawStats?.citationCount, derived.citationCount);
+  return {
+    citationCount,
+    hIndex: toFiniteInt(rawStats?.hIndex, derived.hIndex),
+    i10Index: toFiniteInt(rawStats?.i10Index, derived.i10Index),
+    paperCount: toFiniteInt(rawStats?.paperCount, derived.paperCount),
+    source: rawStats?.source || 'Google Scholar',
+    profileUrl: rawStats?.profileUrl || AUTHOR_PROFILE_URL,
+    lastUpdated: rawStats?.lastUpdated || lastUpdatedFallback || null,
+  };
+}
+
+function renderMetricsSource(stats, mode) {
+  const sourceNode = document.getElementById('pub-metrics-source');
+  if (!sourceNode) return;
+  const dateText = formatMetricDate(stats.lastUpdated);
+  const freshnessLabel = mode === 'live'
+    ? 'Live publications with'
+    : mode === 'live-pending'
+      ? 'Live publications; refreshing'
+      : mode === 'local-cache'
+        ? 'Cached'
+        : 'Snapshot';
+  const profileUrl = stats.profileUrl || AUTHOR_PROFILE_URL;
+  sourceNode.innerHTML = dateText
+    ? `${freshnessLabel} ${stats.source} metrics updated ${dateText}. <a href="${profileUrl}" target="_blank" rel="noopener noreferrer">View profile ↗</a>`
+    : `${freshnessLabel} ${stats.source} metrics. <a href="${profileUrl}" target="_blank" rel="noopener noreferrer">View profile ↗</a>`;
+}
+
+function renderSummaryMetrics(summary, rawStats = null, options = {}) {
+  const stats = normalizeStats(rawStats, latestPapers, options.lastUpdated);
+  const averageCitations = summary.total
+    ? (stats.citationCount / summary.total).toFixed(1)
+    : '0.0';
+
+  document.getElementById('pub-total-count').textContent = summary.total;
+  document.getElementById('pub-citation-count').textContent = stats.citationCount;
+  document.getElementById('pub-conf-count').textContent = summary.conference;
+  document.getElementById('pub-journal-count').textContent = summary.journalReview;
+  document.getElementById('pub-other-count').textContent = summary.other;
+  document.getElementById('pub-h-index').textContent = stats.hIndex;
+  document.getElementById('pub-i10-index').textContent = stats.i10Index;
+  document.getElementById('pub-average-citations').textContent = averageCitations;
+  renderMetricsSource(stats, options.mode || 'snapshot');
+}
+
+function renderPublications(papers, rawStats = null, options = {}) {
   const container = document.getElementById('publications-list');
   if (!container) return;
 
@@ -228,22 +304,19 @@ function renderPublications(papers) {
     counts[summaryCategory(paper)] += 1;
     return counts;
   }, { total: 0, conference: 0, journalReview: 0, other: 0 });
-  const averageCitations = summary.total
-    ? (GOOGLE_SCHOLAR_METRICS.citations / summary.total).toFixed(1)
-    : '0.0';
+  latestPapers = papers;
+  latestSummary = summary;
+  renderSummaryMetrics(summary, rawStats, options);
 
-  document.getElementById('pub-total-count').textContent = summary.total;
-  document.getElementById('pub-citation-count').textContent = GOOGLE_SCHOLAR_METRICS.citations;
-  document.getElementById('pub-conf-count').textContent = summary.conference;
-  document.getElementById('pub-journal-count').textContent = summary.journalReview;
-  document.getElementById('pub-other-count').textContent = summary.other;
-  document.getElementById('pub-h-index').textContent = GOOGLE_SCHOLAR_METRICS.hIndex;
-  document.getElementById('pub-i10-index').textContent = GOOGLE_SCHOLAR_METRICS.i10Index;
-  document.getElementById('pub-average-citations').textContent = averageCitations;
-  document.getElementById('publications-status').textContent = `${summary.total} publications loaded.`;
+  const activeFilter = document.querySelector('.pub-filter.active')?.dataset.filter || 'all';
+  if (activeFilter === 'all') {
+    document.getElementById('publications-status').textContent = `${summary.total} publications loaded.`;
+  } else {
+    filterPublications(activeFilter, true);
+  }
 }
 
-function filterPublications(type) {
+function filterPublications(type, updateStatus = true) {
   const items = document.querySelectorAll('.pub-item');
   items.forEach(item => {
     const match = type === 'all' || item.dataset.type === type;
@@ -255,8 +328,10 @@ function filterPublications(type) {
     group.style.display = visible ? '' : 'none';
   });
 
-  const visibleCount = document.querySelectorAll('.pub-item:not([style*="display: none"])').length;
-  document.getElementById('publications-status').textContent = `Showing ${visibleCount} publications.`;
+  if (updateStatus) {
+    const visibleCount = document.querySelectorAll('.pub-item:not([style*="display: none"])').length;
+    document.getElementById('publications-status').textContent = `Showing ${visibleCount} publications.`;
+  }
 }
 
 document.querySelectorAll('.pub-filter').forEach(btn => {
@@ -271,37 +346,105 @@ document.querySelectorAll('.pub-filter').forEach(btn => {
   });
 });
 
+async function fetchSemanticScholarPapers() {
+  const response = await fetch(PAPERS_API_URL, { cache: 'no-cache' });
+  if (!response.ok) {
+    throw new Error(`Publications API status: ${response.status}`);
+  }
+  const json = await response.json();
+  return (json.data || []).filter((paper) => paper && paper.title);
+}
+
+function extractScholarStatsFromHtml(html) {
+  const tableMatch = html.match(/<table id="gsc_rsb_st"[\s\S]*?<\/table>/i);
+  if (!tableMatch) {
+    throw new Error('Google Scholar stats table not found');
+  }
+  const table = tableMatch[0];
+
+  function readMetric(label) {
+    const pattern = new RegExp(
+      `<tr>\\s*<td class="gsc_rsb_sc1">[\\s\\S]*?${label}[\\s\\S]*?<\\/td>\\s*<td class="gsc_rsb_std">\\s*([0-9,]+)\\s*<\\/td>`,
+      'i'
+    );
+    const match = table.match(pattern);
+    if (!match) {
+      throw new Error(`Google Scholar metric missing: ${label}`);
+    }
+    return toFiniteInt(match[1].replace(/,/g, ''));
+  }
+
+  return {
+    citationCount: readMetric('Citations'),
+    hIndex: readMetric('h-index'),
+    i10Index: readMetric('i10-index'),
+  };
+}
+
+async function fetchGoogleScholarStats() {
+  const response = await fetch(SCHOLAR_PROXY_URL, { cache: 'no-cache' });
+  if (!response.ok) {
+    throw new Error(`Scholar proxy status: ${response.status}`);
+  }
+  const html = await response.text();
+  const stats = extractScholarStatsFromHtml(html);
+  return {
+    ...stats,
+    source: 'Google Scholar',
+    profileUrl: AUTHOR_PROFILE_URL,
+    lastUpdated: new Date().toISOString(),
+  };
+}
+
+async function fetchPublishedSnapshot() {
+  const response = await fetch('./publications_cache.json', { cache: 'no-cache' });
+  if (!response.ok) {
+    throw new Error(`Cache status: ${response.status}`);
+  }
+  return response.json();
+}
+
 async function fetchPublications() {
-  try {
-    const manualPapers = await loadManualPublications().catch(() => []);
-    const cached = localStorage.getItem(PUBLICATIONS_CACHE_KEY);
-    if (cached) {
-      const parsed = JSON.parse(cached);
-      const age = Date.now() - (parsed.cachedAt || 0);
-      if (age < PUBLICATIONS_CACHE_TTL && Array.isArray(parsed.data)) {
-        renderPublications(mergePublications(parsed.data, manualPapers));
-        return;
+  const [manualPapers, snapshot] = await Promise.all([
+    loadManualPublications().catch(() => []),
+    fetchPublishedSnapshot().catch(() => null),
+  ]);
+
+  const snapshotStats = snapshot?.stats || null;
+  const snapshotUpdated = snapshotStats?.lastUpdated || snapshot?.last_updated || null;
+  const snapshotPapers = mergePublications(snapshot?.papers || [], manualPapers);
+  if (snapshotPapers.length) {
+    renderPublications(snapshotPapers, snapshotStats, {
+      mode: 'snapshot',
+      lastUpdated: snapshotUpdated,
+    });
+  }
+
+  let liveScholarStats = null;
+  const scholarStatsPromise = fetchGoogleScholarStats();
+  scholarStatsPromise
+    .then((stats) => {
+      liveScholarStats = stats;
+      if (latestSummary.total > 0) {
+        renderSummaryMetrics(latestSummary, stats, {
+          mode: 'live',
+          lastUpdated: stats.lastUpdated,
+        });
       }
-    }
+    })
+    .catch(() => {});
 
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      throw new Error(`API status: ${response.status}`);
-    }
-    const json = await response.json();
-    const papers = (json.data || []).filter(p => p && p.title);
-
-    localStorage.setItem(PUBLICATIONS_CACHE_KEY, JSON.stringify({ cachedAt: Date.now(), data: papers }));
-    renderPublications(mergePublications(papers, manualPapers));
-  } catch (error) {
-    try {
-      const manualPapers = await loadManualPublications().catch(() => []);
-      const fallback = await fetch('./publications_cache.json');
-      const json = await fallback.json();
-      renderPublications(mergePublications(json.papers || [], manualPapers));
-    } catch {
+  try {
+    const papers = await fetchSemanticScholarPapers();
+    renderPublications(mergePublications(papers, manualPapers), liveScholarStats || snapshotStats, {
+      mode: liveScholarStats ? 'live' : 'live-pending',
+      lastUpdated: liveScholarStats?.lastUpdated || snapshotUpdated || new Date().toISOString(),
+    });
+  } catch {
+    if (!snapshotPapers.length) {
       document.getElementById('publications-status').classList.remove('visually-hidden');
       document.getElementById('publications-status').textContent = 'Publications could not be loaded. Please try again later.';
+      document.getElementById('pub-metrics-source').textContent = 'Publication metrics are currently unavailable.';
     }
   }
 }

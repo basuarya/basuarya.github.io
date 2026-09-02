@@ -1,8 +1,18 @@
 {
-  "last_updated": "2026-08-13T12:15:21.163412+00:00",
+  "last_updated": "2026-09-02T15:06:27.175213+00:00",
   "author": "Aryabrata Basu",
   "semantic_scholar_id": "3227042",
-  "total": 25,
+  "source_profile_url": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
+  "stats": {
+    "paperCount": 26,
+    "citationCount": 462,
+    "hIndex": 11,
+    "i10Index": 11,
+    "source": "Google Scholar",
+    "profileUrl": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
+    "lastUpdated": "2026-09-02T15:06:27.175213+00:00"
+  },
+  "total": 26,
   "papers": [
     {
       "title": "XR for Knowledge Work: Ten Challenges",
@@ -36,8 +46,8 @@
       "year": 2026,
       "venue": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "authors": [
-        "M. Karim",
-        "Mohammad Jahed Murad Sunny",
+        "Md Asif Bin Karim",
+        "M. J. M. Sunny",
         "Aryabrata Basu"
       ],
       "citations": 0,
@@ -52,7 +62,7 @@
       "venue": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "authors": [
         "Atit Kharel",
-        "Mohammad Jahed Murad Sunny",
+        "M. J. M. Sunny",
         "Aryabrata Basu"
       ],
       "citations": 0,
@@ -69,7 +79,7 @@
         "M. Karim",
         "Karun Shrestha",
         "Atit Kharel",
-        "Mohammad Jahed Murad Sunny",
+        "M. J. M. Sunny",
         "Aryabrata Basu"
       ],
       "citations": 0,
@@ -98,7 +108,7 @@
       "year": 2025,
       "venue": "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "authors": [
-        "Mohammad Jahed Murad Sunny",
+        "M. J. M. Sunny",
         "Jan P. Springer",
         "Aryabrata Basu"
       ],
@@ -113,7 +123,7 @@
       "year": 2025,
       "venue": "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "authors": [
-        "Mohammad Jahed Murad Sunny",
+        "M. J. M. Sunny",
         "Jayasri Sai Nikitha Guthula",
         "Atit Kharel",
         "Meherun Nesa Shraboni",
@@ -138,7 +148,7 @@
         "Jan P. Springer",
         "Aryabrata Basu"
       ],
-      "citations": 2,
+      "citations": 3,
       "doi_url": "https://doi.org/10.1109/VRW66409.2025.00281",
       "pdf_url": "",
       "pub_type": "Conference",
@@ -163,7 +173,7 @@
       "year": 2024,
       "venue": "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "authors": [
-        "Mohammad Jahed Murad Sunny",
+        "M. J. M. Sunny",
         "Aryabrata Basu"
       ],
       "citations": 6,
@@ -178,7 +188,7 @@
       "venue": "arXiv.org",
       "authors": [
         "Aryabrata Basu",
-        "Mohammad Jahed Murad Sunny",
+        "M. J. M. Sunny",
         "Jayasri Sai Nikitha Guthula"
       ],
       "citations": 4,
@@ -265,6 +275,25 @@
       ],
       "citations": 8,
       "doi_url": "https://doi.org/10.1109/3DUI.2016.7460057",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Using Virtual Pets to Promote Physical Activity in Children: An Application of the Youth Physical Activity Promotion Model",
+      "year": 2015,
+      "venue": "Journal of health communication",
+      "authors": [
+        "Sun Joo Grace Ahn",
+        "K. Johnsen",
+        "Tom P. Robertson",
+        "James Moore",
+        "Scott Brown",
+        "Amanda Marable",
+        "Aryabrata Basu"
+      ],
+      "citations": 72,
+      "doi_url": "https://doi.org/10.1080/10810730.2015.1018597",
       "pdf_url": "",
       "pub_type": "Journal",
       "abstract": ""
