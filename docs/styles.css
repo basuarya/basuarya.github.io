@@ -2140,6 +2140,7 @@ body:has(.rae-page) #title-block-header {
 }
 
 .rae-detail {
+  min-width: 0;
   height: 40rem;
   padding: clamp(1.4rem, 3vw, 2.2rem);
   overflow: auto;
@@ -2251,6 +2252,7 @@ body:has(.rae-page) #title-block-header {
 }
 
 .rae-sources__list article {
+  min-width: 0;
   padding: 0.75rem;
   border: 1px solid #d4dcdf;
   border-radius: 0.4rem;
@@ -2286,6 +2288,13 @@ body:has(.rae-page) #title-block-header {
   color: var(--rae-muted) !important;
   font-size: 0.63rem;
   line-height: 1.45;
+}
+
+.rae-source__title,
+.rae-source__claim,
+.rae-source__citation {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .rae-source__actions {
