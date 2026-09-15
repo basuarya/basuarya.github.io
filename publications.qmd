@@ -72,7 +72,6 @@ link-citations: true
 const AUTHOR_ID = '3227042';
 const MANUAL_PUBLICATIONS_URL = './manual_publications.json';
 const AUTHOR_PROFILE_URL = 'https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en';
-const SCHOLAR_PROXY_URL = `https://api.allorigins.win/raw?url=${encodeURIComponent(AUTHOR_PROFILE_URL)}`;
 const PAPERS_API_URL = `https://api.semanticscholar.org/graph/v1/author/${AUTHOR_ID}/papers?fields=title,year,venue,authors,citationCount,externalIds,publicationTypes,abstract,openAccessPdf&limit=100`;
 let latestPapers = [];
 let latestSummary = { total: 0, conference: 0, journalReview: 0, other: 0 };
@@ -427,47 +426,6 @@ async function fetchSemanticScholarPapers() {
   return (json.data || []).filter((paper) => paper && paper.title);
 }
 
-function extractScholarStatsFromHtml(html) {
-  const tableMatch = html.match(/<table id="gsc_rsb_st"[\s\S]*?<\/table>/i);
-  if (!tableMatch) {
-    throw new Error('Google Scholar stats table not found');
-  }
-  const table = tableMatch[0];
-
-  function readMetric(label) {
-    const pattern = new RegExp(
-      `<tr>\\s*<td class="gsc_rsb_sc1">[\\s\\S]*?${label}[\\s\\S]*?<\\/td>\\s*<td class="gsc_rsb_std">\\s*([0-9,]+)\\s*<\\/td>`,
-      'i'
-    );
-    const match = table.match(pattern);
-    if (!match) {
-      throw new Error(`Google Scholar metric missing: ${label}`);
-    }
-    return toFiniteInt(match[1].replace(/,/g, ''));
-  }
-
-  return {
-    citationCount: readMetric('Citations'),
-    hIndex: readMetric('h-index'),
-    i10Index: readMetric('i10-index'),
-  };
-}
-
-async function fetchGoogleScholarStats() {
-  const response = await fetch(SCHOLAR_PROXY_URL, { cache: 'no-cache' });
-  if (!response.ok) {
-    throw new Error(`Scholar proxy status: ${response.status}`);
-  }
-  const html = await response.text();
-  const stats = extractScholarStatsFromHtml(html);
-  return {
-    ...stats,
-    source: 'Google Scholar',
-    profileUrl: AUTHOR_PROFILE_URL,
-    lastUpdated: new Date().toISOString(),
-  };
-}
-
 async function fetchPublishedSnapshot() {
   const response = await fetch('./publications_cache.json', { cache: 'no-cache' });
   if (!response.ok) {
@@ -492,35 +450,11 @@ async function fetchPublications() {
     });
   }
 
-  let liveScholarStats = null;
-  let scholarStatsStatus = 'pending';
-  const scholarStatsPromise = fetchGoogleScholarStats();
-  scholarStatsPromise
-    .then((stats) => {
-      liveScholarStats = stats;
-      scholarStatsStatus = 'live';
-      if (latestSummary.total > 0) {
-        renderSummaryMetrics(latestSummary, stats, {
-          mode: 'live',
-          lastUpdated: stats.lastUpdated,
-        });
-      }
-    })
-    .catch(() => {
-      scholarStatsStatus = 'unavailable';
-      if (latestSummary.total > 0 && snapshotStats) {
-        renderSummaryMetrics(latestSummary, snapshotStats, {
-          mode: 'local-cache',
-          lastUpdated: snapshotUpdated,
-        });
-      }
-    });
-
   try {
     const papers = await fetchSemanticScholarPapers();
-    renderPublications(mergePublications(papers, manualPapers), liveScholarStats || snapshotStats, {
-      mode: liveScholarStats ? 'live' : scholarStatsStatus === 'unavailable' ? 'local-cache' : 'live-pending',
-      lastUpdated: liveScholarStats?.lastUpdated || snapshotUpdated || new Date().toISOString(),
+    renderPublications(mergePublications(papers, manualPapers), snapshotStats, {
+      mode: 'snapshot',
+      lastUpdated: snapshotUpdated,
     });
   } catch {
     if (!snapshotPapers.length) {

@@ -1,0 +1,38 @@
+name: Refresh publication metrics
+
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-publication-metrics
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch publication data and metrics
+        run: python3 fetch_publications.py
+
+      - name: Commit refreshed cache
+        run: |
+          if git diff --quiet -- publications_cache.json docs/publications_cache.json; then
+            echo "Publication cache is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add publications_cache.json docs/publications_cache.json
+          git commit -m "Refresh publication metrics"
+          git push

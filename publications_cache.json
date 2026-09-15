@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-09-02T15:06:27.175213+00:00",
+  "last_updated": "2026-09-15T18:56:50.976572+00:00",
   "author": "Aryabrata Basu",
   "semantic_scholar_id": "3227042",
   "source_profile_url": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
   "stats": {
     "paperCount": 26,
-    "citationCount": 462,
+    "citationCount": 471,
     "hIndex": 11,
     "i10Index": 11,
     "source": "Google Scholar",
     "profileUrl": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
-    "lastUpdated": "2026-09-02T15:06:27.175213+00:00"
+    "lastUpdated": "2026-09-15T18:56:50.976572+00:00"
   },
-  "total": 26,
+  "total": 25,
   "papers": [
     {
       "title": "XR for Knowledge Work: Ten Challenges",
@@ -76,7 +76,7 @@
       "year": 2026,
       "venue": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "authors": [
-        "M. Karim",
+        "Md Asif Bin Karim",
         "Karun Shrestha",
         "Atit Kharel",
         "M. J. M. Sunny",
@@ -191,7 +191,7 @@
         "M. J. M. Sunny",
         "Jayasri Sai Nikitha Guthula"
       ],
-      "citations": 4,
+      "citations": 5,
       "doi_url": "https://doi.org/10.48550/arXiv.2302.02525",
       "pdf_url": "http://arxiv.org/pdf/2302.02525",
       "pub_type": "Journal",
@@ -280,33 +280,14 @@
       "abstract": ""
     },
     {
-      "title": "Using Virtual Pets to Promote Physical Activity in Children: An Application of the Youth Physical Activity Promotion Model",
-      "year": 2015,
-      "venue": "Journal of health communication",
-      "authors": [
-        "Sun Joo Grace Ahn",
-        "K. Johnsen",
-        "Tom P. Robertson",
-        "James Moore",
-        "Scott Brown",
-        "Amanda Marable",
-        "Aryabrata Basu"
-      ],
-      "citations": 72,
-      "doi_url": "https://doi.org/10.1080/10810730.2015.1018597",
-      "pdf_url": "",
-      "pub_type": "Journal",
-      "abstract": ""
-    },
-    {
       "title": "Mixed Reality Virtual Pets to Reduce Childhood Obesity",
       "year": 2014,
       "venue": "IEEE Transactions on Visualization and Computer Graphics",
       "authors": [
         "K. Johnsen",
         "Sun Joo Grace Ahn",
-        "James Moore",
-        "Scott Brown",
+        "James N. Moore",
+        "Scott A. Brown",
         "T. Robertson",
         "Amanda Marable",
         "Aryabrata Basu"
