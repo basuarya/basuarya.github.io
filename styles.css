@@ -1255,26 +1255,33 @@ body.dark-mode .links-directory__item strong {
   }
 
   .resources__header {
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.35rem;
     border-bottom: 2px solid #17384f;
   }
 
   .resources__header h2 {
-    margin: 0;
+    margin: 0 !important;
+    padding-bottom: 0;
+    border-bottom: 0 !important;
     color: #17384f;
     font-size: clamp(1.8rem, 3vw, 2.5rem);
-    line-height: 1.1;
+    line-height: 1;
   }
 
   .resources__section {
-    margin-top: 2.25rem;
+    margin-top: 1.5rem;
   }
 
   .resources__section h3 {
-    margin: 0 0 0.6rem;
+    margin: 0 0 0.4rem;
     color: #17384f;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(164, 118, 56, 0.55);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
   }
 
   .resources__section ul {
@@ -1300,15 +1307,12 @@ body.dark-mode .links-directory__item strong {
     font-size: 1.15rem;
     font-weight: 600;
     line-height: 1.25;
-    text-decoration: underline;
-    text-decoration-color: rgba(164, 118, 56, 0.45);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
+    text-decoration: none;
   }
 
   .resources__section a:hover {
     color: #8c5629;
-    text-decoration-color: currentColor;
+    text-decoration: none;
   }
 
   .resources__section a:focus-visible {
@@ -1333,6 +1337,10 @@ body.dark-mode .links-directory__item strong {
     color: #edf3f1 !important;
   }
 
+  body.dark-mode .resources__section h3 {
+    text-decoration-color: rgba(197, 150, 82, 0.7);
+  }
+
   body.dark-mode .resources__section ul,
   body.dark-mode .resources__section li {
     border-color: #60747d;
@@ -1340,7 +1348,6 @@ body.dark-mode .links-directory__item strong {
 
   body.dark-mode .resources__section a {
     color: #e7f0f0 !important;
-    text-decoration-color: rgba(197, 150, 82, 0.65);
   }
 
   body.dark-mode .resources__section a:hover {
