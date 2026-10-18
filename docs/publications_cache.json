@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-14T09:36:13.905752+00:00",
+  "last_updated": "2026-10-18T08:55:37.107726+00:00",
   "author": "Aryabrata Basu",
   "semantic_scholar_id": "3227042",
   "source_profile_url": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
@@ -12,7 +12,7 @@
     "profileUrl": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
     "lastUpdated": "2026-10-05T11:39:04.417952+00:00"
   },
-  "total": 27,
+  "total": 26,
   "papers": [
     {
       "title": "Quantum-Like Spatial Decision Dynamics: A Falsifiable Model of Cue-Order Effects in Immersive Navigation with Implications for Human-Quantum Computer Interaction",
@@ -288,25 +288,6 @@
       ],
       "citations": 9,
       "doi_url": "https://doi.org/10.1109/3DUI.2016.7460057",
-      "pdf_url": "",
-      "pub_type": "Journal",
-      "abstract": ""
-    },
-    {
-      "title": "Using Virtual Pets to Promote Physical Activity in Children: An Application of the Youth Physical Activity Promotion Model",
-      "year": 2015,
-      "venue": "Journal of health communication",
-      "authors": [
-        "Sun Joo Grace Ahn",
-        "Kyle Johnsen",
-        "T. Robertson",
-        "James N. Moore",
-        "Scott A. Brown",
-        "Amanda Marable",
-        "Aryabrata Basu"
-      ],
-      "citations": 72,
-      "doi_url": "https://doi.org/10.1080/10810730.2015.1018597",
       "pdf_url": "",
       "pub_type": "Journal",
       "abstract": ""
