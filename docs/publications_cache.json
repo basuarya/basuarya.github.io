@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-10-24T08:57:23.743202+00:00",
+  "last_updated": "2026-10-28T10:40:57.169843+00:00",
   "author": "Aryabrata Basu",
   "semantic_scholar_id": "3227042",
   "source_profile_url": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
   "stats": {
     "paperCount": 26,
-    "citationCount": 480,
+    "citationCount": 488,
     "hIndex": 11,
     "i10Index": 11,
-    "source": "Google Scholar (last successful snapshot)",
+    "source": "Google Scholar",
     "profileUrl": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
-    "lastUpdated": "2026-10-05T11:39:04.417952+00:00"
+    "lastUpdated": "2026-10-28T10:40:57.169843+00:00"
   },
-  "total": 26,
+  "total": 27,
   "papers": [
     {
       "title": "Quantum-Like Spatial Decision Dynamics: A Falsifiable Model of Cue-Order Effects in Immersive Navigation with Implications for Human-Quantum Computer Interaction",
@@ -175,7 +175,7 @@
         "Jayasri Sai Nikitha Guthula",
         "Aryabrata Basu"
       ],
-      "citations": 2,
+      "citations": 3,
       "doi_url": "https://doi.org/10.1109/VRW62533.2024.00065",
       "pdf_url": "",
       "pub_type": "Conference",
@@ -288,6 +288,25 @@
       ],
       "citations": 9,
       "doi_url": "https://doi.org/10.1109/3DUI.2016.7460057",
+      "pdf_url": "",
+      "pub_type": "Journal",
+      "abstract": ""
+    },
+    {
+      "title": "Using Virtual Pets to Promote Physical Activity in Children: An Application of the Youth Physical Activity Promotion Model",
+      "year": 2015,
+      "venue": "Journal of health communication",
+      "authors": [
+        "Sun Joo Grace Ahn",
+        "K. Johnsen",
+        "T. Robertson",
+        "James N. Moore",
+        "Scott A. Brown",
+        "Amanda Marable",
+        "Aryabrata Basu"
+      ],
+      "citations": 72,
+      "doi_url": "https://doi.org/10.1080/10810730.2015.1018597",
       "pdf_url": "",
       "pub_type": "Journal",
       "abstract": ""
