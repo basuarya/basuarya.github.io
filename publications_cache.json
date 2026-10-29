@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-28T10:40:57.169843+00:00",
+  "last_updated": "2026-10-29T10:58:32.313217+00:00",
   "author": "Aryabrata Basu",
   "semantic_scholar_id": "3227042",
   "source_profile_url": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
@@ -8,7 +8,7 @@
     "citationCount": 488,
     "hIndex": 11,
     "i10Index": 11,
-    "source": "Google Scholar",
+    "source": "Google Scholar (last successful snapshot)",
     "profileUrl": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
     "lastUpdated": "2026-10-28T10:40:57.169843+00:00"
   },
@@ -243,7 +243,7 @@
       "authors": [
         "Aryabrata Basu"
       ],
-      "citations": 13,
+      "citations": 14,
       "doi_url": "",
       "pdf_url": "",
       "pub_type": "Review",
