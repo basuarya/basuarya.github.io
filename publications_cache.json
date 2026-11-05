@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-11-02T12:39:11.456351+00:00",
+  "last_updated": "2026-11-05T12:32:38.604642+00:00",
   "author": "Aryabrata Basu",
   "semantic_scholar_id": "3227042",
   "source_profile_url": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
   "stats": {
-    "paperCount": 26,
+    "paperCount": 27,
     "citationCount": 491,
     "hIndex": 11,
     "i10Index": 11,
-    "source": "Google Scholar",
+    "source": "Google Scholar (last successful snapshot)",
     "profileUrl": "https://scholar.google.com/citations?user=ZOgedfAAAAAJ&hl=en",
     "lastUpdated": "2026-11-02T12:39:11.456351+00:00"
   },
@@ -244,7 +244,7 @@
         "Aryabrata Basu"
       ],
       "citations": 14,
-      "doi_url": "",
+      "doi_url": "https://doi.org/10.48550/arXiv.1911.09605",
       "pdf_url": "",
       "pub_type": "Review",
       "abstract": "In this article, we are going to review a brief history of the field of Virtual Reality (VR), VR systems, and applications and discuss how they evolved. After that, we will familiarize ourselves with the essential components of VR experiences and common VR terminology. Finally, we discuss the evolution of ubiquitous VR as a subfield of VR and its current trends."
@@ -257,7 +257,7 @@
         "Aryabrata Basu"
       ],
       "citations": 0,
-      "doi_url": "",
+      "doi_url": "https://doi.org/10.48550/arXiv.1909.05327",
       "pdf_url": "",
       "pub_type": "Journal",
       "abstract": "The issue of seamless identification of users previously tracked using existing real-time optical position tracking system such as the OptiTrack system and maintaining continuous tracking state (history) of each of those users is a hard problem. In this article, we present a theoretical framework to integrate existing tracking systems with features such as user identification and history of up to "
@@ -271,8 +271,8 @@
         "K. Johnsen"
       ],
       "citations": 2,
-      "doi_url": "",
-      "pdf_url": "",
+      "doi_url": "https://doi.org/10.48550/arXiv.1805.09454",
+      "pdf_url": "http://arxiv.org/pdf/1805.09454",
       "pub_type": "Journal",
       "abstract": "Navigating spaces is an embodied experience. Examples can vary from rescue workers trying to save people from natural disasters; a tourist finding their way to the nearest coffee shop, or a gamer solving a maze. Virtual reality allows these experiences to be simulated in a controlled virtual environment. However, virtual reality users remain anchored in the real world and the conventions by which "
     },
@@ -305,7 +305,7 @@
         "Amanda Marable",
         "Aryabrata Basu"
       ],
-      "citations": 72,
+      "citations": 73,
       "doi_url": "https://doi.org/10.1080/10810730.2015.1018597",
       "pdf_url": "",
       "pub_type": "Journal",
