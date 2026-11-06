@@ -39,7 +39,7 @@ link-citations: true
   <section class="resources__section" aria-labelledby="affiliations-heading">
     <h3 id="affiliations-heading">Institutional affiliations</h3>
     <ul>
-      <li><a href="https://vel.engr.uga.edu/about/" target="_blank" rel="noopener noreferrer">Virtual Experiences Laboratory, University of Georgia <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://velaboratory.com/people/" target="_blank" rel="noopener noreferrer">Virtual Experiences Laboratory, University of Georgia <span aria-hidden="true">↗</span></a></li>
       <li><a href="https://digitalscholarship.emory.edu/" target="_blank" rel="noopener noreferrer">Emory's Center for Digital Scholarship <span aria-hidden="true">↗</span></a></li>
       <li><a href="https://ualr.edu/computerscience" target="_blank" rel="noopener noreferrer">Department of Computer Science, UA Little Rock <span aria-hidden="true">↗</span></a></li>
       <li><a href="https://eac.ualr.edu/" target="_blank" rel="noopener noreferrer">Donaghey Emerging Analytics Center, UA Little Rock <span aria-hidden="true">↗</span></a></li>
